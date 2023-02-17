@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100002, guid: 480369b02f3d8804bb808bb73e17a191, type: 3}
       propertyPath: m_Name
-      value: rus_build_4et_01_LOD1
+      value: Apartment01
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 480369b02f3d8804bb808bb73e17a191, type: 3}
       propertyPath: m_RootOrder
