@@ -3,7 +3,12 @@ guid: ff8fb4ae0fa3ade478d0186059c72057
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MaterialChernobylReatorDoor
+    second: {fileID: 2100000, guid: af792b0e489a0d0459058f8990d7c7c0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
