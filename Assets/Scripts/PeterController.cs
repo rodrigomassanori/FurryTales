@@ -76,7 +76,7 @@ public class PeterController : MonoBehaviour
     {
         print("Entered");
 
-        if (other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Grounded"))
         {
             IsGrounded = true;
         }
@@ -86,7 +86,7 @@ public class PeterController : MonoBehaviour
     {
         print("Exited");
 
-        if (other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Grounded"))
         {
             IsGrounded = false;
         }
