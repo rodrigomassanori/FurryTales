@@ -8,8 +8,6 @@ public class PeterAnimation : MonoBehaviour
 
     Animator an;
 
-    Animation anim;
-
     Vector3 mover;
 
     bool AutoJump;
@@ -45,7 +43,7 @@ public class PeterAnimation : MonoBehaviour
     {
         bool walking = h != 0.0f || v != 0.0f;
 
-        anim.Play("Walk");
+        an.Play("Walk");
 
         an.SetBool("Walk", walking);
     }
