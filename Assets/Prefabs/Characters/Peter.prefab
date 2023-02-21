@@ -1504,6 +1504,7 @@ GameObject:
   - component: {fileID: 6188451946502972829}
   - component: {fileID: 3135294911889145147}
   - component: {fileID: 1673279286363957203}
+  - component: {fileID: 3710407107880681520}
   m_Layer: 0
   m_Name: Peter
   m_TagString: Player
@@ -1590,9 +1591,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467074b65f165f34f919eb288663e97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsJumping: 0
-  IsJumpingAlt: 0
-  IsGrounded: 0
+  LuzPlayer: {fileID: 0}
+  gravityValue: -1.5
+  isGrounded: 0
+  playerVelocity: {x: 0, y: 0, z: 0}
+--- !u!143 &3710407107880681520
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6422315108070137853}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 35
+  m_Radius: 35
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 35, z: 0}
 --- !u!1 &6722875143682509229
 GameObject:
   m_ObjectHideFlags: 0
