@@ -19,9 +19,9 @@ public class PeterController : MonoBehaviour
     
     void Awake()
     {
-        print("Initialized (" + this.name + ")");
+        print("Initialized(" + this.name + ")");
 
-        GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
@@ -84,7 +84,7 @@ public class PeterController : MonoBehaviour
 
     void OnCollisionExit(Collision other)
     {
-       print("Exited");
+        print("Exited");
 
         if (other.gameObject.CompareTag("Ground"))
         {
