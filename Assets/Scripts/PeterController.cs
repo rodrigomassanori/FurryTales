@@ -1,94 +1,124 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-public class PeterController : MonoBehaviour 
+namespace Player
 {
-    float MoveSpeed = 2.0f;
-
-    float RotationSpeed = 4.0f;
-
-    float RunningSpeed;
-
-    float Vaxis, Haxis;
-    
-    public bool IsJumping, IsJumpingAlt, IsGrounded = false;
-    
-    Vector3 Movement;
-
-    Rigidbody rb;
-    
-    void Awake()
+    public class PeterController : MonoBehaviour
     {
-        print("Initialized(" + this.name + ")");
+        float forwardMovement = 3.5f;
 
-        rb = GetComponent<Rigidbody>();
-    }
+        float leftMovement = 8.0f;
 
-    void FixedUpdate()
-    {
-        Vaxis = Input.GetAxis("Vertical");
+        float rightMovement = 8.0f;
 
-        Haxis = Input.GetAxis("Horizontal");
+        float backMovement = 3.0f;
 
-        IsJumping = Input.GetButton("Jump");
+        float velocidade = 6.5f;
 
-        IsJumpingAlt = Input.GetKey(KeyCode.Joystick1Button0);
+        float girar = 17.5f;
 
-        RunningSpeed = Vaxis;
+        readonly KeyCode W = KeyCode.W;
 
-        if(IsGrounded)
+        readonly KeyCode S = KeyCode.S;
+
+        readonly KeyCode A = KeyCode.A;
+
+        readonly KeyCode D = KeyCode.D;
+
+        readonly KeyCode z = KeyCode.Z;
+
+        public Light LuzPlayer;
+
+        CharacterController mark;
+
+        Animator anim;
+
+        float jumpHeight = 10.0f;
+
+        [SerializeField] 
+        float gravityValue = -1.5f;
+
+        public bool isGrounded = false;
+
+        [SerializeField]
+        Vector3 playerVelocity;
+
+        void Awake()
         {
-            Movement = new Vector3(0, 0, RunningSpeed * 8);
+            LuzPlayer = GetComponentInChildren<Light>();
 
-            Movement = transform.TransformDirection(Movement);
+            mark = GetComponent<CharacterController>();
+
+            anim = GetComponent<Animator>();
         }
 
-        else
+        void Update()
         {
-            Movement *= 0.70f;
-        }
+            transform.Rotate(0, Input.GetAxisRaw("Horizontal") * girar * Time.fixedDeltaTime, 0);
 
-        rb.AddForce(Movement * MoveSpeed);
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
 
-        if ((IsJumping || IsJumpingAlt) && IsGrounded)
-        {
-            print(this.ToString() + " IsJumping = " + IsJumping);
+            float Giro = velocidade * Input.GetAxisRaw("Vertical");
 
-            rb.AddForce(Vector3.up * 150);
-        }
+            mark.SimpleMove(forward * Giro);
 
-        if ((Input.GetAxis("Vertical") != 0f || Input.GetAxis("Horizontal") != 0f) 
-        && !IsJumping && IsGrounded)
-        {
-            if (Input.GetAxis("Vertical") >= 0)
+            mark.detectCollisions = true;
+
+            if(mark.isGrounded)
             {
-                transform.Rotate(new Vector3(0, Haxis * RotationSpeed, 0));
+                isGrounded = mark.isGrounded;
+
+                if (isGrounded && playerVelocity.y < 0)
+                {
+                    isGrounded = true;
+
+                    playerVelocity.y = 0.0f;
+                }
+
+                if (Input.GetButtonDown("Jump"))
+                {
+                    print("Botão de pulo apertado");
+
+                    print("Is Grounder?" + isGrounded);
+
+                    if (isGrounded)
+                    {
+                        playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+                    }
+
+                    playerVelocity.y += gravityValue * Time.deltaTime;
+
+                    mark.Move(playerVelocity * Time.deltaTime);
+                }
+
+                if(Input.GetKey(A))
+                {
+                    Vector3 position = transform.TransformDirection(Vector3.right *
+                    rightMovement * Time.fixedDeltaTime);
+                }
+
+                else if(Input.GetKey(D))
+                {
+                    Vector3 position = transform.TransformDirection(Vector3.left * 
+                    leftMovement * Time.fixedDeltaTime);
+                }
+
+                if (Input.GetKey(W)) 
+                {
+                    Vector3 position = transform.TransformDirection (Vector3.forward *
+                    forwardMovement * Time.fixedDeltaTime);
+                }
+
+                else if (Input.GetKey(S)) 
+                {
+                    Vector3 position = transform.TransformDirection (Vector3.back *
+                    backMovement * Time.fixedDeltaTime);
+                }
+
+                if (Input.GetKeyDown(z)) 
+                {
+                    LuzPlayer.enabled = !LuzPlayer.enabled;
+                }
             }
-                
-            else
-            {
-                transform.Rotate(new Vector3(0, -Haxis * RotationSpeed, 0));
-            }
-        }
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        print("Entered");
-
-        if (other.gameObject.CompareTag("Grounded"))
-        {
-            IsGrounded = true;
-        }
-    }
-
-    void OnCollisionExit(Collision other)
-    {
-        print("Exited");
-
-        if (other.gameObject.CompareTag("Grounded"))
-        {
-            IsGrounded = false;
         }
     }
 }
