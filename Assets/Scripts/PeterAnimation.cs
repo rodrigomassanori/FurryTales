@@ -43,8 +43,6 @@ public class PeterAnimation : MonoBehaviour
     {
         bool walking = h != 0.0f || v != 0.0f;
 
-        an.Play("Walk");
-
         an.SetBool("Walk", walking);
     }
 }
