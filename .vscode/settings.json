@@ -54,7 +54,13 @@
     },
     "git.ignoreLimitWarning": true,
     "cSpell.words": [
+        "apertado",
         "Behaviour",
-        "Rigidbody"
+        "Botão",
+        "girar",
+        "Mathf",
+        "pulo",
+        "Rigidbody",
+        "velocidade"
     ]
 }
