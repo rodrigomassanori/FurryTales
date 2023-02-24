@@ -54,6 +54,7 @@
     },
     "git.ignoreLimitWarning": true,
     "cSpell.words": [
-        "Behaviour"
+        "Behaviour",
+        "Rigidbody"
     ]
 }
