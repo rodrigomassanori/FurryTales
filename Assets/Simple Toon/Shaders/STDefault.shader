@@ -7,29 +7,29 @@
         [Header(Colorize)][Space(5)]  //colorize
 		_Color ("Color", COLOR) = (1,1,1,1)
 
-		[HideInInspector] _ColIntense ("Intensity", Range(0,3)) = 1
-        [HideInInspector] _ColBright ("Brightness", Range(-1,1)) = 0
-		_AmbientCol ("Ambient", Range(0,1)) = 0
+		[HideInInspector] _ColIntense ("Intensity", Range(0, 3)) = 1
+        [HideInInspector] _ColBright ("Brightness", Range(-1, 1)) = 0
+		_AmbientCol ("Ambient", Range(0, 1)) = 0
 
         [Header(Detail)][Space(5)]  //detail
         [Toggle] _Segmented ("Segmented", Float) = 1
-        _Steps ("Steps", Range(1,25)) = 3
-        _StpSmooth ("Smoothness", Range(0,1)) = 0
-        _Offset ("Lit Offset", Range(-1,1.1)) = 0
+        _Steps ("Steps", Range(1, 25)) = 3
+        _StpSmooth ("Smoothness", Range(0, 1)) = 0
+        _Offset ("Lit Offset", Range(-1, 1.1)) = 0
 
         [Header(Light)][Space(5)]  //light
         [Toggle] _Clipped ("Clipped", Float) = 0
-        _MinLight ("Min Light", Range(0,1)) = 0
-        _MaxLight ("Max Light", Range(0,1)) = 1
-        _Lumin ("Luminocity", Range(0,2)) = 0
+        _MinLight ("Min Light", Range(0, 1)) = 0
+        _MaxLight ("Max Light", Range(0, 400)) = 400
+        _Lumin ("Luminocity", Range(0, 2)) = 0
 
         [Header(Shine)][Space(5)]  //shine
-		[HDR] _ShnColor ("Color", COLOR) = (1,1,0,1)
+		[HDR] _ShnColor ("Color", COLOR) = (1, 1, 0, 1)
         [Toggle] _ShnOverlap ("Overlap", Float) = 0
 
-        _ShnIntense ("Intensity", Range(0,1)) = 0
-        _ShnRange ("Range", Range(0,1)) = 0.15
-        _ShnSmooth ("Smoothness", Range(0,1)) = 0
+        _ShnIntense ("Intensity", Range(0, 1)) = 0
+        _ShnRange ("Range", Range(0, 1)) = 0.15
+        _ShnSmooth ("Smoothness", Range(0, 1)) = 0
     }
 
     SubShader
@@ -84,14 +84,14 @@
                 _Steps = _Segmented ? _Steps : 1;
                 _StpSmooth = _Segmented ? _StpSmooth : 1;
 
-				_DarkColor = fixed4(0,0,0,1);
+				_DarkColor = fixed4(0, 0, 0, 1);
 				_MaxAtten = 1.0;
 
 				float3 normal = normalize(i.worldNormal);
 				float3 light_dir = normalize(_WorldSpaceLightPos0.xyz);
 				float3 view_dir = normalize(i.viewDir);
 				float3 halfVec = normalize(light_dir + view_dir);
-				float3 forward = mul((float3x3)unity_CameraToWorld, float3(0,0,1));
+				float3 forward = mul((float3x3)unity_CameraToWorld, float3(0, 0, 1));
 
                 float NdotL = dot(normal, light_dir);
 				float NdotH = dot(normal, halfVec);
