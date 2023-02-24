@@ -3,16 +3,16 @@ Shader "Lpk/SimpleToon"
     Properties
     {
         _BaseMap            ("Texture", 2D)                     = "white" {}
-        _BaseColor          ("Color", Color)                    = (1,1,1,1)
-        [HDR]_HighColor     ("HighColor", Color)                = (1,1,1,1)
-        _Gloss              ("Gloss", Range(0,10))              = 10
-        _ShadowStep         ("ShadowStep", Range(0, 1))         = 0.847
-        _ShadowStepSmooth   ("ShadowStepSmooth", Range(0, 1))   = 0.021
-        _SpecularStep       ("SpecularStep", Range(0, 1))       = 1
-        _SpecularStepSmooth ("SpecularStepSmooth", Range(0, 1)) = 1
-        _RimStepSmooth      ("RimStepSmooth",Range(0,1))        = 0.1
-        _RimStep            ("RimStep", Range(0, 1))            = 0.95
-        _RimColor           ("Color", Color)                    = (1,1,1,1)
+        _BaseColor          ("Color", Color)                    = (1, 1, 1, 1)
+        [HDR]_HighColor     ("HighColor", Color)                = (1, 1, 1, 1)
+        _Gloss              ("Gloss", Range(0, 100))              = 100
+        _ShadowStep         ("ShadowStep", Range(0, 100))         = 700
+        _ShadowStepSmooth   ("ShadowStepSmooth", Range(0, 100))   = 800
+        _SpecularStep       ("SpecularStep", Range(0, 100))       = 100
+        _SpecularStepSmooth ("SpecularStepSmooth", Range(0, 100)) = 100
+        _RimStepSmooth      ("RimStepSmooth",Range(0, 500))        = 500
+        _RimStep            ("RimStep", Range(0, 300))            = 300
+        _RimColor           ("Color", Color)                    = (1, 1, 1, 1)
         
         [Space]   
         _OutlineWidth      ("OutlineWidth", Range(0.0, 1.0))    = 0.1
