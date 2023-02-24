@@ -200,13 +200,13 @@ Shader "Toon Shader for this game"
             void main()
             {
                 vec3 normalDirection = normalize(varyingNormalDirection);
- 
+
                 vec3 viewDirection = normalize(WorldSpaceCameraPos - vec3(position));
                 
                 vec3 lightDirection;
                 
                 float attenuation;
- 
+
                 if (0.0 == WorldSpaceLightPos0.w)
                 {
                     attenuation = 1.0;
@@ -224,7 +224,7 @@ Shader "Toon Shader for this game"
                     
                     lightDirection = normalize(vertexToLightSource);
                 }
- 
+
                 vec4 fragmentColor = vec4(0.0, 0.0, 0.0, 0.0);
 
                 if (dot(normalDirection, lightDirection) > 0.0 && attenuation 
@@ -232,12 +232,12 @@ Shader "Toon Shader for this game"
                 {
                     fragmentColor = vec4(_LightColor0.rgb, 1.0) * _SpecColor;
                 }
- 
+
                 gl_FragColor = fragmentColor;
             }
 
             #endif
- 
+
             ENDGLSL
         }
     }
