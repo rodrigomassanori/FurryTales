@@ -61,6 +61,7 @@
         "Mathf",
         "pulo",
         "Rigidbody",
+        "Toon",
         "velocidade"
     ]
 }
