@@ -218,9 +218,9 @@ Shader "Shaders/FurryTalesToon"
             
             #pragma fragment Fragment
             
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
-            #include "../Include/ToonHairShadowMaskPass.hlsl"
+            #include "..Shaders/Include/ToonHairShadowMaskPass.hlsl"
             
             ENDHLSL
         }
@@ -267,11 +267,11 @@ Shader "Shaders/FurryTalesToon"
             
             #pragma fragment Fragment
 
-            #include "../Include/ToonFunction.hlsl"    
+            #include "../Shaders/Include/ToonFunction.hlsl"    
             
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
-            #include "../Include/ToonOutlinePass.hlsl"            
+            #include "../Shaders/Include/ToonOutlinePass.hlsl"            
             
             ENDHLSL
         }
@@ -370,13 +370,13 @@ Shader "Shaders/FurryTalesToon"
 
             #pragma fragment ToonForwardPassFragment
 
-            #include "../Include/ToonFunction.hlsl"
+            #include "../Shaders/Include/ToonFunction.hlsl"
             
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
-            #include "../Include/ToonLighting.hlsl"
+            #include "../Shaders/Include/ToonLighting.hlsl"
             
-            #include "../Include/ToonForwardPass.hlsl"
+            #include "../Shaders/Include/ToonForwardPass.hlsl"
             
             ENDHLSL
         }
@@ -416,7 +416,7 @@ Shader "Shaders/FurryTalesToon"
             
             #pragma fragment ShadowPassFragment
 
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
             #include "Packages/com.unity.render-pipelines.universal/Shaders/ShadowCasterPass.hlsl"
             
@@ -456,7 +456,7 @@ Shader "Shaders/FurryTalesToon"
             
             #pragma fragment DepthOnlyFragment
 
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
             #include "Packages/com.unity.render-pipelines.universal/Shaders/DepthOnlyPass.hlsl"   
             
@@ -496,7 +496,7 @@ Shader "Shaders/FurryTalesToon"
             
             #pragma multi_compile _ DOTS_INSTANCING_ON
 
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
             #include "Packages/com.unity.render-pipelines.universal/Shaders/DepthNormalsPass.hlsl"
             
@@ -534,13 +534,13 @@ Shader "Shaders/FurryTalesToon"
             
             #pragma shader_feature_local_fragment _SPECULAR_SETUP
 
-            #include "../Include/ToonFunction.hlsl"
+            #include "../Shaders/Include/ToonFunction.hlsl"
             
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
-            #include "../Include/ToonLighting.hlsl"
+            #include "../Shaders/Include/ToonLighting.hlsl"
             
-            #include "../Include/ToonMetaPass.hlsl"
+            #include "../Shaders/Include/ToonMetaPass.hlsl"
             
             ENDHLSL
         }
@@ -590,9 +590,9 @@ Shader "Shaders/FurryTalesToon"
             
             #pragma fragment Fragment
             
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
-            #include "../Include/ToonHairShadowMaskPass.hlsl"
+            #include "../Shaders/Include/ToonHairShadowMaskPass.hlsl"
             
             ENDHLSL
         }
@@ -639,11 +639,11 @@ Shader "Shaders/FurryTalesToon"
             
             #pragma fragment Fragment
             
-            #include "../Include/ToonFunction.hlsl"
+            #include "../Shaders/Include/ToonFunction.hlsl"
             
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
-            #include "../Include/ToonOutlinePass.hlsl"            
+            #include "../Shaders/Include/ToonOutlinePass.hlsl"            
             
             ENDHLSL
         }
@@ -742,13 +742,13 @@ Shader "Shaders/FurryTalesToon"
             
             #pragma fragment ToonForwardPassFragment
 
-            #include "../Include/ToonFunction.hlsl"
+            #include "../Shaders/Include/ToonFunction.hlsl"
             
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
-            #include "../Include/ToonLighting.hlsl"
+            #include "../Shaders/Include/ToonLighting.hlsl"
             
-            #include "../Include/ToonForwardPass.hlsl"
+            #include "../Shaders/Include/ToonForwardPass.hlsl"
             
             ENDHLSL
         }
@@ -788,7 +788,7 @@ Shader "Shaders/FurryTalesToon"
             
             #pragma fragment ShadowPassFragment
 
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
             #include "Packages/com.unity.render-pipelines.universal/Shaders/ShadowCasterPass.hlsl"
             
@@ -828,7 +828,7 @@ Shader "Shaders/FurryTalesToon"
             
             #pragma fragment DepthOnlyFragment
 
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
             #include "Packages/com.unity.render-pipelines.universal/Shaders/DepthOnlyPass.hlsl"   
             
@@ -851,6 +851,7 @@ Shader "Shaders/FurryTalesToon"
             HLSLPROGRAM
             
             #pragma only_renderers gles gles3 glcore
+
             #pragma target 2.0
 
             #pragma vertex DepthNormalsVertex
@@ -867,7 +868,7 @@ Shader "Shaders/FurryTalesToon"
             
             #pragma multi_compile _ DOTS_INSTANCING_ON
 
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
             #include "Packages/com.unity.render-pipelines.universal/Shaders/DepthNormalsPass.hlsl"
             
@@ -905,13 +906,13 @@ Shader "Shaders/FurryTalesToon"
             
             #pragma shader_feature_local_fragment _SPECULAR_SETUP
 
-            #include "../Include/ToonFunction.hlsl"
+            #include "../Shaders/Include/ToonFunction.hlsl"
             
-            #include "../Include/ToonInput.hlsl"
+            #include "../Shaders/Include/ToonInput.hlsl"
             
-            #include "../Include/ToonLighting.hlsl"
+            #include "../Shaders/Include/ToonLighting.hlsl"
             
-            #include "../Include/ToonMetaPass.hlsl"            
+            #include "../Shaders/Include/ToonMetaPass.hlsl"            
             
             ENDHLSL
         }
