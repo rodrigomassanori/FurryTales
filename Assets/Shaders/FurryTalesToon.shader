@@ -6,7 +6,7 @@ Shader "Shaders/FurryTalesToon"
         WorkFlowMode("WKFlowMode", Float) = 0.0
 
         [HideInInspector]
-        Cull("cull", Float) = 2.0
+        Cull("Cull", Float) = 2.0
 
         [HideInInspector]
         [ToggleOff]
