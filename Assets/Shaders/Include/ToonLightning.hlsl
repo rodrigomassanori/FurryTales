@@ -65,261 +65,346 @@ inline void InitializeBrdfDataToon(SurfaceDataToon SurfaceData, out BrdfDataToon
     OutBrdfData.Roughness2MinusOne = OutBrdfData.Roughness2 - 1.0h;
 }
 
-#ifdef HAIRSPECULAR
-half DirectSpecularHairToon(half specularExponent, half specularShift, half3 normalWS, 
-half3 lightDirectionWS, half3 viewDirectionWS, half3 bitangentWS,half specularStep, half specularFeather)
-{
-    half3 t = ShiftTangent(bitangentWS,normalWS,specularShift);
-    half LdotV = dot(lightDirectionWS,viewDirectionWS);
-    float invLenLV = rsqrt(max(2.0 * LdotV + 2.0,FLT_EPS));
-    half3 H = (lightDirectionWS+viewDirectionWS) * invLenLV;
-    half spec = D_KajiyaKay(t,H,specularExponent);
+#ifdef HairSpecular
+    half DirectSpecularHairToon(half sSpecularExponent, half SpecularShift, half3 NormalWS, 
+    half3 LightDirectionWS, half3 ViewDirectionWS, half3 BitangentWS,half SpecularStep, half SpecularFeather)
+    {
+        half3 T = ShiftTangent(BitangentWS, NormalWS, SpecularShift);
 
-    half normalizeSpec = spec * rcp(specularExponent + 2) * 2 * PI;
-    spec *= StepFeatherToon(normalizeSpec,specularStep,specularFeather);
+        half LdotV = dot(LightDirectionWS, ViewDirectionWS);
+        
+        float InvLenLV = rsqrt(max(2.0 * LdotV + 2.0, FltEps));
+        
+        half3 H = (LightDirectionWS+viewDirectionWS) * InvLenLV;
+        
+        half Spec = DKajiyaKay(T, H, SpecularExponent);
 
-    return spec;
-}
-#elif defined _HAIRSPECULARVIEWNORMAL
-half DirectSpecularHairViewNormalToon(half specularExponent, half3 normalWS, 
-half3 viewDirectionWS, half specularStep, half specularFeather)
-{
-    half NdotV = saturate(dot(normalize(normalWS.xz), normalize(viewDirectionWS.xz)));
-    half spec = pow(NdotV, specularExponent);
+        half NormalizeSpec = Spec * rcp(SpecularExponent + 2) * 2 * PI;
+        
+        Spec *= StepFeatherToon(NormalizeSpec, SpecularStep, SpecularFeather);
 
-    return StepFeatherToon(spec, specularStep, specularFeather);
-}
+        return Spec;
+    }
+
+#elif defined HairSpecularViewNormal
+    half DirectSpecularHairViewNormalToon(half SpecularExponent, half3 NormalWS, 
+    half3 ViewDirectionWS, half SpecularStep, half SpecularFeather)
+    {
+        half NdotV = saturate(dot(normalize(NormalWS.xz), normalize(ViewDirectionWS.xz)));
+
+        half Spec = pow(NdotV, SpecularExponent);
+
+        return StepFeatherToon(Spec, SpecularStep, SpecularFeather);
+    }
+
 #else
-half DirectSpecularToon(BRDFDataToon brdfData, half3 normalWS, 
-half3 lightDirectionWS, half3 viewDirectionWS, half step, half feather)
-{
-    float3 halfDir = SafeNormalize(float3(lightDirectionWS) + float3(viewDirectionWS));
-    float NoH = saturate(dot(normalWS, halfDir));
-    half LoH = saturate(dot(lightDirectionWS, halfDir));
-    half LoH2 = LoH * LoH;
-    float d = NoH * NoH * brdfData.roughness2MinusOne + 1.00001f;
-    half d2 = half(d * d);
+    half DirectSpecularToon(BrdfDataToon BrdfData, half3 NormalWS, 
+    half3 LightDirectionWS, half3 ViewDirectionWS, half Step, half Feather)
+    {
+        float3 HalfDir = SafeNormalize(float3(LightDirectionWS) + float3(ViewDirectionWS));
+
+        float NoH = saturate(dot(NormalWS, HalfDir));
+        
+        half LoH = saturate(dot(LightDirectionWS, HalfDir));
+        
+        half LoH2 = LoH * LoH;
+        
+        float D = NoH * NoH * BrdfData.Roughness2MinusOne + 1.00001f;
+        
+        half D2 = half(D * D);
     
-    half specularTerm = brdfData.roughness2 / (d2 * max(0.1h, LoH2) * brdfData.normalizationTerm);
-    half normalizeSpec = brdfData.roughness2 * brdfData.roughness2 * rcp(d2);
+        half SpecularTerm = BrdfData.Roughness2 / (D2 * max(0.1h, LoH2) * brdfData.normalizationTerm);
+        
+        half normalizeSpec = BrdfData.Roughness2 * BrdfData.Roughness2 * rcp(D2);
     
-    specularTerm *= StepFeatherToon(normalizeSpec, step, feather);
-    return specularTerm;
-}
+        SpecularTerm *= StepFeatherToon(NormalizeSpec, Step, Feather);
+        
+        return SpecularTerm;
+    }
 #endif  
 
-half3 SpecularBDRFToon(BRDFDataToon brdfData, half3 normalWS, half3 lightDirectionWS, half3 viewDirectionWS, 
-half3 bitangentWS, half specularShift, half specularStep, half specularFeather)
+half3 SpecularBrdfToon(BrdfDataToon BrdfData, half3 NormalWS, half3 LightDirectionWS, half3 ViewDirectionWS, 
+half3 BitangentWS, half SpecularShift, half SpecularStep, half SpecularFeather)
 {
-    #ifndef _SPECULARHIGHLIGHTS_OFF
-        #ifdef _HAIRSPECULAR
-            half specularTerm = DirectSpecularHairToon(brdfData.specularExponent, specularShift, normalWS, 
-            lightDirectionWS, viewDirectionWS, bitangentWS, specularStep, specularFeather);
+    #ifndef SpecularHighlightsOff
+        #ifdef HairSpecular
+            half SpecularTerm = DirectSpecularHairToon(BrdfData.SpecularExponent, SpecularShift, NormalWS, 
+            LightDirectionWS, ViewDirectionWS, BitangentWS, SpecularStep, SpecularFeather);
     
-        #elif defined _HAIRSPECULARVIEWNORMAL
-            half specularTerm = DirectSpecularHairViewNormalToon(brdfData.specularExponent, 
-            normalWS, viewDirectionWS, specularStep, specularFeather);
+        #elif defined HairSpecularViewNormal
+            half SpecularTerm = DirectSpecularHairViewNormalToon(BrdfData.SpecularExponent, 
+            NormalWS, ViewDirectionWS, SpecularStep, SpecularFeather);
     
         #else
-            half specularTerm = DirectSpecularToon(brdfData, normalWS, 
-            lightDirectionWS, viewDirectionWS, specularStep, specularFeather);
+            half SpecularTerm = DirectSpecularToon(BrdfData, NormalWS, 
+            LightDirectionWS, ViewDirectionWS, SpecularStep, SpecularFeather);
         #endif
 
-        specularTerm = specularTerm - HALF_MIN;
+        SpecularTerm = SpecularTerm - HALF_MIN;
 
-        specularTerm = clamp(specularTerm, 0.0, 100.0);
+        SpecularTerm = clamp(SpecularTerm, 0.0, 100.0);
     
-        half3 specularColor = specularTerm * brdfData.specular;
+        half3 SpecularColor = SpecularTerm * BrdfData.Specular;
     
-        return specularColor;
+        return SpecularColor;
     
         #else
             return 0;
     #endif
 }
 
-half3 GlossyEnvironmentToon(half3 reflectVector, half perceptualRoughness, half occlusion)
+half3 GlossyEnvironmentToon(half3 ReflectVector, half PerceptualRoughness, half Occlusion)
 {
-#if !defined(_ENVIRONMENTREFLECTIONS_OFF)
-    half mip = PerceptualRoughnessToMipmapLevel(perceptualRoughness);
-    half4 encodedIrradiance = SAMPLE_TEXTURECUBE_LOD(unity_SpecCube0, samplerunity_SpecCube0, reflectVector, mip);
-#if !defined(UNITY_USE_NATIVE_HDR)
-    half3 irradiance = DecodeHDREnvironment(encodedIrradiance, unity_SpecCube0_HDR);
-#else
-    half3 irradiance = encodedIrradiance.rbg;
-#endif
-    return irradiance * occlusion;
-#else
-    return 0;
-#endif
-}
-
-half3 GlobalIlluminationToon(BRDFDataToon brdfData, half3 bakedGI, half occlusion, half3 normalWS, half3 viewDirectionWS)
-{
-    half3 reflectVector = reflect(-viewDirectionWS, normalWS);
-    half fresnelTerm = Pow4(1.0 - saturate(dot(normalWS, viewDirectionWS)));
-    half3 indirectDiffuse = bakedGI * occlusion * brdfData.diffuse;
-    half3 reflection = GlossyEnvironmentToon(reflectVector, brdfData.perceptualRoughness, occlusion);
-    float surfaceReduction = 1.0 / (brdfData.roughness2 + 1.0);
-    half3 indirectSpecular = surfaceReduction * reflection * lerp(brdfData.specular, brdfData.grazingTerm, fresnelTerm);
-    return indirectDiffuse + indirectSpecular;
-}
-
-half HairShadowMaskAtten(half hairShadowMask, half H_Lambert)
-{
-    half hairAtten = lerp(1, hairShadowMask, H_Lambert);
-    return hairAtten;
-}
-
-#ifdef _SDFSHADOWMAP
-half SDFShadowRadiance(half sdfShadowMask, half2 LdotF, half3 lightDirectionWS, half lightAttenuation, half inShadow, half hairShadowMask, half shadowStep, half shadowFeather)
-{    
-    half radiance = 1 - saturate( (1 - sdfShadowMask - LdotF - (shadowStep * 2 - 1)) / shadowFeather + 1);
-    lightAttenuation = lerp(StepAntiAliasing(lightAttenuation,0.5),lightAttenuation,shadowFeather);
-    lightAttenuation = saturate(lightAttenuation * inShadow);
-    radiance *= lightAttenuation * HairShadowMaskAtten(hairShadowMask,radiance);
+    #if !defined(EnvironmentReflectionsOff)
+        half Mip = PerceptualRoughnessToMipmapLevel(PerceptualRoughness);
+        
+        half4 EncodedIrradiance = SAMPLE_TEXTURECUBE_LOD(UnitySpecCube0, SamplerUnitySpecCube0, ReflectVector, Mip);
     
-    return radiance;
-}
-#else
-
-half3 DoubleShadowToon(half3 shadow1, half3 shadow2, half3 baseColor, half2 radiance)
-{
-    half3 finalColor = lerp(lerp(shadow2,shadow1,radiance.y),baseColor,radiance.x);
-    return finalColor;
-}
-
-#ifndef _DIFFUSERAMPMAP
-half2 RadianceToon(half3 normalWS, half3 lightDirectionWS, half lightAttenuation, half inShadow, half hairShadowMask, half shadow1Step, half shadow1Feather, half shadow2Step, half shadow2Feather)
-{
-    half2 radiance;
-    lightAttenuation = lerp(StepAntiAliasing(lightAttenuation,0.5),lightAttenuation,shadow1Feather);
-    lightAttenuation = saturate(lightAttenuation * inShadow);
-    half H_Lambert = 0.5 * dot(normalWS, lightDirectionWS) + 0.5;
-    radiance.x = StepFeatherToon(H_Lambert, shadow1Step, shadow1Feather) * lightAttenuation * HairShadowMaskAtten(hairShadowMask, H_Lambert);
-    radiance.y = StepFeatherToon(H_Lambert,shadow2Step,shadow2Feather);
-    return radiance;
-}
-#else
-half3 RampRadianceToon(half3 normalWS, half3 lightDirectionWS, half lightAttenuation, half inShadow, half hairShadowMask)
-{
-    half3 radiance;
-    lightAttenuation = StepAntiAliasing(lightAttenuation,0.5);
-    lightAttenuation = saturate(lightAttenuation * inShadow);
-    half H_Lambert = 0.5 * dot(normalWS, lightDirectionWS) + 0.5;
-    radiance.xyz =  SampleRampMap(H_Lambert) * lightAttenuation * HairShadowMaskAtten(hairShadowMask,H_Lambert);
-    return radiance;
-}
-#endif
-#endif
-
-float3 RimLight(half3 rimColor, half3 normalWS, half3 viewDirectionWS, half3 lightDirectionWS, half rimStep, half rimFeather, half rimBlendShadow, half rimBlendLdotV, half rimFlip, half radiance)
-{
-    half LdotV = dot(-lightDirectionWS, viewDirectionWS) * 0.5 + 0.5;
-
-    half fresnel = (1.0 - saturate(dot(normalWS, viewDirectionWS)));
-    fresnel = StepFeatherToon(fresnel, rimStep, rimFeather);
-    fresnel = lerp(fresnel, fresnel * LdotV, rimBlendLdotV);
-    half3 color = rimColor * fresnel;
-    radiance = lerp(radiance, 1 - radiance, rimFlip);
-    color = lerp(color, color * radiance, rimBlendShadow);
-
-    return  color;
-}
-
-half3 MatCapLight(half3 normalWS, half3 viewDirection, half radiance)
-{
-#ifdef _MATCAP
-    half3 ViewNormal = TransformWorldToViewDir(normalWS);
-    half2 ViewNormalAsMatCapUV = ViewNormal * 0.5 + 0.5;
-    half3 color = SampleMatCap(ViewNormalAsMatCapUV);
-    
-    return color * radiance;
-#else
-    return 0;
-#endif
-}
-
-
-half3 LightingToon(BRDFDataToon brdfData, SurfaceDataToon surfaceData, InputDataToon inputData, ToonData toonData, Light light, half isMainLight)
-{
-    half lightAttenuation = light.distanceAttenuation * light.shadowAttenuation;
-    half3 color = half3(0.0h,0.0h,0.0h);
-
-#ifdef _SDFSHADOWMAP
-    half radiance = SDFShadowRadiance(toonData.sdfShadowMask,toonData.LdotF,light.direction,lightAttenuation,toonData.inShadow,toonData.hairShadowMask,toonData.shadow1Step,toonData.shadow1Feather);
-    half3 specularColor = SpecularBDRFToon(brdfData, inputData.normalWS, light.direction, inputData.viewDirectionWS, inputData.bitangentWS, toonData.specularShift, toonData.specularStep,toonData.specularFeather) * radiance;
-    half3 diffuseColor = lerp(toonData.shadow1,brdfData.diffuse,radiance);
-    color = diffuseColor + specularColor;
-#else
-#ifdef _DIFFUSERAMPMAP
-    half3 radiance = RampRadianceToon(inputData.normalWS, light.direction,lightAttenuation,toonData.inShadow,toonData.hairShadowMask);
-    half3 specularColor = SpecularBDRFToon(brdfData, inputData.normalWS, light.direction, inputData.viewDirectionWS, inputData.bitangentWS, toonData.specularShift, toonData.specularStep,toonData.specularFeather) * radiance;
-    half3 diffuseColor = radiance.xyz * brdfData.diffuse;
-    color = specularColor + diffuseColor;
-#else
-    half2 radiance = RadianceToon(inputData.normalWS,light.direction,lightAttenuation,toonData.inShadow,toonData.hairShadowMask,toonData.shadow1Step,toonData.shadow1Feather,toonData.shadow2Step,toonData.shadow2Feather);
-    half3 specularColor = SpecularBDRFToon(brdfData, inputData.normalWS, light.direction, inputData.viewDirectionWS, inputData.bitangentWS, toonData.specularShift, toonData.specularStep, toonData.specularFeather) * radiance.x;
-    half3 diffuseColor = DoubleShadowToon(toonData.shadow1,toonData.shadow2,brdfData.diffuse,radiance);
-    color +=  specularColor + diffuseColor;
-#endif
-#endif
-    color += isMainLight * RimLight(toonData.rimColor, inputData.normalWS, inputData.viewDirectionWS, light.direction, toonData.rimStep, toonData.rimFeather, toonData.rimBlendShadow, toonData.rimBlendLdotV,toonData.rimFlip ,radiance.x);
-    color += isMainLight * MatCapLight(inputData.normalWS, inputData.viewDirectionWS, radiance.x);
-    return color * light.color;
-}
-
-half4 FragmentLitToon(InputDataToon inputData, SurfaceDataToon surfaceData, ToonData toonData)
-{
-    BRDFDataToon brdfData;
-    
-    InitializeBRDFDataToon(surfaceData, brdfData);
-
-    #if defined(SHADOWS_SHADOWMASK) && defined(LIGHTMAP_ON)
-        half4 shadowMask = inputData.shadowMask;
-    
-    #elif !defined (LIGHTMAP_ON)
-        half4 shadowMask = unity_ProbesOcclusion;
+    #if !defined(UnityUseNativeHdr)
+        half3 Irradiance = DecodeHDREnvironment(EncodedIrradiance, UnitySpecCube0Hdr);
     
     #else
-        half4 shadowMask = half4(1, 1, 1, 1);
+        half3 Irradiance = EncodedIrradiance.rbg;
     #endif
 
-    uint meshRenderingLayers = GetMeshRenderingLightLayer();
+    return Irradiance * Occlusion;
     
-    Light mainLight = GetMainLight(inputData.shadowCoord,inputData.positionWS,shadowMask);
+    #else
+        return 0;
+    #endif
+}
+
+half3 GlobalIlluminationToon(BrdfDataToon BrdfData, half3 BakedGi, 
+half Occlusion, half3 NormalWS, half3 ViewDirectionWS)
+{
+    half3 ReflectVector = reflect(-ViewDirectionWS, NormalWS);
+
+    half FresnelTerm = Pow4(1.0 - saturate(dot(NormalWS, ViewDirectionWS)));
     
-    MixRealtimeAndBakedGI(mainLight, inputData.normalWS, inputData.bakedGI);
+    half3 IndirectDiffuse = BakedGi * Occlusion * BrdfData.Diffuse;
     
-    half3 color = GlobalIlluminationToon(brdfData, inputData.bakedGI, toonData.ssao, 
-    inputData.normalWS, inputData.viewDirectionWS);
+    half3 Reflection = GlossyEnvironmentToon(ReflectVector, BrdfData.PerceptualRoughness, Occlusion);
     
-    if (IsMatchingLightLayer(mainLight.layerMask, meshRenderingLayers))
-    {
-        color += LightingToon(brdfData, surfaceData, inputData, toonData, mainLight, 1);
+    float SurfaceReduction = 1.0 / (BrdfData.Roughness2 + 1.0);
+    
+    half3 IndirectSpecular = SurfaceReduction * Reflection * lerp(BrdfData.Specular, BrdfData.GrazingTerm, FresnelTerm);
+    
+    return IndirectDiffuse + IndirectSpecular;
+}
+
+half HairShadowMaskAtten(half HairShadowMask, half HLambert)
+{
+    half HairAtten = lerp(1, HairShadowMask, HLambert);
+
+    return HairAtten;
+}
+
+#ifdef SdfShadowMap
+    half SdfShadowRadiance(half SdfShadowMask, half2 LdotF, half3 LightDirectionWS, 
+    half LightAttenuation, half InShadow, half HairShadowMask, half ShadowStep, half ShadowFeather)
+    {    
+        half Radiance = 1 - saturate( (1 - SdfShadowMask - LdotF - (ShadowStep * 2 - 1)) / ShadowFeather + 1);
+
+        LightAttenuation = lerp(StepAntiAliasing(LightAttenuation, 0.5), LightAttenuation, ShadowFeather);
+    
+        LightAttenuation = saturate(LightAttenuation * InShadow);
+    
+        Radiance *= LightAttenuation * HairShadowMaskAtten(HairShadowMask, Radiance);
+    
+        return Radiance;
     }
 
-#ifdef _ADDITIONAL_LIGHTS
-    uint pixelLightCount = GetAdditionalLightsCount();
-
-    for (uint lightIndex = 0u; lightIndex < pixelLightCount; ++lightIndex)
+#else
+    half3 DoubleShadowToon(half3 Shadow1, half3 Shadow2, half3 BaseColor, half2 Radiance)
     {
-        Light light = GetAdditionalLight(lightIndex, inputData.positionWS, shadowMask);
+        half3 FinalColor = lerp(lerp(Shadow2, Shadow1, Radiance.y), BaseColor, Radiance.x);
+        
+        return FinalColor;
+    }
 
-        if(IsMatchingLightLayer(light.layerMask, meshRenderingLayers))
+#ifndef DiffuseRampMap
+    half2 RadianceToon(half3 NormalWS, half3 LightDirectionWS, half LightAttenuation, 
+    half InShadow, half hHairShadowMask, half Shadow1Step, half Shadow1Feather, half Shadow2Step, half Shadow2Feather)
+    {
+        half2 Radiance;
+        LightAttenuation = lerp(StepAntiAliasing(LightAttenuation, 0.5), LightAttenuation, Shadow1Feather);
+
+        LightAttenuation = saturate(LightAttenuation * InShadow);
+        
+        half HLambert = 0.5 * dot(NormalWS, LightDirectionWS) + 0.5;
+
+        Radiance.x = StepFeatherToon(HLambert, Shadow1Step, Shadow1Feather) 
+        * LightAttenuation * HairShadowMaskAtten(HairShadowMask, HLambert);
+        
+        Radiance.y = StepFeatherToon(HLambert, Shadow2Step, Shadow2Feather);
+        
+        return Radiance;
+    }
+
+#else
+    half3 RampRadianceToon(half3 NormalWS, half3 LightDirectionWS, 
+    half LightAttenuation, half InShadow, half HairShadowMask)
+    {
+        half3 Radiance;
+        
+        LightAttenuation = StepAntiAliasing(LightAttenuation,0.5);
+        
+        LightAttenuation = saturate(LightAttenuation * InShadow);
+        
+        half HLambert = 0.5 * dot(NormalWS, LightDirectionWS) + 0.5;
+        
+        Radiance.xyz =  SampleRampMap(HLambert) * LightAttenuation * HairShadowMaskAtten(HairShadowMask, HLambert);
+        
+        return Radiance;
+    }
+#endif
+
+#endif
+
+float3 RimLight(half3 RimColor, half3 NormalWS, half3 ViewDirectionWS, 
+half3 LightDirectionWS, half RimStep, half RimFeather, half RimBlendShadow, 
+half RimBlendLdotV, half RimFlip, half Radiance)
+{
+    half LdotV = dot(-LightDirectionWS, ViewDirectionWS) * 0.5 + 0.5;
+
+    half Fresnel = (1.0 - saturate(dot(NormalWS, ViewDirectionWS)));
+    
+    Fresnel = StepFeatherToon(Fresnel, RimStep, RimFeather);
+    
+    Fresnel = lerp(Fresnel, Fresnel * LdotV, RimBlendLdotV);
+    
+    half3 Color = RimColor * Fresnel;
+    
+    Radiance = lerp(Radiance, 1 - Radiance, RimFlip);
+    
+    Color = lerp(Color, Color * Radiance, RimBlendShadow);
+
+    return Color;
+}
+
+half3 MatCapLight(half3 NormalWS, half3 ViewDirection, half Radiance)
+{
+    #ifdef MatCap
+        half3 ViewNormal = TransformWorldToViewDir(NormalWS);
+
+        half2 ViewNormalAsMatCapUV = ViewNormal * 0.5 + 0.5;
+        
+        half3 Color = SampleMatCap(ViewNormalAsMatCapUV);
+    
+        return Color * Radiance;
+
+    #else
+        return 0;
+    #endif
+}
+
+half3 LightingToon(BrdfDataToon BrdfData, SurfaceDataToon SurfaceData, InputDataToon InputData, 
+ToonData ToonDt, Light L, half IsMainLight)
+{
+    half LightAttenuation = L.DistanceAttenuation * L.ShadowAttenuation;
+
+    half3 Color = half3(0.0h, 0.0h, 0.0h);
+
+    #ifdef SdfShadowMap
+        half Radiance = SDFShadowRadiance(ToonDt.SdfShadowMask, 
+        ToonDt.LdotF, L.Direction, LightAttenuation, ToonDt.InShadow, ToonDt.HairShadowMask, 
+        ToonDt.Shadow1Step, ToonDt.Shadow1Feather);
+        
+        half3 SpecularColor = SpecularBDRFToon(BrdfData, InputData.NormalWS, L.Direction, 
+        InputData.ViewDirectionWS, InputData.BitangentWS, ToonDt.SpecularShift, 
+        ToonDt.SpecularStep, ToonDt.SpecularFeather) * Radiance;
+        
+        half3 DiffuseColor = lerp(ToonDt.Shadow1, BrdfData.Diffuse, Radiance);
+        
+        Color = DiffuseColor + SpecularColor;
+
+    #else
+        #ifdef DiffuseRampMap
+            half3 Radiance = RampRadianceToon(InputData.NormalWS, L.Direction, 
+            LightAttenuation, ToonDt.InShadow, ToonDt.HairShadowMask);
+        
+            half3 SpecularColor = SpecularBDRFToon(BrdfData, InputData.NormalWS, L.Direction, 
+            InputData.ViewDirectionWS, InputData.BitangentWS, ToonDt.SpecularShift, 
+            ToonDt.SpecularStep, ToonDt.SpecularFeather) * Radiance;
+        
+            half3 DiffuseColor = Radiance.xyz * BrdfData.Diffuse;
+        
+            Color = SpecularColor + DiffuseColor;
+
+    #else
+        half2 Radiance = RadianceToon(InputData.NormalWS, L.Direction, 
+        LightAttenuation, ToonDt.InShadow, ToonDt.HairShadowMask, ToonDt.Shadow1Step, ToonDt.Shadow1Feather, 
+        ToonDt.Shadow2Step, ToonDt.Shadow2Feather);
+    
+        half3 SpecularColor = SpecularBDRFToon(BrdfData, InputData.NormalWS, L.Direction, InputData.ViewDirectionWS, 
+        InputData.BitangentWS, ToonDt.SpecularShift, ToonDt.SpecularStep, ToonDt.SpecularFeather) * Radiance.x;
+    
+        half3 DiffuseColor = DoubleShadowToon(ToonDt.Shadow1, ToonDt.Shadow2, BrdfData.Diffuse, Radiance);
+    
+        Color +=  specularColor + diffuseColor;
+    #endif
+
+    #endif
+        Color += IsMainLight * RimLight(ToonDt.RimColor, InputData.NormalWS, InputData.ViewDirectionWS, 
+        L.direction, ToonDt.RimStep, ToonDt.RimFeather, ToonDt.RimBlendShadow, ToonDt.RimBlendLdotV, 
+        ToonDt.RimFlip, Radiance.x);
+        
+        Color += IsMainLight * MatCapLight(InputData.NormalWS, InputData.ViewDirectionWS, Radiance.x);
+        
+        return Color * L.Color;
+}
+
+half4 FragmentLitToon(InputDataToon InputData, SurfaceDataToon SurfaceData, ToonData ToonDt)
+{
+    BrdfDataToon BrdfData;
+    
+    InitializeBRDFDataToon(SurfaceData, BrdfData);
+
+    #if defined(ShadowsShadowMask) && defined(LightMapOn)
+        half4 ShadowMask = InputData.ShadowMask;
+    
+    #elif !defined (LightMapOn)
+        half4 ShadowMask = UnityProbesOcclusion;
+    
+    #else
+        half4 ShadowMask = half4(1, 1, 1, 1);
+    #endif
+
+    uint MeshRenderingLayers = GetMeshRenderingLightLayer();
+    
+    Light MainLight = GetMainLight(InputData.ShadowCoord, InputData.PositionWS, ShadowMask);
+    
+    MixRealtimeAndBakedGI(MainLight, InputData.NormalWS, InputData.BakedGi);
+    
+    half3 Color = GlobalIlluminationToon(BrdfData, InputData.BakedGi, ToonDt.Ssao, 
+    InputData.NormalWS, InputData.ViewDirectionWS);
+    
+    if (IsMatchingLightLayer(MainLight.LayerMask, MeshRenderingLayers))
+    {
+        Color += LightingToon(BrdfData, SurfaceData, InputData, ToonDt, MainLight, 1);
+    }
+
+    #ifdef AdditionalLights
+        uint PixelLightCount = GetAdditionalLightsCount();
+
+        for (uint LightIndex = 0u; LightIndex < PixelLightCount; ++LightIndex)
         {
-            color += LightingToon(brdfData, surfaceData, inputData, toonData, light, 0);
+            Light L = GetAdditionalLight(LightIndex, InputData.PositionWS, ShadowMask);
+
+            if(IsMatchingLightLayer(L.LayerMask, MeshRenderingLayers))
+            {
+                Color += LightingToon(BrdfData, SurfaceData, InputData, ToonDt, L, 0);
+            }
         }
-    }
-#endif
+    #endif
 
-#ifdef _ADDITIONAL_LIGHTS_VERTEX
-    color += inputData.vertexLighting * brdfData.diffuse;
-#endif
+    #ifdef AdditionalLightsVertex
+        Color += InputData.VertexLighting * BrdfData.Diffuse;
+    #endif
 
-    color += surfaceData.emission;
+    Color += SurfaceData.Emission;
 
-    return half4(color, surfaceData.alpha);
+    return half4(Color, SurfaceData.Alpha);
 }
 
 #endif
