@@ -289,7 +289,7 @@ Shader "Shaders/FurryTalesToon"
             
             ZWrite On
             
-            Cull[Cull]
+            Cull[cull]
             
             Stencil
             {
@@ -396,7 +396,7 @@ Shader "Shaders/FurryTalesToon"
             
             ColorMask 0
             
-            Cull[Cull]
+            Cull[cull]
 
             HLSLPROGRAM
 
@@ -436,7 +436,7 @@ Shader "Shaders/FurryTalesToon"
             
             ColorMask 0
             
-            Cull[Cull]
+            Cull[cull]
 
             HLSLPROGRAM
 
@@ -574,7 +574,7 @@ Shader "Shaders/FurryTalesToon"
             
             ZWrite Off
             
-            Cull[Cull]
+            Cull[cull]
  
             HLSLPROGRAM
             
@@ -661,7 +661,7 @@ Shader "Shaders/FurryTalesToon"
             
             ZWrite On
             
-            Cull[Cull]
+            Cull[cull]
             
             Stencil
             {
@@ -768,7 +768,7 @@ Shader "Shaders/FurryTalesToon"
             
             ColorMask 0
             
-            Cull[Cull]
+            Cull[cull]
 
             HLSLPROGRAM
 
@@ -808,7 +808,7 @@ Shader "Shaders/FurryTalesToon"
             
             ColorMask 0
             
-            Cull[Cull]
+            Cull[cull]
 
             HLSLPROGRAM
 
@@ -846,7 +846,7 @@ Shader "Shaders/FurryTalesToon"
 
             ZWrite On
             
-            Cull[Cull]
+            Cull[cull]
 
             HLSLPROGRAM
             

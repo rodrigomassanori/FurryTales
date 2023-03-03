@@ -228,9 +228,9 @@ Shader "Toon Shader for this game"
                 vec4 fragmentColor = vec4(0.0, 0.0, 0.0, 0.0);
 
                 if (dot(normalDirection, lightDirection) > 0.0 && attenuation 
-                * pow(max(0.0, dot(reflect(-lightDirection, normalDirection), viewDirection)), _Shininess) > 0.5)
+                * pow(max(0.0, dot(reflect(-lightDirection, normalDirection), viewDirection)), Shininess) > 0.5)
                 {
-                    fragmentColor = vec4(_LightColor0.rgb, 1.0) * _SpecColor;
+                    fragmentColor = vec4(LightColor0.rgb, 1.0) * SpecColor;
                 }
 
                 gl_FragColor = fragmentColor;
