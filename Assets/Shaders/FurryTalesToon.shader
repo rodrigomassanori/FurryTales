@@ -220,7 +220,7 @@ Shader "Shaders/FurryTalesToon"
             
             #include "../Shaders/Include/ToonInput.hlsl"
             
-            #include "..Shaders/Include/ToonHairShadowMaskPass.hlsl"
+            #include "../Shaders/Include/ToonHairShadowMaskPass.hlsl"
             
             ENDHLSL
         }
@@ -374,7 +374,7 @@ Shader "Shaders/FurryTalesToon"
             
             #include "../Shaders/Include/ToonInput.hlsl"
             
-            #include "../Shaders/Include/ToonLighting.hlsl"
+            #include "../Shaders/Include/ToonLightning.hlsl"
             
             #include "../Shaders/Include/ToonForwardPass.hlsl"
             
@@ -538,7 +538,7 @@ Shader "Shaders/FurryTalesToon"
             
             #include "../Shaders/Include/ToonInput.hlsl"
             
-            #include "../Shaders/Include/ToonLighting.hlsl"
+            #include "../Shaders/Include/ToonLightning.hlsl"
             
             #include "../Shaders/Include/ToonMetaPass.hlsl"
             
@@ -746,7 +746,7 @@ Shader "Shaders/FurryTalesToon"
             
             #include "../Shaders/Include/ToonInput.hlsl"
             
-            #include "../Shaders/Include/ToonLighting.hlsl"
+            #include "../Shaders/Include/ToonLightning.hlsl"
             
             #include "../Shaders/Include/ToonForwardPass.hlsl"
             
@@ -910,7 +910,7 @@ Shader "Shaders/FurryTalesToon"
             
             #include "../Shaders/Include/ToonInput.hlsl"
             
-            #include "../Shaders/Include/ToonLighting.hlsl"
+            #include "../Shaders/Include/ToonLightning.hlsl"
             
             #include "../Shaders/Include/ToonMetaPass.hlsl"            
             
