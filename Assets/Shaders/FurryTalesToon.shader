@@ -3,68 +3,68 @@ Shader "Shaders/FurryTalesToon"
     Properties
     {
         [HideInInspector]
-        WorkFlowMode("WKFlowMode", Float) = 0.0
+        WorkFlowMode("WKFlowMode", float) = 0.0
 
         [HideInInspector]
-        Cull("Cull", Float) = 2.0
+        Cull("cull", float) = 2.0
 
         [HideInInspector]
         [ToggleOff]
-        AlphaClip("Clip", Float) = 0.0
+        AlphaClip("Clip", float) = 0.0
 
         [ToggleOff]
-        InverseClipMask("InvClipMask", Float) = 0.0
+        InverseClipMask("InvClipMask", float) = 0.0
 
         ClipMask("CPMask", 2D) = "white"{}
 
         CutOff("AlphaCutOff", Range(0.0, 40.0)) = 40.0
 
         [HideInInspector] 
-        SurfaceType("Surface", Float) = 0.0
+        SurfaceType("Surface", float) = 0.0
         
         [HideInInspector] 
-        SrcBlend("Src", Float) = 1.0
+        SrcBlend("Src", float) = 1.0
         
         [HideInInspector] 
-        DstBlend("Dst", Float) = 0.0
+        DstBlend("Dst", float) = 0.0
 
         [HideInInspector]
-        StencilType("StencilType",Float) = 0
+        StencilType("StencilType", float) = 0
         
         [ToggleOff]
-        EnableStencil("EnableStencil",Float) = 0 
+        EnableStencil("EnableStencil", float) = 0 
         
         StencilRef ("Stencil Ref", int) = 1
         
         [HideInInspector]
-        StencilComp("Stencil Comp",int) = 0
+        StencilComp("Stencil Comp", int) = 0
         
         [HideInInspector]
-        StencilOp ("Stencil Op",int) = 0
+        StencilOp ("Stencil Op", int) = 0
 
         BumpMap("Normal Map", 2D) = "bump" {}
 		
-        BumpScale("Scale", Float) = 1.0
+        BumpScale("Scale", float) = 1.0
 		
         OcclusionStrength("Strength", Range(0.0, 30.0)) = 30.0
         
         OcclusionMap("Occlusion", 2D) = "white" {}
         
-        EmissionColor("Color", Color) = (0, 0, 0)
+        EmissionColor("color", color) = (0, 0, 0)
         
         EmissionMap("Emission", 2D) = "white" {}
 
         BaseMap("Albedo", 2D) = "white" {}
 		
-        BaseColor("Color", Color) = (1.0, 1.0, 1.0, 1.0)
+        BaseColor("color", color) = (1.0, 1.0, 1.0, 1.0)
         
-        Shadow1Color("Shadow1Color", Color) = (0.5, 0.5, 0.5, 0.5)
+        Shadow1Color("Shadow1Color", color) = (0.5, 0.5, 0.5, 0.5)
         
         Shadow1Step("Shadow1 Step", Range(0.0, 1.0)) = 0.5
         
         Shadow1Feather("Shadow1 Feather", Range(0.0, 1.0)) = 0.0
         
-        Shadow2Color("Shadow2Color", Color) = (0.0, 0.0, 0.0, 0.0)
+        Shadow2Color("Shadow2Color", color) = (0.0, 0.0, 0.0, 0.0)
         
         Shadow2Step("Shadow1 Step", Range(0.0, 1.0)) = 0.3
         
@@ -77,10 +77,10 @@ Shader "Shaders/FurryTalesToon"
         SSAOStrength("SSAOStrength", Range(0.0, 1.0)) = 0.0
         
         [ToggleOff]
-        CastHairShadowMask("CastHairShadowMask(FrontHair)", Float) = 0.0
+        CastHairShadowMask("CastHairShadowMask(FrontHair)", float) = 0.0
         
         [ToggleOff]
-        ReceiveHairShadowMask("ReceiveHairShadowMask", Float) = 0.0
+        ReceiveHairShadowMask("ReceiveHairShadowMask", float) = 0.0
         
         ReceiveHairShadowOffset("ReceiveHairShadowOffset", Range(0.0, 5.0)) = 5
 
@@ -92,7 +92,7 @@ Shader "Shaders/FurryTalesToon"
         
         MetallicGlossMap("Metallic", 2D) = "white" {}
         
-        SpecColor("Specular", Color) = (0.2, 0.2, 0.2)
+        SpecColor("Specular", color) = (0.2, 0.2, 0.2)
         
         SpecGlossMap("Specular", 2D) = "white" {}
         
@@ -103,20 +103,20 @@ Shader "Shaders/FurryTalesToon"
         Smoothness("Smoothness", Range(0.0, 1.0)) = 0.5
 
         [HideInInspector]
-        ShadowType("ShadowType", Float) = 0.0
+        ShadowType("ShadowType", float) = 0.0
         
         DiffuseRampMap("DiffuseRampMap", 2D) = "white"{}
         
         DiffuseRampV("DiffuseRampV", Range(0.0, 1)) = 0.0
 
-        RimBlendShadow("RimBlendShadow",Range(0.0,1.0)) = 0.0
+        RimBlendShadow("RimBlendShadow", Range(0.0,1.0)) = 0.0
         
-        RimBlendLdotV("RimBlendLdotV",Range(0.0,1.0)) = 0.0
+        RimBlendLdotV("RimBlendLdotV", Range(0.0,1.0)) = 0.0
         
         [ToggleOff]
-        RimFlip("RimFlip", Float) = 0.0
+        RimFlip("RimFlip", float) = 0.0
         
-        RimColor("RimColor", Color) = (0.0, 0.0, 0.0, 0.0)
+        RimColor("RimColor", color) = (0.0, 0.0, 0.0, 0.0)
         
         RimStep("RimStep", Range(0.0, 1.0)) = 0.5
         
@@ -129,37 +129,37 @@ Shader "Shaders/FurryTalesToon"
         
         SpecularShiftIntensity("SpecularShiftIntensity", Range(0.0, 3.0)) = 3.0
         
-        SpecularShift("SpecularShift", Float) = 0.0
+        SpecularShift("SpecularShift", float) = 0.0
 
         [ToggleOff] 
-        EnableOutline("Enable Outline", Float) = 1.0
+        EnableOutline("Enable Outline", float) = 1.0
         
         [ToggleOff] 
-        UseSmoothNormal("UseSmoothNormal", Float) = 0.0
+        UseSmoothNormal("UseSmoothNormal", float) = 0.0
         
-        OutlineColor("OutlineColor", Color) = (0.0, 0.0, 0.0, 0.0)
+        OutlineColor("OutlineColor", color) = (0.0, 0.0, 0.0, 0.0)
         
         OutlineWidth("OutlineWidth", Range(0.0, 5.0)) = 5.0
 
         [ToggleOff]
-        EnableMatCap("Enable MatCap", Float) = 0.0
+        EnableMatCap("Enable MatCap", float) = 0.0
         
         MatCapMap("MatCapMap", 2D) = "white" {}
         
-        MatCapColor("MatCapColor", Color) = (0.0, 0.0, 0.0, 0.0)
+        MatCapColor("MatCapColor", color) = (0.0, 0.0, 0.0, 0.0)
         
         MatCapUVScale("MatCapUVScale", Range(-0.5, 0.5)) = 0
 
         [ToggleOff] 
-        ReceiveShadows("Receive Shadows", Float) = 1.0
+        ReceiveShadows("Receive Shadows", float) = 1.0
 		
         [ToggleOff] 
-        SpecularHighlights("Specular Highlights", Float) = 1.0
+        SpecularHighlights("Specular Highlights", float) = 1.0
         
         [ToggleOff] 
-        EnvironmentReflections("Environment Reflections", Float) = 0.0
+        EnvironmentReflections("Environment Reflections", float) = 0.0
         
-        RenderQueue("Render Queue", Float) = 2000
+        RenderQueue("Render Queue", float) = 2000
         
         [HideInInspector]
         [NoScaleOffset]
@@ -474,7 +474,7 @@ Shader "Shaders/FurryTalesToon"
 
             ZWrite On
             
-            Cull[Cull]
+            Cull[cull]
 
             HLSLPROGRAM
 
