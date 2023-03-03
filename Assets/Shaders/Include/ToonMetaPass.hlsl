@@ -31,7 +31,7 @@ Varyings ToonVertexMeta(Attributes Input)
 
     Output.positionCS = UnityMetaVertexPosition(Input.PositionOS.xyz, Input.Uv1, Input.Uv2);
     
-    Output.Uv = TransformTex(Input.uv0, BaseMap);
+    Output.Uv = TRANSFORM_TEX(Input.uv0, BaseMap);
     
     return Output;
 }
