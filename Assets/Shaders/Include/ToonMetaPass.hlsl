@@ -52,7 +52,7 @@ half4 ToonFragmentMeta(Varyings Input) : SV_Target
     
     MetaIpt.Emission = SurfaceData.Emission;
     
-    return UnityMetaFragment(metaInput);
+    return UnityMetaFragment(MetaIpt);
 }
 
 #endif
