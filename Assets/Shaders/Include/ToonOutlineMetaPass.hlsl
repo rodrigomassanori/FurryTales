@@ -3,64 +3,94 @@
 
 struct Attributes
 {
-    float4 positionOS : POSITION;
-    float3 normalOS : NORMAL;
-#ifdef _USESMOOTHNORMAL
-    float4 tangentOS : TANGENT;
-    float2 texcoord7 : TEXCOORD7;
-#endif
-    UNITY_VERTEX_INPUT_INSTANCE_ID
+    float4 PositionOS : Position;
+    
+    float3 NormalOS : Normal;
+    
+    #ifdef UseSmoothNormal
+        float4 TangentOS : Tangent;
+        
+        float2 Texcoord7 : TexCoordD7;
+    #endif
+    
+    UnityVertexInputInstanceId
 };
 
 struct Varyings
 {
-    float4 positionCS : SV_POSITION;
-    UNITY_VERTEX_INPUT_INSTANCE_ID
-    UNITY_VERTEX_OUTPUT_STEREO
+    float4 PositionCS : SvPosition;
+
+    UnityVertexInputInstanceId
+    
+    UnityVertexOutputStereo
 };
 
-float4 TransformOutlineToHClipScreenSpace(float4 position, float3 normal, float outlineWidth)
+float4 TransformOutlineToHClipScreenSpace(float4 Position, float3 Normal, float OutlineWidth)
 {
-    float4 positionCS = TransformObjectToHClip(position.xyz);
-#ifdef _USESMOOTHNORMAL
-    float3 clipNormal = TransformWorldToHClipDir(normal);
+    float4 PositionCS = TransformObjectToHClip(Position.xyz);
+
+    #ifdef UseSmoothNormal
+        float3 ClipNormal = TransformWorldToHClipDir(Normal);
+
+    #else
+        float3 NormalWS = TransformObjectToWorldNormal(Normal);
+
+        float3 ClipNormal = TransformWorldToHClipDir(NormalWS);
+
+    #endif
+
+    float2 ProjectedNormal = normalize(ClipNormal.xy);
+
+    float4 NearUpperRight = mul(UnityCameraInvProjection, float4(1, 1, UnityNearClipValue, ProjectionParams.y));
+    
+    float Aspect = abs(NearUpperRight.y / NearUpperRight.x);
+    
+    ProjectedNormal.x *= Aspect;
+    
+    ProjectedNormal *= min(PositionCS.w, 3);
+    
+    PositionCS.xy += 0.01 * OutlineWidth * ProjectedNormal.xy;
+    
+    return PositionCS;
+}
+
+Varyings Vertex(Attributes Input)
+{
+    Varyings Output = (Varyings) 0;
+
+    UnitySetupInstanceId(Input);
+
+    UnityTransferInstanceId(Input, Output);
+    
+    UnityInitializeVertexOutputStereo(Output);
+
+#ifdef UseSmoothNormal
+    float3 NormalDir = TransformObjectToWorldNormal(Input.NormalOS);
+    
+    float3 TangentDir = TransformObjectToWorldNormal(Input.TangentOS.xyz);
+    
+    float3 BitangentDir = normalize(cross(NormalDir, TangentDir) * Input.TangentOS.w);
+    
+    float3x3 Ttbn = float3x3(TangentDir, BitangentDir, NormalDir);
+    
+    float3 BakeNormal = GetSmoothedWorldNormal(Input.TexCoord7, Ttbn);
+    
+    Output.PositionCS = TransformOutlineToHClipScreenSpace(Input.PositionOS, BakeNormal, OutlineWidth);
+
 #else
-    float3 normalWS = TransformObjectToWorldNormal(normal);
-    float3 clipNormal = TransformWorldToHClipDir(normalWS);
+    Output.PositionCS = TransformOutlineToHClipScreenSpace(Input.PositionOS, Input.NormalOS, OutlineWidth);
+
 #endif
-    float2 projectedNormal = normalize(clipNormal.xy);
-    float4 nearUpperRight = mul(unity_CameraInvProjection, float4(1, 1, UNITY_NEAR_CLIP_VALUE, _ProjectionParams.y));
-    float aspect = abs(nearUpperRight.y / nearUpperRight.x);
-    projectedNormal.x *= aspect;
-    projectedNormal *= min(positionCS.w, 3);
-    positionCS.xy += 0.01 * outlineWidth * projectedNormal.xy;
-    return positionCS;
+    return Output;
 }
 
-Varyings Vertex(Attributes input)
+half4 Fragment(Varyings Input) : SvTarget
 {
-    Varyings output = (Varyings) 0;
+    UnitySetupInstanceId(Input);
 
-    UNITY_SETUP_INSTANCE_ID(input);
-    UNITY_TRANSFER_INSTANCE_ID(input, output);
-    UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(output);
-#ifdef _USESMOOTHNORMAL
-    float3 normalDir = TransformObjectToWorldNormal(input.normalOS);
-    float3 tangentDir = TransformObjectToWorldNormal(input.tangentOS.xyz);
-    float3 bitangentDir = normalize(cross(normalDir, tangentDir) * input.tangentOS.w);
-    float3x3 t_tbn = float3x3(tangentDir,bitangentDir,normalDir);
-    float3 bakeNormal = GetSmoothedWorldNormal(input.texcoord7,t_tbn);
-    output.positionCS = TransformOutlineToHClipScreenSpace(input.positionOS, bakeNormal, _OutlineWidth);
-#else
-    output.positionCS = TransformOutlineToHClipScreenSpace(input.positionOS, input.normalOS, _OutlineWidth);
-#endif
-    return output;
+    UnitySetupStereoEyeIndexPostVertex(Input);
+    
+    return OutlineColor;
 }
 
-half4 Fragment(Varyings input) : SV_Target
-{
-    UNITY_SETUP_INSTANCE_ID(input);
-    UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
-    return _OutlineColor;
-}
 #endif
