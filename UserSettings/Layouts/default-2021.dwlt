@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 110
+  controlID: 19
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 20
+  controlID: 77
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 21
+  controlID: 78
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -460,22 +460,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials/Characters
+    - Assets/Models/Characters
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials/Characters
+  - Assets/Models/Characters
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\rodri\Documents\FurryTales
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 289c0000
-    m_LastClickedID: 39976
-    m_ExpandedIDs: 00000000c2890000c4890000c6890000948b0000968b0000aa8b0000
+    m_SelectedIDs: ba9b0000
+    m_LastClickedID: 39866
+    m_ExpandedIDs: 00000000c6890000c8890000ca890000848b0000868b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -503,7 +503,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c2890000c4890000c6890000
+    m_ExpandedIDs: 00000000c6890000c8890000ca890000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -631,9 +631,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: eefaffff
-      m_LastClickedID: -1298
-      m_ExpandedIDs: fafafffffcfaffff
+      m_SelectedIDs: f6f2ffff
+      m_LastClickedID: -3338
+      m_ExpandedIDs: d4faffffd6faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -926,9 +926,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -18117.791, y: 148.37248, z: 3730.6006}
+    m_Target: {x: -17780.852, y: 142.11743, z: 3953.1458}
     speed: 2
-    m_Value: {x: -18117.791, y: 148.37248, z: 3730.6006}
+    m_Value: {x: -17780.852, y: 142.11743, z: 3953.1458}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -975,13 +975,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.07629269, y: -0.5829536, z: 0.055057667, w: -0.8071861}
+    m_Target: {x: -0.061726954, y: -0.5357061, z: 0.03926339, w: -0.8413711}
     speed: 2
-    m_Value: {x: -0.07636617, y: -0.58167344, z: 0.054936677, w: -0.8079642}
+    m_Value: {x: -0.061660647, y: -0.5369036, z: 0.03935125, w: -0.84046656}
   m_Size:
-    m_Target: 90.02797
+    m_Target: 109.447914
     speed: 2
-    m_Value: 94.27013
+    m_Value: 114.60515
   m_Ortho:
     m_Target: 1
     speed: 2
