@@ -395,6 +395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kaitlyn
       objectReference: {fileID: 0}
+    - target: {fileID: 8135858440635268431, guid: b212b3ba5c5763a469a3948a80218d6b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b212b3ba5c5763a469a3948a80218d6b, type: 3}
 --- !u!1001 &2645727866335152405
