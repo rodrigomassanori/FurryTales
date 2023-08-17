@@ -2,82 +2,66 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[RequireComponent(typeof(Rigidbody))]
 public class ElevatorMovement : MonoBehaviour
 {
-    [SerializeField]
-    Transform[] levels;
+    Vector3 StartPos;
 
-    int currentLevel;
+    Vector3 EndPos;
 
-    [SerializeField]
-    int targetedLevel;
+    [Header("Height")]
+    [Range(1, 20)]
+    float FinalHeight = -1.0f;
 
-    [SerializeField]
-    float elevatorSpeed;
+    [Header("Speed to work")]
+    [Range(1, 10)]
+    float Speed = 2.0f;
 
-    Rigidbody elevatorRb;
+    [Range(0, 5)]
+    [Header("Reset Time")]
+    float TimeStand = 2.0f;
 
-    void Awake()
+    void Start()
     {
-        elevatorRb = GetComponent<Rigidbody>();
+        StartPos = transform.position;
+
+        EndPos = Vector3.up * FinalHeight;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        transform.position = Vector3.Lerp(transform.position, EndPos, Speed * Time.deltaTime);
+
+        if(transform.position == EndPos)
         {
-            if (targetedLevel + 1 < levels.Length)
-            {
-                targetedLevel++;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            if (targetedLevel - 1 >= 0)
-            {
-                targetedLevel--;
-            }
-        }
-
-        if (transform.position.y != levels[targetedLevel].transform.position.y)
-        {
-            GoTo(levels[targetedLevel], elevatorRb);
-        }
-
-        CheckCurrentLevel(levels);
-    }
-
-    IEnumerator CheckCurrentLevel(Transform[] levels)
-    {
-        for (int c = 0; c < levels.Length; c++)
-        {
-            if (transform.position.y >= levels[c].transform.position.y)
-            {
-                currentLevel = c;
-
-                yield return new WaitForSeconds(6.0f);
-            }
-        }
-    }
-
-    void GoTo(Transform target, Rigidbody Rb)
-    {
-
-        if (target.position.y > Rb.position.y)
-        {
-            Rb.MovePosition(Rb.position + (Vector3.up * Time.deltaTime * elevatorSpeed));
+            InvokeRepeating("ResetPos", TimeStand, 0);
         }
 
         else
         {
-            Rb.MovePosition(Rb.position + (-Vector3.up * Time.deltaTime * elevatorSpeed));
+            CancelInvoke("ResetPos");
         }
+    }
 
-        if (Vector3.Distance(target.position, Rb.position) < 0.05)
-        {
-            Rb.MovePosition(target.position);
-        }
+    void ResetPos()
+    {
+        EndPos = StartPos;
+
+        StartPos = transform.position;
+    }
+    
+    void OnDrawGizmos()
+    {
+        Vector3 ActualSize = transform.localScale;
+
+        Vector3 FinalPos = transform.position - Vector3.up * FinalHeight;
+
+        Gizmos.color = Color.yellow;
+
+        Gizmos.DrawWireCube(new Vector3(transform.localPosition.x, transform.localPosition.y + FinalHeight / 2, 
+        transform.localPosition.z), new Vector3(ActualSize.x, ActualSize.y, ActualSize.z));
+
+        Gizmos.color = Color.blue;
+
+        Gizmos.DrawCube(FinalPos, ActualSize);
     }
 }
