@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 using System.Collections;
 
 public class TheDeformers : MonoBehaviour
@@ -11,9 +12,13 @@ public class TheDeformers : MonoBehaviour
 
     AudioSource CreepyFox;
 
+    NavMeshAgent agent;
+
     void Awake()
     {
         CreepyFox = GetComponent<AudioSource>();
+
+        agent = GetComponent<NavMeshAgent>();
     }
 
     void Start()
@@ -22,7 +27,7 @@ public class TheDeformers : MonoBehaviour
         {
             CreepyFox.Play();
             
-            transform.Translate(0, Time.deltaTime, 10, Space.World);
+            transform.Translate(0, Time.deltaTime, 10 * SpeedMovement, Space.World);
         }
     }
 
