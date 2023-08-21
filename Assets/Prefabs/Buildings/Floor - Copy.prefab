@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4937456513659833000}
   - component: {fileID: 5489943866060125302}
   - component: {fileID: 1922919117524606707}
+  - component: {fileID: 7217844871565482758}
   m_Layer: 0
   m_Name: Floor - Copy
   m_TagString: Grounded
@@ -113,7 +114,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.1
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: affe7014721ca114bae6aa5c5e5f3a07, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 845c5fe855862594393936371848e9d9, type: 2}
   m_BuildHeightMesh: 0
 --- !u!64 &1922919117524606707
 MeshCollider:
@@ -129,3 +130,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -462981019419857548, guid: b8236788c0b5ac44bb4a3b682cc82937, type: 3}
+--- !u!114 &7217844871565482758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6883086800668961661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: 00000000
