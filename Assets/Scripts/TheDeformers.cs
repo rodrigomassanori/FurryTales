@@ -4,9 +4,9 @@ using System.Collections;
 
 public class TheDeformers : MonoBehaviour
 {
-    public GameObject TD;
-
     public GameObject PL;
+
+    Transform player;
 
     float SpeedMovement = 3.5f;
 
@@ -19,13 +19,17 @@ public class TheDeformers : MonoBehaviour
         CreepyFox = GetComponent<AudioSource>();
 
         agent = GetComponent<NavMeshAgent>();
+
+        player = GetComponent<Transform>();
     }
 
     void Start()
     {
-        if (TD.gameObject.tag == "Monster")
+        if (PL.gameObject.tag == "Player")
         {
             CreepyFox.Play();
+
+            agent.destination = player.position;
             
             transform.Translate(0, Time.deltaTime, 10 * SpeedMovement, Space.World);
         }
@@ -39,6 +43,8 @@ public class TheDeformers : MonoBehaviour
     IEnumerator BackToSpawn()
     {
         yield return new WaitForSeconds(20.0f);
+
+        agent.destination = transform.position;
 
         transform.Translate(0, Time.deltaTime, 0, Space.World);
     }
