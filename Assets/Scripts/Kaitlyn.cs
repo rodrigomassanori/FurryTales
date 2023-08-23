@@ -36,7 +36,7 @@ public class Kaitlyn : MonoBehaviour
 
     void Awake()
     {
-        ch = GetComponentInChildren<CharacterController>();
+        ch = GetComponent<CharacterController>();
     }
 
     void Update()
