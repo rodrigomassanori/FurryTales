@@ -78,7 +78,7 @@ namespace Player
                 {
                     print("Botão de pulo apertado");
 
-                    print("Is Grounder?" + isGrounded);
+                    print("Is Grounded?" + isGrounded);
 
                     if (isGrounded)
                     {
