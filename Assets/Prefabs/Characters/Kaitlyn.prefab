@@ -1748,6 +1748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7516972076410342350}
   - component: {fileID: 5126572899994524838}
+  - component: {fileID: 1560737791401717520}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -1881,6 +1882,27 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00038065668, y: 0.01504723, z: -0.00006585568}
     m_Extent: {x: 0.011254594, y: 0.050882854, z: 0.045861438}
   m_DirtyAABB: 0
+--- !u!65 &1560737791401717520
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437168604536169884}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 62.159813, y: 281.02908, z: 253.29549}
+  m_Center: {x: -1.0511951, y: 137.14233, z: -0.18186246}
 --- !u!1 &6535469347307886289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +2009,9 @@ GameObject:
   - component: {fileID: 6200956384857220639}
   - component: {fileID: 67013235989494885}
   - component: {fileID: 1498374555101541357}
+  - component: {fileID: 1568570428978378997}
+  - component: {fileID: 5680619582066206533}
+  - component: {fileID: 2937197879074626636}
   m_Layer: 0
   m_Name: Kaitlyn
   m_TagString: Player
@@ -2044,6 +2069,71 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5793371d2abb68b44b09f29a0e0fb797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!143 &1568570428978378997
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721033478234356901}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 280
+  m_Radius: 60
+  m_SlopeLimit: 45
+  m_StepOffset: 0.2
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 140, z: 0}
+--- !u!54 &5680619582066206533
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721033478234356901}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!114 &2937197879074626636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721033478234356901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3450ca8f0d2b634b9842ebebf2065b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6736109925336061869
