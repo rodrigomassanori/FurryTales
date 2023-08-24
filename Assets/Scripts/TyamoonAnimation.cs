@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class KaitlynAnimation : MonoBehaviour
+public class TyamoonAnimation : MonoBehaviour
 {
     float vel = 8.5f;
 

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Kaitlyn : MonoBehaviour
+public class Tyamoon : MonoBehaviour 
 {
-    float forwardMovement = 3.5f;
+	float forwardMovement = 3.5f;
 
     float leftMovement = 8.0f;
 
