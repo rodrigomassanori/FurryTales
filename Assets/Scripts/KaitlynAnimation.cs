@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class KaitlynAnimation : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class KaitlynAnimation : MonoBehaviour
     Vector3 mover;
 
     bool AutoJump;
+
+    bool SpeakAnim;
 
     void Awake()
     {
@@ -25,12 +28,14 @@ public class KaitlynAnimation : MonoBehaviour
 
         float v = Input.GetAxisRaw("Vertical") * Time.deltaTime;
 
-        Mover(h, v);
+        Move(h, v);
 
-        Animar(h, v);
+        Anima(h, v);
+
+        Speak(SpeakAnim);
     }
 
-    void Mover(float h, float v)
+    void Move(float h, float v)
     {
         mover.Set(h, 0.0f, v);
 
@@ -39,10 +44,17 @@ public class KaitlynAnimation : MonoBehaviour
         rb.MovePosition(transform.position + mover);
     }
 
-    void Animar(float h, float v)
+    void Anima(float h, float v)
     {
         bool walking = h != 0.0f || v != 0.0f;
 
         an.SetBool("Walking", walking);
+    }
+
+    bool Speak(bool AnimSpeak)
+    {
+        an.Play("Speaking");
+        
+        return SpeakAnim;
     }
 }
