@@ -12,7 +12,7 @@ public class TyamoonAnimation : MonoBehaviour
 
     bool AutoJump;
 
-    bool SpeakAnim;
+    bool PickupAnim;
 
     void Awake()
     {
@@ -31,7 +31,7 @@ public class TyamoonAnimation : MonoBehaviour
 
         Anima(h, v);
 
-        Speak(SpeakAnim);
+        PickItem(PickupAnim);
     }
 
     void Move(float h, float v)
@@ -50,10 +50,10 @@ public class TyamoonAnimation : MonoBehaviour
         an.SetBool("Walking", walking);
     }
 
-    bool Speak(bool AnimSpeak)
+    bool PickItem(bool AnimPickup)
     {
-        an.Play("Speaking");
+        an.Play("Pickup");
         
-        return SpeakAnim;
+        return PickupAnim;
     }
 }

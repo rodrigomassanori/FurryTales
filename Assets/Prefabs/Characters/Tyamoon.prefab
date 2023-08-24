@@ -508,7 +508,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3098278902583807039}
   - component: {fileID: 399646766757124951}
-  - component: {fileID: 8751585106458712402}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -630,32 +629,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0052023, y: -0.0021164827, z: 0.023005167}
     m_Extent: {x: 0.024992604, y: 0.026628846, z: 0.04273498}
   m_DirtyAABB: 0
---- !u!143 &8751585106458712402
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016346839557382765}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 0.0029
-  m_Radius: 0.00019
-  m_SlopeLimit: 45
-  m_StepOffset: 2
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2054520397792586316
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +706,7 @@ GameObject:
   - component: {fileID: 1337557545484432450}
   - component: {fileID: 3662621435527746079}
   - component: {fileID: 2743269424898421157}
+  - component: {fileID: 6580730335085014969}
   m_Layer: 0
   m_Name: Tyamoon
   m_TagString: Player
@@ -831,6 +805,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de1a28c094f78b459aca787d0fba60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!143 &6580730335085014969
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2299934436575869780}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 350
+  m_Radius: 140
+  m_SlopeLimit: 45
+  m_StepOffset: 2
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 100, z: -100}
 --- !u!1 &2363188907145887082
 GameObject:
   m_ObjectHideFlags: 0
