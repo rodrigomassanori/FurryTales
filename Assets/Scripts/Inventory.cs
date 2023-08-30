@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    void OnCollisionEnter(Collision CherGear)
+    readonly KeyCode e = KeyCode.E;
+
+    public GameObject CherGear;
+
+    void Update()
     {
-        if (CherGear.gameObject.name == "ChernobylGear")
+        if (Input.GetKeyDown(e) && CherGear.name == "ChernobylGear")
         {
-            CherGear.gameObject.SetActive(false);
+            CherGear.SetActive(false);
         }
     }
 }
