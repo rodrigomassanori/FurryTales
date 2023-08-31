@@ -18,11 +18,15 @@ public class Inventory : MonoBehaviour
 
     IEnumerator CollectedGears()
     {
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(2.0f);
 
         CherGear[0].SetActive(false);
 
+        yield return new WaitForSeconds(2.0f);
+
         CherGear[1].SetActive(false);
+
+        yield return new WaitForSeconds(2.0f);
 
         CherGear[2].SetActive(false);
     }
