@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -10,7 +11,14 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(e) && CherGear.name == "ChernobylGear")
         {
-            CherGear.SetActive(false);
+            StartCoroutine(CollectedGears());
         }
+    }
+
+    IEnumerator CollectedGears()
+    {
+        yield return new WaitForSeconds(4.0f);
+
+        CherGear.SetActive(false);
     }
 }
