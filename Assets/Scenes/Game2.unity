@@ -4933,9 +4933,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5795679081486775540, guid: f5c69533a3baa1a43846c03ce699a8ee, type: 3}
-      propertyPath: CherGear
+      propertyPath: CherGear.Array.data[0]
       value: 
       objectReference: {fileID: 239246403}
+    - target: {fileID: 5795679081486775540, guid: f5c69533a3baa1a43846c03ce699a8ee, type: 3}
+      propertyPath: CherGear.Array.data[1]
+      value: 
+      objectReference: {fileID: 361439689}
+    - target: {fileID: 5795679081486775540, guid: f5c69533a3baa1a43846c03ce699a8ee, type: 3}
+      propertyPath: CherGear.Array.data[2]
+      value: 
+      objectReference: {fileID: 1683759430}
     - target: {fileID: 6200956384857220639, guid: f5c69533a3baa1a43846c03ce699a8ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
