@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
 
     public GameObject CherGear;
 
-    List<GameObject> items;
+    public List<GameObject> items;
 
     void Update()
     {
@@ -24,6 +24,6 @@ public class Inventory : MonoBehaviour
 
         items.Remove(CherGear);
 
-        //CherGear.SetActive(false);
+        CherGear.SetActive(false);
     }
 }
