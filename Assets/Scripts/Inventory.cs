@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -7,9 +8,11 @@ public class Inventory : MonoBehaviour
 
     public GameObject CherGear;
 
+    List<GameObject> items;
+
     void Update()
     {
-        if (Input.GetKeyDown(e) && CherGear.name == "ChernobylGear")
+        if (Input.GetKeyDown(e) && CherGear.name == "ChernobylGear" && items.Count > 3)
         {
             StartCoroutine(CollectedGears());
         }
@@ -19,6 +22,8 @@ public class Inventory : MonoBehaviour
     {
         yield return new WaitForSeconds(4.0f);
 
-        CherGear.SetActive(false);
+        items.Remove(CherGear);
+
+        //CherGear.SetActive(false);
     }
 }
