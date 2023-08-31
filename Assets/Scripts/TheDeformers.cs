@@ -27,7 +27,7 @@ public class TheDeformers : MonoBehaviour
     {
         if (PL.gameObject.tag == "Player")
         {
-            CreepyFox.Play();
+            //CreepyFox.Play();
 
             agent.destination = player.position;
             
