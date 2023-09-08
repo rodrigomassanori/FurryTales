@@ -40,7 +40,7 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
-    motionNodeName: Armature
+    motionNodeName: Idle
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -58,11 +58,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|ArmatureAction
-      takeName: Armature|ArmatureAction
+      name: T Shirt|Armature|Armature|ArmatureAction.001
+      takeName: T Shirt|Armature|Armature|ArmatureAction.001
       internalID: 4781951162920444690
       firstFrame: 0
-      lastFrame: 250
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -588,7 +588,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: Armature
+    rootMotionBoneName: Idle
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
