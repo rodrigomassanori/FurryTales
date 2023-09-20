@@ -34,7 +34,7 @@ public class Tyamoon : MonoBehaviour
 
     void Awake()
     {
-        ch = GetComponent<CharacterController>();
+        ch = GetComponentInChildren<CharacterController>();
     }
 
     void Update()
