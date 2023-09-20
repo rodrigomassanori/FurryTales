@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tyamoon 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aee5e33993576244397745e376b5980b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3324262737018831274, guid: aee5e33993576244397745e376b5980b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.005791359
@@ -100,39 +104,16 @@ PrefabInstance:
       addedObject: {fileID: 4019139447539762394}
     - targetCorrespondingSourceObject: {fileID: 635547659545568360, guid: aee5e33993576244397745e376b5980b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 567878455466787877}
+      addedObject: {fileID: 7885334563446429465}
     - targetCorrespondingSourceObject: {fileID: 635547659545568360, guid: aee5e33993576244397745e376b5980b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7885334563446429465}
+      addedObject: {fileID: 6045599602836889988}
   m_SourcePrefab: {fileID: 100100000, guid: aee5e33993576244397745e376b5980b, type: 3}
 --- !u!1 &6501464403882079361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 635547659545568360, guid: aee5e33993576244397745e376b5980b, type: 3}
   m_PrefabInstance: {fileID: 5974091252150800617}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &567878455466787877
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6501464403882079361}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.0004931557
-  m_Height: 0.0009935366
-  m_Direction: 0
-  m_Center: {x: -0.00014868016, y: -0.0000653934, z: -0.0002584437}
 --- !u!54 &7885334563446429465
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -160,6 +141,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!143 &6045599602836889988
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501464403882079361}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 0.0019638664
+  m_Radius: 0.00096169976
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6785048350178323896 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aee5e33993576244397745e376b5980b, type: 3}
