@@ -18,7 +18,7 @@ public class TyamoonAnimation : MonoBehaviour
     {
         an = GetComponent<Animator>();
 
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponentInChildren<Rigidbody>();
     }
 
     void FixedUpdate()
