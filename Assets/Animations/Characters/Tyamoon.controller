@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Pickup
-  m_Speed: 50
+  m_Speed: 0.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 668197861006341281}
@@ -134,7 +134,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Running
-  m_Speed: 1.8
+  m_Speed: 25
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 351590376298566538}
@@ -205,7 +205,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WalkTy
-  m_Speed: 0.5
+  m_Speed: 40
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3478812878649332866}
