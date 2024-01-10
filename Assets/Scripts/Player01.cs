@@ -37,14 +37,14 @@ public class Player01 : MonoBehaviour
         {
             Anim.SetFloat("Horizontal", -Movement.x);
 
-            Anim.SetFloat("Speed", Movement.sqrMagnitude);
+            Anim.SetFloat("Speed", -Movement.sqrMagnitude);
         }
 
         if (rb.velocity.y > 0)
         {
             Anim.SetFloat("Vertical", -Movement.y);
 
-            Anim.SetFloat("Speed", Movement.sqrMagnitude);
+            Anim.SetFloat("Speed", -Movement.sqrMagnitude);
         }
 
         if (rb.velocity.y < 0)
