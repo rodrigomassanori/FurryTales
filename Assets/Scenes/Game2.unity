@@ -398,18 +398,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2123907377197237056, guid: 1573a2f87a3689147954537a6baaff08, type: 3}
-      propertyPath: orthographic size
-      value: 1.40625
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159898119159490775, guid: 1573a2f87a3689147954537a6baaff08, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 6886576350607606785, guid: 1573a2f87a3689147954537a6baaff08, type: 3}
-      propertyPath: m_AssetsPPU
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 8034398560472481301, guid: 1573a2f87a3689147954537a6baaff08, type: 3}
       propertyPath: m_Name
       value: Kaitlyn
