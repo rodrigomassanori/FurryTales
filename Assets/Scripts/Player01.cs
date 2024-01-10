@@ -4,8 +4,7 @@ public class Player01 : MonoBehaviour
 {
     Rigidbody2D rb;
 
-    [SerializeField]
-    float MoveSpeed;
+    float MoveSpeed = 0.4f;
 
     Vector2 Movement;
 
@@ -27,11 +26,33 @@ public class Player01 : MonoBehaviour
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, -30.0f, 30.0f), 
         Mathf.Clamp(transform.position.y, -30.0f, 30.0f));
 
-        Anim.SetFloat("Horizontal", Movement.x);
+        if (rb.velocity.x > 0)
+        {
+            Anim.SetFloat("Horizontal", Movement.x);
 
-        Anim.SetFloat("Vertical", Movement.y);
+            Anim.SetFloat("Speed", Movement.sqrMagnitude);
+        }
 
-        Anim.SetFloat("Speed", Movement.sqrMagnitude);
+        if (rb.velocity.x < 0)
+        {
+            Anim.SetFloat("Horizontal", Movement.x);
+
+            Anim.SetFloat("Speed", Movement.sqrMagnitude);
+        }
+
+        if (rb.velocity.y > 0)
+        {
+            Anim.SetFloat("Vertical", Movement.y);
+
+            Anim.SetFloat("Speed", Movement.sqrMagnitude);
+        }
+
+        if (rb.velocity.y < 0)
+        {
+            Anim.SetFloat("Vertical", Movement.y);
+
+            Anim.SetFloat("Speed", Movement.sqrMagnitude);
+        }
     }
 
     void FixedUpdate()
