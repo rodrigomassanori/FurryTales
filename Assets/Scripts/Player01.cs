@@ -4,7 +4,7 @@ public class Player01 : MonoBehaviour
 {
     Rigidbody2D rb;
 
-    float MoveSpeed = 0.4f;
+    float MoveSpeed = 0.9f;
 
     Vector3 Movement;
 
@@ -19,7 +19,7 @@ public class Player01 : MonoBehaviour
 
     void Update()
     {
-        Movement = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0.0f);
+        Movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
 
         Anim.SetFloat("Horizontal", Movement.x);
 
