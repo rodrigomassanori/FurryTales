@@ -6,7 +6,9 @@ public class Player01 : MonoBehaviour
 
     float MoveSpeed = 0.4f;
 
-    Vector2 Movement;
+    float Movement;
+
+    Vector2 position;
 
     Animator Anim;
 
@@ -28,35 +30,43 @@ public class Player01 : MonoBehaviour
 
         if (rb.velocity.x > 0)
         {
-            Anim.SetFloat("Horizontal", Movement.x);
+            Anim.SetFloat("Horizontal", Movement);
 
-            Anim.SetFloat("Speed", Movement.sqrMagnitude);
+            Anim.SetFloat("Speed", Movement);
+
+            position = Vector2.right;
         }
 
         if (rb.velocity.x < 0)
         {
-            Anim.SetFloat("Horizontal", Movement.x);
+            Anim.SetFloat("Horizontal", -Movement);
 
-            Anim.SetFloat("Speed", Movement.sqrMagnitude);
+            Anim.SetFloat("Speed", Movement);
+
+            position = Vector2.left;
         }
 
         if (rb.velocity.y > 0)
         {
-            Anim.SetFloat("Vertical", Movement.y);
+            Anim.SetFloat("Vertical", -Movement);
 
-            Anim.SetFloat("Speed", Movement.sqrMagnitude);
+            Anim.SetFloat("Speed", Movement);
+
+            position = Vector2.down;
         }
 
         if (rb.velocity.y < 0)
         {
-            Anim.SetFloat("Vertical", Movement.y);
+            Anim.SetFloat("Vertical", Movement);
 
-            Anim.SetFloat("Speed", Movement.sqrMagnitude);
+            Anim.SetFloat("Speed", Movement);
+
+            position = Vector2.up;
         }
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + Movement * MoveSpeed * Time.deltaTime);
+        rb.MovePosition(rb.position + position * MoveSpeed * Time.deltaTime);
     }
 }
