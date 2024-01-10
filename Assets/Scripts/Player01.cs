@@ -18,10 +18,13 @@ public class Player01 : MonoBehaviour
         Anim = GetComponent<Animator>();
     }
 
-    void Update()
+    void Start()
     {
         Anim.Play("Idle");
+    }
 
+    void Update()
+    {
         Movement.x = Input.GetAxisRaw("Horizontal");
 
         Movement.y = Input.GetAxisRaw("Vertical");
