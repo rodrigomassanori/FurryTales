@@ -21,9 +21,9 @@ public class Player01 : MonoBehaviour
 
     void Update()
     {
-        Movement.x = Input.GetAxisRaw("Horizontal");
+        Movement = Input.GetAxisRaw("Horizontal");
 
-        Movement.y = Input.GetAxisRaw("Vertical");
+        Movement = Input.GetAxisRaw("Vertical");
 
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, -30.0f, 30.0f), 
         Mathf.Clamp(transform.position.y, -30.0f, 30.0f));
