@@ -18,11 +18,6 @@ public class Player01 : MonoBehaviour
         Anim = GetComponent<Animator>();
     }
 
-    void Start()
-    {
-        Anim.Play("Idle");
-    }
-
     void Update()
     {
         Movement.x = Input.GetAxisRaw("Horizontal");
