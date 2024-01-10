@@ -20,6 +20,8 @@ public class Player01 : MonoBehaviour
 
     void Update()
     {
+        Anim.Play("Idle");
+
         Movement.x = Input.GetAxisRaw("Horizontal");
 
         Movement.y = Input.GetAxisRaw("Vertical");
