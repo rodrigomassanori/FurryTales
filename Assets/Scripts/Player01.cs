@@ -33,8 +33,6 @@ public class Player01 : MonoBehaviour
             Anim.SetFloat("Horizontal", Movement);
 
             Anim.SetFloat("Speed", Movement);
-
-            position = Vector2.right;
         }
 
         if (rb.velocity.x < 0)
@@ -42,8 +40,6 @@ public class Player01 : MonoBehaviour
             Anim.SetFloat("Horizontal", -Movement);
 
             Anim.SetFloat("Speed", Movement);
-
-            position = Vector2.left;
         }
 
         if (rb.velocity.y > 0)
@@ -51,8 +47,6 @@ public class Player01 : MonoBehaviour
             Anim.SetFloat("Vertical", -Movement);
 
             Anim.SetFloat("Speed", Movement);
-
-            position = Vector2.down;
         }
 
         if (rb.velocity.y < 0)
@@ -60,8 +54,6 @@ public class Player01 : MonoBehaviour
             Anim.SetFloat("Vertical", Movement);
 
             Anim.SetFloat("Speed", Movement);
-
-            position = Vector2.up;
         }
     }
 
