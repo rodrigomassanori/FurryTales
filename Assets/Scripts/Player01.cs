@@ -47,4 +47,9 @@ public class Player01 : MonoBehaviour
             Anim.SetFloat("Vertical", -Movement.y);
         }
     }
+
+    void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + Movement * MoveSpeed * Time.deltaTime);
+    }
 }
