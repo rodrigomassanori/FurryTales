@@ -6,7 +6,7 @@ public class Player01 : MonoBehaviour
 
     float MoveSpeed = 0.9f;
 
-    Vector3 Movement;
+    Vector2 Movement;
 
     Animator Anim;
 
@@ -19,14 +19,12 @@ public class Player01 : MonoBehaviour
 
     void Update()
     {
-        Movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
+        Movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         Anim.SetFloat("Horizontal", Movement.x);
 
         Anim.SetFloat("Vertical", Movement.y);
 
-        Anim.SetFloat("Speed", Movement.magnitude);
-
-        transform.position = transform.position + Movement * MoveSpeed * Time.deltaTime;
+        Anim.SetFloat("Speed", Movement.sqrMagnitude);
     }
 }
