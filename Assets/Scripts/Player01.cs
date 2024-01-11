@@ -22,21 +22,29 @@ public class Player01 : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             Anim.SetBool("Walking", true);
+
+            Anim.SetTrigger("WalkingRight");
         }
 
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
             Anim.SetBool("Walking", true);
+
+            Anim.SetTrigger("WalkingLeft");
         }
 
         if (Input.GetAxisRaw("Vertical") > 0)
         {
             Anim.SetBool("Walking", true);
+
+            Anim.SetTrigger("WalkingUp");
         }
 
         if (Input.GetAxisRaw("Vertical") < 0)
         {
             Anim.SetBool("Walking", true);
+
+            Anim.SetTrigger("WalkingDown");
         }
     }
 }
