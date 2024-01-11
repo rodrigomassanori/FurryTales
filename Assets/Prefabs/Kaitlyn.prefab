@@ -95,7 +95,8 @@ GameObject:
   - component: {fileID: 8757667590540013717}
   - component: {fileID: 4510438595920214325}
   - component: {fileID: 4706279610666750713}
-  - component: {fileID: 3845547410592178257}
+  - component: {fileID: 8646780404328002503}
+  - component: {fileID: 1601795319517822944}
   m_Layer: 0
   m_Name: Kaitlyn
   m_TagString: Player
@@ -255,7 +256,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.6953125
---- !u!114 &3845547410592178257
+--- !u!114 &8646780404328002503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,11 +265,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 8034398560472481301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 501616e8e98880d46afb3dfc1dd02393, type: 3}
+  m_Script: {fileID: 11500000, guid: 188e6667a739e8b4b825632df690762f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Speed: 100
-  _Rigidbody: {fileID: 4510438595920214325}
+--- !u!114 &1601795319517822944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8034398560472481301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe0557757bc8124396e71acd6016bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 617659098041983560}
+  OffsetY: 3
+  SmoothX: 0.4
+  SmoothY: 0.4
 --- !u!1 &8196061689601733621
 GameObject:
   m_ObjectHideFlags: 0
