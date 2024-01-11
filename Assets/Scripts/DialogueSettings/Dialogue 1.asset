@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77585dad47e1b284dbf373dfe8497d5d, type: 3}
+  m_Name: Dialogue 1
+  m_EditorClassIdentifier: 
+  _speakerPortrait: {fileID: 1906306973, guid: 6d80041a0cfa7ec419abde18ff3d0c88, type: 3}
+  _dialogueBox: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  _speakText: "Este \xE9 um texto que pode aparecer no jogo"
+  _nextDialogue: {fileID: 11400000, guid: f5516c7feb39f75438f2f4a9d22a8118, type: 2}
+  _protraitSide: 1
