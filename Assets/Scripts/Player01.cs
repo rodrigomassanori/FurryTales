@@ -19,12 +19,24 @@ public class Player01 : MonoBehaviour
 
     void Update()
     {
-        Movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (Input.GetAxisRaw("Horizontal") > 0)
+        {
+            Anim.SetBool("Walking", true);
+        }
 
-        Anim.SetFloat("Horizontal", Movement.x);
+        if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            Anim.SetBool("Walking", true);
+        }
 
-        Anim.SetFloat("Vertical", Movement.y);
+        if (Input.GetAxisRaw("Vertical") > 0)
+        {
+            Anim.SetBool("Walking", true);
+        }
 
-        Anim.SetFloat("Speed", Movement.sqrMagnitude);
+        if (Input.GetAxisRaw("Vertical") < 0)
+        {
+            Anim.SetBool("Walking", true);
+        }
     }
 }

@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kaitlyn
       objectReference: {fileID: 0}
+    - target: {fileID: 8757667590540013717, guid: 1573a2f87a3689147954537a6baaff08, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
