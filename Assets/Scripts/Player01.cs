@@ -24,8 +24,6 @@ public class Player01 : MonoBehaviour
             Anim.SetBool("Walking", true);
 
             Anim.SetFloat("Horizontal", Movement.x);
-
-            Anim.SetTrigger("WalkingRight");
         }
 
         if (Input.GetAxisRaw("Horizontal") < 0)
@@ -33,8 +31,6 @@ public class Player01 : MonoBehaviour
             Anim.SetBool("Walking", true);
 
             Anim.SetFloat("Horizontal", -Movement.x);
-
-            Anim.SetTrigger("WalkingLeft");
         }
 
         if (Input.GetAxisRaw("Vertical") > 0)
@@ -42,8 +38,6 @@ public class Player01 : MonoBehaviour
             Anim.SetBool("Walking", true);
 
             Anim.SetFloat("Vertical", Movement.y);
-
-            Anim.SetTrigger("WalkingUp");
         }
 
         if (Input.GetAxisRaw("Vertical") < 0)
@@ -51,8 +45,6 @@ public class Player01 : MonoBehaviour
             Anim.SetBool("Walking", true);
 
             Anim.SetFloat("Vertical", -Movement.y);
-
-            Anim.SetTrigger("WalkingDown");
         }
     }
 }
