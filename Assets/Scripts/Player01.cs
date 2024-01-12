@@ -25,7 +25,7 @@ public class Player01 : MonoBehaviour
 
         Movement = new Vector2(H, V).normalized;
 
-        Rb.velocity = Movement * Speed * Time.deltaTime;
+        Rb.velocity = Movement * Speed;
 
         Anim.SetBool("WalkingUp", V > 0);
 
