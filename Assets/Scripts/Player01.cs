@@ -8,8 +8,12 @@ public class Player01 : MonoBehaviour
 
     Vector2 Movement;
 
+    Animator Anim;
+
     void Awake()
     {
+        Anim = GetComponent<Animator>();
+
         Rb = GetComponent<Rigidbody2D>();
     }
 
@@ -22,5 +26,13 @@ public class Player01 : MonoBehaviour
         Movement = new Vector2(H, V).normalized;
 
         Rb.velocity = Movement * Speed * Time.deltaTime;
+
+        Anim.SetBool("WalkingUp", V > 0);
+
+        Anim.SetBool("WalkingDown", V < 0);
+
+        Anim.SetBool("WalkingLeft", H < 0);
+
+        Anim.SetBool("WalkingRight", H > 0);
     }
 }
