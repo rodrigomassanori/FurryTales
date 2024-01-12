@@ -2,54 +2,25 @@ using UnityEngine;
 
 public class Player01 : MonoBehaviour
 {
-    Rigidbody2D rb;
+    Rigidbody2D Rb;
 
-    float MoveSpeed = 0.9f;
+    float Speed = 2.0f;
 
     Vector2 Movement;
 
-    Animator Anim;
-
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-
-        Anim = GetComponent<Animator>();
+        Rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (Input.GetAxisRaw("Horizontal") > 0)
-        {
-            Anim.SetBool("Walking", true);
+        float H = Input.GetAxisRaw("Horizontal");
 
-            Anim.SetFloat("Horizontal", Movement.x);
-        }
+        float V = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetAxisRaw("Horizontal") < 0)
-        {
-            Anim.SetBool("Walking", true);
+        Movement = new Vector2(H, V).normalized;
 
-            Anim.SetFloat("Horizontal", -Movement.x);
-        }
-
-        if (Input.GetAxisRaw("Vertical") > 0)
-        {
-            Anim.SetBool("Walking", true);
-
-            Anim.SetFloat("Vertical", Movement.y);
-        }
-
-        if (Input.GetAxisRaw("Vertical") < 0)
-        {
-            Anim.SetBool("Walking", true);
-
-            Anim.SetFloat("Vertical", -Movement.y);
-        }
-    }
-
-    void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + Movement * MoveSpeed * Time.deltaTime);
+        Rb.velocity = Movement * Speed * Time.deltaTime;
     }
 }
