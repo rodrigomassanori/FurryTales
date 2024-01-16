@@ -33,7 +33,7 @@ public class Player01 : MonoBehaviour
 
             Anim.SetFloat("Vertical", V);
 
-            Anim.SetFloat("Speed", Speed);
+            Anim.SetFloat("Speed", Movement.magnitude);
         }
 
         else
