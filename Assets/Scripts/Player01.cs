@@ -27,9 +27,9 @@ public class Player01 : MonoBehaviour
 
         Rb.velocity = Movement * Speed;
 
-        bool x = H > 0;
+        bool x = H != 0;
 
-        bool y = V > 0;
+        bool y = V != 0;
 
         Anim.SetBool("WalkingUp", y);
 
