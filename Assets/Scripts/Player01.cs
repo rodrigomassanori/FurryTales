@@ -4,9 +4,9 @@ public class Player01 : MonoBehaviour
 {
     Rigidbody2D Rb;
 
-    float Speed = 2.0f;
+    float Speed = 5.0f;
 
-    Vector2 Movement;
+    Vector3 Movement;
 
     Animator Anim;
 
@@ -23,7 +23,7 @@ public class Player01 : MonoBehaviour
 
         float V = Input.GetAxisRaw("Vertical");
 
-        Movement = new Vector2(H, V).normalized;
+        Movement = new Vector3(H, V, 0.0f) * Speed * Time.deltaTime;
 
         Anim.SetFloat("Horizontal", Movement.x);
 
@@ -31,6 +31,6 @@ public class Player01 : MonoBehaviour
 
         Anim.SetFloat("Speed", Speed);
 
-        Rb.MovePosition(Rb.position + Movement * Speed * Time.deltaTime);
+        transform.Translate(Movement);
     }
 }
