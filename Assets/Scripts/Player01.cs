@@ -25,13 +25,23 @@ public class Player01 : MonoBehaviour
 
         float V = Input.GetAxisRaw("Vertical");
 
+        if(H != 0.0f || V != 0.0f)
+        {
+            Anim.SetTrigger("Walk");
+
+            Anim.SetFloat("Horizontal", H);
+
+            Anim.SetFloat("Vertical", V);
+
+            Anim.SetFloat("Speed", Speed);
+        }
+
+        else
+        {
+            Anim.ResetTrigger("Walk");
+        }
+
         Movement = new Vector3(H, V, 0.0f) * Speed * Time.deltaTime;
-
-        Anim.SetFloat("Horizontal", Movement.x);
-
-        Anim.SetFloat("Vertical", Movement.y);
-
-        Anim.SetFloat("Speed", Speed);
 
         transform.Translate(Movement);
 
