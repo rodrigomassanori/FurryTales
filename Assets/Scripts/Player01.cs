@@ -8,6 +8,8 @@ public class Player01 : MonoBehaviour
 
     Vector3 Movement;
 
+    Vector2 MoveRb;
+
     Animator Anim;
 
     void Awake()
@@ -32,5 +34,7 @@ public class Player01 : MonoBehaviour
         Anim.SetFloat("Speed", Speed);
 
         transform.Translate(Movement);
+
+        Rb.MovePosition(Rb.position + MoveRb * Speed * Time.deltaTime);
     }
 }
