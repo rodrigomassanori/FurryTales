@@ -25,10 +25,12 @@ public class Player01 : MonoBehaviour
 
         Movement = new Vector2(H, V).normalized;
 
-        Rb.velocity = Movement * Speed;
-
         Anim.SetFloat("Horizontal", Movement.x);
 
         Anim.SetFloat("Vertical", Movement.y);
+
+        Anim.SetFloat("Speed", Speed);
+
+        Rb.MovePosition(Rb.position + Movement * Speed * Time.deltaTime);
     }
 }
