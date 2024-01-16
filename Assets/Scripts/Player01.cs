@@ -27,12 +27,16 @@ public class Player01 : MonoBehaviour
 
         Rb.velocity = Movement * Speed;
 
-        Anim.SetBool("WalkingUp", true);
+        bool x = H > 0;
 
-        Anim.SetBool("WalkingDown", true);
+        bool y = V > 0;
 
-        Anim.SetBool("WalkingLeft", true);
+        Anim.SetBool("WalkingUp", y);
 
-        Anim.SetBool("WalkingRight", true);
+        Anim.SetBool("WalkingDown", !y);
+
+        Anim.SetBool("WalkingLeft", !x);
+
+        Anim.SetBool("WalkingRight", x);
     }
 }
