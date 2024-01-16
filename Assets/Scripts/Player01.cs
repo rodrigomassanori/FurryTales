@@ -27,8 +27,8 @@ public class Player01 : MonoBehaviour
 
         Rb.velocity = Movement * Speed;
 
-        Anim.SetFloat("Horizontal", H);
+        Anim.SetFloat("Horizontal", Movement.x);
 
-        Anim.SetFloat("Vertical", V);
+        Anim.SetFloat("Vertical", Movement.y);
     }
 }
