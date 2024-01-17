@@ -27,7 +27,7 @@ public class Player01 : MonoBehaviour
 
         Anim.SetFloat("Vertical", Movement.y);
 
-        Anim.SetFloat("Speed", Movement.magnitude);
+        Anim.SetFloat("Speed", Movement.sqrMagnitude);
     }
 
     void FixedUpdate()
