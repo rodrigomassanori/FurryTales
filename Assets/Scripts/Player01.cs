@@ -27,18 +27,11 @@ public class Player01 : MonoBehaviour
 
         if(H != 0.0f || V != 0.0f)
         {
-            Anim.SetTrigger("Walk");
-
             Anim.SetFloat("Horizontal", H);
 
             Anim.SetFloat("Vertical", V);
 
             Anim.SetFloat("Speed", Movement.magnitude);
-        }
-
-        else
-        {
-            Anim.ResetTrigger("Walk");
         }
 
         Movement = new Vector3(H, V, 0.0f) * Speed * Time.deltaTime;
