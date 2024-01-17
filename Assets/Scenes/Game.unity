@@ -410,6 +410,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteriorLight
       objectReference: {fileID: 0}
+    - target: {fileID: 7918184363318433286, guid: 9d8fa95f44993f24bb988c3e021ea858, type: 3}
+      propertyPath: m_Intensity
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
