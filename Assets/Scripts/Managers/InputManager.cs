@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    public static InputManager Instance { get; private set; }
+    public static InputManager Instance { get; set; }
 
     public static PlayerControler Input;
 
@@ -86,7 +86,9 @@ public class InputManager : MonoBehaviour
     void HandleMovement()
     {
         Input.UI.Disable();
+
         Input.CharacterController.Enable();
+        
         Input.Dialogue.Disable();
     }
 

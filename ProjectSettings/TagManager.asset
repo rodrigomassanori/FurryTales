@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Monster
   - Grounded
+  - Door
+  - Walls
   layers:
   - Default
   - TransparentFX
