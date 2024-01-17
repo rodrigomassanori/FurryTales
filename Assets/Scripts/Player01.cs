@@ -21,9 +21,9 @@ public class Player01 : MonoBehaviour
 
     void Update()
     {
-        float H = Input.GetAxisRaw("Horizontal");
+        float H = Input.GetAxis("Horizontal");
 
-        float V = Input.GetAxisRaw("Vertical");
+        float V = Input.GetAxis("Vertical");
 
         if(H != 0.0f || V != 0.0f)
         {
