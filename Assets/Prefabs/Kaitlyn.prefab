@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 4706279610666750713}
   - component: {fileID: 8646780404328002503}
   - component: {fileID: 1601795319517822944}
+  - component: {fileID: 5331522518897244866}
   m_Layer: 0
   m_Name: Kaitlyn
   m_TagString: Player
@@ -284,6 +285,18 @@ MonoBehaviour:
   OffsetY: 3
   SmoothX: 0.4
   SmoothY: 0.4
+--- !u!114 &5331522518897244866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8034398560472481301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74fc8d85b614ad4088bba029939e097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8196061689601733621
 GameObject:
   m_ObjectHideFlags: 0
