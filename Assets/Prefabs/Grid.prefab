@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2173942762243590957}
   - component: {fileID: 5012331385412348170}
   m_Layer: 0
-  m_Name: Tilemap
-  m_TagString: Untagged
+  m_Name: Floor
+  m_TagString: Grounded
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
