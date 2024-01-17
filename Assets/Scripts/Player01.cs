@@ -19,9 +19,9 @@ public class Player01 : MonoBehaviour
 
     void Update()
     {
-        Movement.x = Input.GetAxis("Horizontal");
+        Movement.x = Input.GetAxisRaw("Horizontal");
 
-        Movement.y = Input.GetAxis("Vertical");
+        Movement.y = Input.GetAxisRaw("Vertical");
 
         Anim.SetFloat("Horizontal", Movement.x);
 
