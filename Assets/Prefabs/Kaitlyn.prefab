@@ -96,9 +96,8 @@ GameObject:
   - component: {fileID: 4510438595920214325}
   - component: {fileID: 4706279610666750713}
   - component: {fileID: 5331522518897244866}
-  - component: {fileID: 2936899026697645662}
-  - component: {fileID: 293976522667650949}
-  - component: {fileID: 6538847346337271827}
+  - component: {fileID: 1255211185341890332}
+  - component: {fileID: 4895430162572846364}
   m_Layer: 0
   m_Name: Kaitlyn
   m_TagString: Player
@@ -270,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74fc8d85b614ad4088bba029939e097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2936899026697645662
+--- !u!114 &1255211185341890332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,10 +278,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8034398560472481301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c5c2f4c4df49708fdef38a0c1c1430, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fe0557757bc8124396e71acd6016bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &293976522667650949
+  Target: {fileID: 617659098041983560}
+  OffsetY: 3
+  SmoothX: 0
+  SmoothY: 0
+--- !u!114 &4895430162572846364
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -291,30 +294,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8034398560472481301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a01f9a54f8e472eac6ff58912a445de, type: 3}
+  m_Script: {fileID: 11500000, guid: 188e6667a739e8b4b825632df690762f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdButtonThrottle: 2
-  target: {fileID: 8034398560472481301}
---- !u!114 &6538847346337271827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8034398560472481301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d0f62f0a3c94b12b8cc3d939dbdc7e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  collisionSpeed: 2.5
-  tilesPerStep: 1
-  turnAroundDelay: 125
-  collisionSound: {fileID: 0}
-  collisionSoundDelay: 0.25
-  clampOffset: {x: 0.5, y: 0.5}
 --- !u!1 &8196061689601733621
 GameObject:
   m_ObjectHideFlags: 0

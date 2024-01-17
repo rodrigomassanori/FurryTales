@@ -63,6 +63,7 @@
         "Mathf",
         "pulo",
         "Rigidbody",
+        "Tilemap",
         "Toon",
         "velocidade"
     ],
