@@ -6,9 +6,7 @@ public class Player01 : MonoBehaviour
 
     float Speed = 5.0f;
 
-    Vector3 Movement;
-
-    Vector2 MoveRb;
+    Vector2 Movement;
 
     Animator Anim;
 
@@ -21,25 +19,19 @@ public class Player01 : MonoBehaviour
 
     void Update()
     {
-        float H = Input.GetAxis("Horizontal");
+        Movement.x = Input.GetAxis("Horizontal");
 
-        float V = Input.GetAxis("Vertical");
+        Movement.y = Input.GetAxis("Vertical");
 
-        if(H != 0.0f || V != 0.0f)
-        {
-            Anim.SetFloat("Horizontal", H);
+        Anim.SetFloat("Horizontal", Movement.x);
 
-            Anim.SetFloat("Vertical", V);
+        Anim.SetFloat("Vertical", Movement.y);
 
-            Anim.SetFloat("Speed", Movement.magnitude);
-        }
+        Anim.SetFloat("Speed", Movement.magnitude);
+    }
 
-        Movement = new Vector3(H, V, 0.0f) * Speed * Time.deltaTime;
-
-        Movement.Normalize();
-
-        transform.Translate(Movement);
-
-        Rb.MovePosition(Rb.position + MoveRb * Speed * Time.deltaTime);
+    void FixedUpdate()
+    {
+        Rb.MovePosition(Rb.position + Movement * Speed * Time.deltaTime);
     }
 }
