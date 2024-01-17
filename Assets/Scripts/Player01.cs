@@ -36,6 +36,8 @@ public class Player01 : MonoBehaviour
 
         Movement = new Vector3(H, V, 0.0f) * Speed * Time.deltaTime;
 
+        Movement.Normalize();
+
         transform.Translate(Movement);
 
         Rb.MovePosition(Rb.position + MoveRb * Speed * Time.deltaTime);
