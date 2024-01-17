@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class DoorController : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D Pl)
+    void OnCollisionEnter2D(Collision2D Door)
     {
-        if(Pl.gameObject.tag == "Player")
+        if(Door.gameObject.tag == "Door")
         {
             SceneManager.LoadScene("Game2");
         }
