@@ -8,6 +8,7 @@ TagManager:
   - Grounded
   - Door
   - Walls
+  - Computer
   layers:
   - Default
   - TransparentFX
