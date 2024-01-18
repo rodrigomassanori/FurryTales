@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Walls
   - Computer
+  - Fluid
   layers:
   - Default
   - TransparentFX
