@@ -10,6 +10,9 @@ TagManager:
   - Walls
   - Computer
   - Fluid
+  - NuclearWarning
+  - GearChernobyl
+  - Door2
   layers:
   - Default
   - TransparentFX
