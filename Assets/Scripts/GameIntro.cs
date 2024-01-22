@@ -11,7 +11,7 @@ public class GameIntro : MonoBehaviour
 
 	IEnumerator IntroScreen()
 	{
-		yield return new WaitForSeconds(6.0f);
+		yield return new WaitForSeconds(10.0f);
 
 		SceneManager.LoadScene("Game");
 	}
