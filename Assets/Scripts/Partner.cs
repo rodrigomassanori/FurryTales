@@ -3,22 +3,22 @@ using UnityEngine;
 public class Partner : MonoBehaviour
 {
 	float Speed = 3.0f;
+	
+	Animator Anim;
+    
+	Rigidbody2D Rb;
 
-	Transform Player;
+    void Awake()
+    {
+        Anim = GetComponent<Animator>();
 
-	void Awake()
-	{
-		Player = GameObject.FindGameObjectWithTag("Player").transform;
-	}
+        Rb = GetComponent<Rigidbody2D>();
+    }
 
-	void Update()
-	{
-		transform.position = Vector2.MoveTowards(transform.position, Player.position, Speed * Time.deltaTime);
+    void Update()
+    {
+        Speed = Rb.velocity.magnitude;
 
-		Vector3 Direction = Player.position - transform.position;
-
-		float Angle = Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
-
-		transform.rotation = Quaternion.AngleAxis(Angle, Vector3.forward);
-	}
+        Anim.SetFloat("Speed", Speed);
+    }
 }
