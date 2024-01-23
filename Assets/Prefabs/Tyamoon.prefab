@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2116255075624198626}
   - component: {fileID: 2603115652108935901}
   - component: {fileID: 2815024055904432583}
-  - component: {fileID: 8225556262603829188}
   - component: {fileID: 1190192510983809593}
+  - component: {fileID: 4633273218823375905}
   m_Layer: 0
   m_Name: Tyamoon
   m_TagString: Partner
@@ -160,18 +160,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.65625, y: 1.296875}
   m_EdgeRadius: 0
---- !u!114 &8225556262603829188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2987365145392127435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a025167f2055c224d83f36f84271def9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1190192510983809593
 Animator:
   serializedVersion: 5
@@ -193,3 +181,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4633273218823375905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2987365145392127435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560fdcc7e84e4974eb1a846aaa0dd80c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -65,6 +65,7 @@
         "Rigidbody",
         "Tilemap",
         "Toon",
+        "UGUI",
         "velocidade"
     ],
     "dotnet.preferCSharpExtension": true
