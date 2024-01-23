@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2603115652108935901}
   - component: {fileID: 2815024055904432583}
   - component: {fileID: 8225556262603829188}
+  - component: {fileID: 1190192510983809593}
   m_Layer: 0
   m_Name: Tyamoon
   m_TagString: Partner
@@ -171,3 +172,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a025167f2055c224d83f36f84271def9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1190192510983809593
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2987365145392127435}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c8912fca42d19043b0802de9322e7e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
