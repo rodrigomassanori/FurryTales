@@ -13,9 +13,9 @@ public class Partner : MonoBehaviour
 
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput = 5.0f;
 
-        float verticalInput = Input.GetAxis("Vertical");
+        float verticalInput = 5.0f;
 
         Vector2 movement = new Vector2(horizontalInput, verticalInput);
 
