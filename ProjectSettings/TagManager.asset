@@ -13,6 +13,7 @@ TagManager:
   - NuclearWarning
   - GearChernobyl
   - Door2
+  - Partner
   layers:
   - Default
   - TransparentFX
