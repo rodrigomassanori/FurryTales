@@ -2,38 +2,30 @@ using UnityEngine;
 
 public class Partner : MonoBehaviour
 {
-	float Speed = 3.0f;
-
-    Transform Player;
-
-    Vector2 Direction;
-	
-	Animator Anim;
+    public float Speed = 5.0f;
     
-	Rigidbody2D Rb;
+    Rigidbody2D rb;
 
-    void Awake()
+    void Start()
     {
-        Anim = GetComponent<Animator>();
-
-        Rb = GetComponent<Rigidbody2D>();
-
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (Player != null)
-        {
-            Direction = Player.position - transform.position;
+        float horizontalInput = Input.GetAxis("Horizontal");
 
-            Direction.Normalize();
+        float verticalInput = Input.GetAxis("Vertical");
 
-            transform.Translate(Direction * Speed * Time.deltaTime);
-        }
+        Vector2 movement = new Vector2(horizontalInput, verticalInput);
 
-        float Angle = Mathf.Atan2(Direction.x, Direction.y) * Mathf.Rad2Deg;
+        movement.Normalize();
+        
+        rb.velocity = movement * Speed;
 
-        transform.rotation = Quaternion.AngleAxis(Angle, Vector3.forward);
+        // Optionally, you can add an animation parameter for movement direction in an Animator.
+        // For example, if you have a "Direction" parameter, you can set it like this:
+        // animator.SetFloat("DirectionX", movement.x);
+        // animator.SetFloat("DirectionY", movement.y);
     }
 }
