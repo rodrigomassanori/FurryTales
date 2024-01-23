@@ -5,6 +5,8 @@ public class Partner : MonoBehaviour
 	float Speed = 3.0f;
 
     Transform Player;
+
+    Vector2 Direction;
 	
 	Animator Anim;
     
@@ -23,11 +25,15 @@ public class Partner : MonoBehaviour
     {
         if (Player != null)
         {
-            Vector2 Direction = Player.position - transform.position;
+            Direction = Player.position - transform.position;
 
             Direction.Normalize();
 
             transform.Translate(Direction * Speed * Time.deltaTime);
         }
+
+        float Angle = Mathf.Atan2(Direction.x, Direction.y) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.AngleAxis(Angle, Vector3.forward);
     }
 }
