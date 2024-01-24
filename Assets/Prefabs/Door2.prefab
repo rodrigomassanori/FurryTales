@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5546994484696872519}
   - component: {fileID: 305995329167106190}
   - component: {fileID: 7682831493079527379}
+  - component: {fileID: 5590909575978897481}
   m_Layer: 0
   m_Name: Door2
   m_TagString: Door2
@@ -277,6 +278,18 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 44307106629197695}
+--- !u!114 &5590909575978897481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44307106629197695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ce81ff4f1fee942b7f9ea8fe12e49b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &550251177511675878
 GameObject:
   m_ObjectHideFlags: 0
