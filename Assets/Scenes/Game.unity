@@ -613,45 +613,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 60051830937394356, guid: 6750b1fb9e9ecab4c9ea24b2c880ec96, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 9f01676a7aec4a247ba709421ef33bd9, type: 2}
-    - target: {fileID: 60051830937394356, guid: 6750b1fb9e9ecab4c9ea24b2c880ec96, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -7033194011230396790, guid: 9f01676a7aec4a247ba709421ef33bd9, type: 2}
-    - target: {fileID: 60051830937394356, guid: 6750b1fb9e9ecab4c9ea24b2c880ec96, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203567443836528800, guid: 6750b1fb9e9ecab4c9ea24b2c880ec96, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203567443836528800, guid: 6750b1fb9e9ecab4c9ea24b2c880ec96, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1440
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203567443836528800, guid: 6750b1fb9e9ecab4c9ea24b2c880ec96, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 960
-      objectReference: {fileID: 0}
     - target: {fileID: 4538456658057019840, guid: 6750b1fb9e9ecab4c9ea24b2c880ec96, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7029077241601028530, guid: 6750b1fb9e9ecab4c9ea24b2c880ec96, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7029077241601028530, guid: 6750b1fb9e9ecab4c9ea24b2c880ec96, type: 3}
-      propertyPath: m_VertexColorAlwaysGammaSpace
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7029077241601028530, guid: 6750b1fb9e9ecab4c9ea24b2c880ec96, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9121492328834765672, guid: 6750b1fb9e9ecab4c9ea24b2c880ec96, type: 3}
       propertyPath: m_Pivot.x
