@@ -11,10 +11,6 @@ public class DialoguePartner : MonoBehaviour
 
     void Start()
     {
-        DialogueText.enabled = false;
-
-        DialogueText.gameObject.SetActive(false);
-
         Sentences = new Queue<string>();
     }
 
