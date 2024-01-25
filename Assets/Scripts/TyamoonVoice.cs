@@ -16,6 +16,8 @@ public class TyamoonVoice : MonoBehaviour
 		if (other.gameObject.tag == "Player")
 		{
 			DPartner.gameObject.SetActive(true);
+
+			DPartner.enabled = true;
 			
 			VoiceOfTyamoon.Play();
 		}
