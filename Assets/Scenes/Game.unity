@@ -244,6 +244,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c8063d6f1e739745a6756480bcc4873, type: 3}
+--- !u!114 &1178124087 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8891777355057251966, guid: 279ed0de7c02af24db8383bc87215402, type: 3}
+  m_PrefabInstance: {fileID: 2884059632629003002}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560fdcc7e84e4974eb1a846aaa0dd80c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1461318048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -438,9 +449,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tyamoon
       objectReference: {fileID: 0}
+    - target: {fileID: 3396325628271183194, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
+      propertyPath: DPartner
+      value: 
+      objectReference: {fileID: 1178124087}
     - target: {fileID: 5427225060617120431, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 5427225060617120431, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
       propertyPath: m_LocalPosition.y
