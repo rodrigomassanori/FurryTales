@@ -22,4 +22,11 @@ public class TyamoonVoice : MonoBehaviour
 			VoiceOfTyamoon.Play();
 		}
 	}
+
+	void OnCollisionExit2D(Collision2D other)
+	{
+		DPartner.enabled = false;
+
+		DPartner.gameObject.SetActive(false);
+	}
 }
