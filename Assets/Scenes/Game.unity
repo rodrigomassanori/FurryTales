@@ -438,6 +438,18 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2636167415825721269, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
+      propertyPath: Dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636167415825721269, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
+      propertyPath: Dialogue.Array.data[0]
+      value: Narration
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636167415825721269, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
+      propertyPath: Dialogue.Array.data[1]
+      value: Narration
+      objectReference: {fileID: 0}
     - target: {fileID: 2987365145392127435, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
       propertyPath: m_Name
       value: Tyamoon

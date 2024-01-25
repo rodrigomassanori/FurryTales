@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Hey Kaitlyn, do you know where is the reator pool?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f01676a7aec4a247ba709421ef33bd9, type: 2}
   m_sharedMaterial: {fileID: -7033194011230396790, guid: 9f01676a7aec4a247ba709421ef33bd9, type: 2}
