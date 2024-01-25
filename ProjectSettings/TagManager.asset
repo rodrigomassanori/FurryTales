@@ -18,6 +18,7 @@ TagManager:
   - Pic
   - Floor3
   - Pool
+  - Door3
   layers:
   - Default
   - TransparentFX
