@@ -11,11 +11,19 @@ public class DialoguePartner : MonoBehaviour
 
     void Start()
     {
+        DialogueText.enabled = false;
+
+        DialogueText.gameObject.SetActive(false);
+
         Sentences = new Queue<string>();
     }
 
     public void StartDialogue(string[] Dialogue)
     {
+        DialogueText.enabled = true;
+
+        DialogueText.gameObject.SetActive(true);
+        
         Sentences.Clear();
 
         foreach (string Sentence in Dialogue)

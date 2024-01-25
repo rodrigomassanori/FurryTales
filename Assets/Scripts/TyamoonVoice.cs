@@ -4,6 +4,8 @@ public class TyamoonVoice : MonoBehaviour
 {
 	AudioSource VoiceOfTyamoon;
 
+	public DialoguePartner DPartner;
+
 	void Awake()
 	{
 		VoiceOfTyamoon = GetComponent<AudioSource>();
@@ -13,6 +15,8 @@ public class TyamoonVoice : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
+			DPartner.gameObject.SetActive(true);
+			
 			VoiceOfTyamoon.Play();
 		}
 	}
