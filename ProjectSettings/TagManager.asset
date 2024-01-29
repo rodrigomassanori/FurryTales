@@ -21,6 +21,7 @@ TagManager:
   - Door3
   - Floor5
   - Door5
+  - Door4
   layers:
   - Default
   - TransparentFX
