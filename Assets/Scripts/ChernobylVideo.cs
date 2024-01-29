@@ -29,7 +29,7 @@ public class ChernobylVideo : MonoBehaviour
 
 	IEnumerator GameIntro()
 	{
-		yield return new WaitForSeconds(80.0f);
+		yield return new WaitForSeconds(150.0f);
 
 		SceneManager.LoadScene("GameIntro");
 	}
