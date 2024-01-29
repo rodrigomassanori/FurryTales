@@ -19,6 +19,8 @@ TagManager:
   - Floor3
   - Pool
   - Door3
+  - Floor5
+  - Door5
   layers:
   - Default
   - TransparentFX
