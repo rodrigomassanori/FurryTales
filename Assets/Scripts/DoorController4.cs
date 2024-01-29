@@ -7,7 +7,7 @@ public class DoorController4 : MonoBehaviour
 	{
 		if (Door4.gameObject.CompareTag("Player"))
 		{
-			SceneManager.LoadScene("Game4");
+			SceneManager.LoadScene("Game5");
 		}
 	}
 }
