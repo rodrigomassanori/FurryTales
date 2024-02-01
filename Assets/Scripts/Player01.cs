@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player01 : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Player01 : MonoBehaviour
     Animator Anim;
 
     KeyCode E = KeyCode.E;
+
+    public RawImage Map;
 
     void Awake()
     {
@@ -33,7 +36,12 @@ public class Player01 : MonoBehaviour
 
         if (Input.GetKeyDown(E))
         {
-            
+            Map.enabled = true;
+        }
+        
+        else if(Input.GetKeyUp(E)) 
+        {
+            Map.enabled = false;
         }
     }
 

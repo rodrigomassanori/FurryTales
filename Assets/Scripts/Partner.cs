@@ -6,6 +6,11 @@ public class Partner : MonoBehaviour
 
     DialoguePartner DPartner;
 
+    void Awake()
+    {
+        DPartner = GetComponent<DialoguePartner>();
+    }
+
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
