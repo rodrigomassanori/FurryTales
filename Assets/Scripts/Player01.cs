@@ -37,11 +37,15 @@ public class Player01 : MonoBehaviour
         if (Input.GetKeyDown(E))
         {
             Map.enabled = true;
+
+            Map.gameObject.SetActive(true);
         }
         
         else if(Input.GetKeyUp(E)) 
         {
             Map.enabled = false;
+
+            Map.gameObject.SetActive(false);
         }
     }
 
