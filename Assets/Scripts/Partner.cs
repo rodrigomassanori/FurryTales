@@ -4,6 +4,8 @@ public class Partner : MonoBehaviour
 {
     public string[] Dialogue;
 
+    DialoguePartner DPartner;
+
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -12,6 +14,14 @@ public class Partner : MonoBehaviour
             {
                 StartDialogue();
             }
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            DPartner.enabled = false;
         }
     }
 

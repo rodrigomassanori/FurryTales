@@ -10,6 +10,8 @@ public class Player01 : MonoBehaviour
 
     Animator Anim;
 
+    KeyCode E = KeyCode.E;
+
     void Awake()
     {
         Anim = GetComponent<Animator>();
@@ -28,6 +30,11 @@ public class Player01 : MonoBehaviour
         Anim.SetFloat("Vertical", Movement.y);
 
         Anim.SetFloat("Speed", Movement.sqrMagnitude);
+
+        if (Input.GetKeyDown(E))
+        {
+            
+        }
     }
 
     void FixedUpdate()
