@@ -4,12 +4,7 @@ public class Partner : MonoBehaviour
 {
     public string[] Dialogue;
 
-    DialoguePartner DPartner;
-
-    void Awake()
-    {
-        DPartner = GetComponent<DialoguePartner>();
-    }
+    public DialoguePartner DPartner;
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -27,6 +22,8 @@ public class Partner : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             DPartner.enabled = false;
+
+            DPartner.DialogueText.gameObject.SetActive(false);
         }
     }
 
