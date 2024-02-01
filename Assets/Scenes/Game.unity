@@ -323,6 +323,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2048577773 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3939762842975468407, guid: 6750b1fb9e9ecab4c9ea24b2c880ec96, type: 3}
+  m_PrefabInstance: {fileID: 3356989771496324244}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1185964247746396360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -428,6 +439,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4895430162572846364, guid: 1573a2f87a3689147954537a6baaff08, type: 3}
+      propertyPath: Map
+      value: 
+      objectReference: {fileID: 2048577773}
     - target: {fileID: 8034398560472481301, guid: 1573a2f87a3689147954537a6baaff08, type: 3}
       propertyPath: m_Name
       value: Kaitlyn
@@ -445,6 +460,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2636167415825721269, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
+      propertyPath: DPartner
+      value: 
+      objectReference: {fileID: 1178124087}
     - target: {fileID: 2987365145392127435, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
       propertyPath: m_Name
       value: Tyamoon
@@ -493,6 +512,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8775265749621310278, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
+      propertyPath: DialogueText
+      value: 
+      objectReference: {fileID: 1512322392}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
