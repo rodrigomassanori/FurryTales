@@ -7,7 +7,7 @@ public class MissionController : MonoBehaviour
 {
     public TextMeshProUGUI Quest2;
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -19,7 +19,7 @@ public class MissionController : MonoBehaviour
         }
     }
 
-    void OnCollisionExit2D(Collision2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {

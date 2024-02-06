@@ -23,6 +23,7 @@ TagManager:
   - Door5
   - Door4
   - Monster2
+  - Mission2
   layers:
   - Default
   - TransparentFX
