@@ -23,7 +23,7 @@ public class MissionController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            StopAllCoroutines();
+            StopCoroutine(ShowQuest2());
         }
     }
 

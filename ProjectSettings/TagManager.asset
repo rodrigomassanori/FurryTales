@@ -24,6 +24,7 @@ TagManager:
   - Door4
   - Monster2
   - Mission2
+  - Newspaper
   layers:
   - Default
   - TransparentFX
