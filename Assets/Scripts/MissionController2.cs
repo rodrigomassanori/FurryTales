@@ -11,22 +11,16 @@ public class MissionController2 : MonoBehaviour
     {
         if (Input.GetKeyDown(E))
         {
-            if (Mission3.gameObject.CompareTag("Player"))
-            {
-                Mission3.enabled = true;
+            Mission3.enabled = true;
 
-                Mission3.gameObject.SetActive(true);
-            }
+            Mission3.gameObject.SetActive(true);
         }
 
         if (Input.GetKeyUp(E))
         {
-            if (Mission3.gameObject.CompareTag("Player"))
-            {
-                Mission3.enabled = false;
+            Mission3.enabled = false;
 
-                Mission3.gameObject.SetActive(false);
-            }
+            Mission3.gameObject.SetActive(false);
         }
     }
 }
