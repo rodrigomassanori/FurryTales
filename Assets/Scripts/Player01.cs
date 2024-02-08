@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,21 +37,35 @@ public class Player01 : MonoBehaviour
 
         if (Input.GetKeyDown(E))
         {
-            Map.enabled = true;
-
-            Map.gameObject.SetActive(true);
+            StartCoroutine(ShowMap());
         }
         
         else if(Input.GetKeyUp(E)) 
         {
-            Map.enabled = false;
-
-            Map.gameObject.SetActive(false);
+            StartCoroutine(HideMap());
         }
     }
 
     void FixedUpdate()
     {
         Rb.MovePosition(Rb.position + Movement * Speed * Time.deltaTime);
+    }
+
+    IEnumerator ShowMap()
+    {
+        yield return new WaitForSeconds(10.0f);
+
+        Map.enabled = true;
+
+        Map.gameObject.SetActive(true);
+    }
+
+    IEnumerator HideMap()
+    {
+        yield return new WaitForSeconds(10.0f);
+
+        Map.enabled = false;
+
+        Map.gameObject.SetActive(false);
     }
 }
