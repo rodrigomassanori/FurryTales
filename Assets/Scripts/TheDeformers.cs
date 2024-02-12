@@ -1,11 +1,12 @@
 using UnityEngine;
-using System.Collections;
 
 public class TheDeformers : MonoBehaviour
 {
     float MoveSpeed = 4.0f;
 
     Rigidbody2D Rb;
+    
+    public Transform player;
 
     void Awake()
     {
@@ -14,8 +15,18 @@ public class TheDeformers : MonoBehaviour
 
     void Update()
     {
-        Vector2 Direction = (Vector2.zero - Rb.position).normalized;
+        FollowPlayer();
+    }
 
-        Rb.MovePosition(Rb.position + Direction * MoveSpeed * Time.deltaTime);
+    void FollowPlayer()
+    {
+        if (player != null)
+        {
+            Vector2 direction = player.position - transform.position;
+
+            direction.Normalize();
+
+            Rb.velocity = direction * MoveSpeed;
+        }
     }
 }
