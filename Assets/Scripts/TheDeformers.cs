@@ -8,6 +8,10 @@ public class TheDeformers : MonoBehaviour
     
     public Transform player;
 
+    float Angle;
+
+    Vector2 Direction;
+
     void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
@@ -22,11 +26,15 @@ public class TheDeformers : MonoBehaviour
     {
         if (player != null)
         {
-            Vector2 direction = player.position - transform.position;
+            Direction = player.position - transform.position;
 
-            direction.Normalize();
+            Direction.Normalize();
 
-            Rb.velocity = direction * MoveSpeed;
+            Rb.velocity = Direction * MoveSpeed;
+
+            Angle = Mathf.Atan2(Direction.x, Direction.y) * Mathf.Rad2Deg;
+
+            transform.rotation = Quaternion.Euler(new Vector2(Angle, 0.0f));
         }
     }
 }
