@@ -34,7 +34,7 @@ public class TheDeformers : MonoBehaviour
 
             Angle = Mathf.Atan2(Direction.x, Direction.y) * Mathf.Rad2Deg;
 
-            transform.rotation = Quaternion.Euler(new Vector2(0.0f, Angle));
+            transform.rotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, Angle));
         }
     }
 }
