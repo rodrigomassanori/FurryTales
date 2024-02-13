@@ -36,7 +36,7 @@ public class TheDeformers : MonoBehaviour
         {
             Direction = (Vector2)(player.transform.position - transform.position).normalized;
 
-            Rotation = Mathf.Atan2(Direction.x, Direction.y) / Mathf.PI * 16.0f + 16.0f;
+            Rotation = Mathf.Atan2(Direction.x, Direction.y) / Mathf.PI * 8.0f + 8.0f;
 
             Sp.sprite = Spr[(int)Mathf.Round(Rotation * 16) % 16];
 
