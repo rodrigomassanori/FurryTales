@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TheDeformers : MonoBehaviour
 {
@@ -42,5 +44,20 @@ public class TheDeformers : MonoBehaviour
 
             Rb.MovePosition((Vector2)transform.position + Direction * MoveSpeed * Time.deltaTime);
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(GameOverScene());
+        }
+    }
+
+    IEnumerator GameOverScene()
+    {
+        yield return new WaitForSeconds(15.0f);
+
+        SceneManager.LoadScene("GameOver");
     }
 }
