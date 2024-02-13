@@ -5,10 +5,10 @@ public class SceneController : MonoBehaviour
 {
 	Scene Sc;
 
+	public GameObject Player;
+
 	void Awake()
 	{
-		Sc = SceneManager.CreateScene("GameOver");
-
-		print(Sc);
+		Instantiate(Player);
 	}
 }
