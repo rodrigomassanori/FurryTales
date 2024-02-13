@@ -375,6 +375,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  Spr:
+  - {fileID: 1461496751, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: 1327475194, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: -1153286420, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: 9938238, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: 296405971, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: 1725338497, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: 1874901562, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: -121782199, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: -1248576661, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: -965223066, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: -1826724855, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: -741331961, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: 350724924, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: -1286308309, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: -1492343399, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
+  - {fileID: -2110928923, guid: f8eda9f94207b8242b5ee9a58a3103ca, type: 3}
 --- !u!1 &9149308892233377015
 GameObject:
   m_ObjectHideFlags: 0
