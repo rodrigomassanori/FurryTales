@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class TheDeformers : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class TheDeformers : MonoBehaviour
 
     SpriteRenderer Sp;
 
+    public TextMeshProUGUI MonsterQuest;
+
     void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
@@ -29,6 +32,25 @@ public class TheDeformers : MonoBehaviour
     void Update()
     {
         FollowPlayer();
+
+        StartCoroutine(RunTheDeformer());
+    }
+
+    IEnumerator RunTheDeformer()
+    {
+        yield return new WaitForSeconds(30.0f);
+
+        MonsterQuest.enabled = true;
+
+        MonsterQuest.gameObject.SetActive(true);
+
+        MonsterQuest.text = "Find the door and escape The Deformer!";
+
+        yield return new WaitForSeconds(15.0f);
+
+        MonsterQuest.enabled = false;
+
+        MonsterQuest.gameObject.SetActive(false);
     }
 
     void FollowPlayer()
