@@ -46,7 +46,7 @@ public class TheDeformers : MonoBehaviour
 
         MonsterQuest.text = "Find the door and escape The Deformer!";
 
-        yield return new WaitForSeconds(15.0f);
+        yield return new WaitForSeconds(75.0f);
 
         MonsterQuest.enabled = false;
 
