@@ -38,7 +38,7 @@ public class TheDeformers : MonoBehaviour
 
     IEnumerator RunTheDeformer()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(50.0f);
 
         MonsterQuest.enabled = true;
 
