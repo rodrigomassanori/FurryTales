@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -12,28 +11,33 @@ public class TheDeformers : MonoBehaviour
     
     public Transform player;
 
-    float Rotation;
-
-    Vector2 Direction;
-
-    public List<Sprite> Spr;
-
-    SpriteRenderer Sp;
+    public Vector2[] Directions;
 
     public TextMeshProUGUI MonsterQuest;
 
+    Animator AnimMonster;
+
+    int CurrentDirectionIndex = 0;
+
     void Awake()
     {
-        Rb = GetComponent<Rigidbody2D>();
+        AnimMonster = GetComponent<Animator>();
 
-        Sp = GetComponent<SpriteRenderer>();
+        Rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        FollowPlayer();
+        UpdateAnim();
+
+        Walking();
 
         StartCoroutine(RunTheDeformer());
+    }
+
+    void Walking()
+    {
+        Rb.velocity = Directions[CurrentDirectionIndex] * MoveSpeed;
     }
 
     IEnumerator RunTheDeformer()
@@ -53,26 +57,23 @@ public class TheDeformers : MonoBehaviour
         MonsterQuest.gameObject.SetActive(false);
     }
 
-    void FollowPlayer()
+    void UpdateAnim()
     {
-        if (Vector2.Distance(transform.position, player.position) > 3.0f 
-        && player.gameObject.tag == "Player")
-        {
-            Direction = (Vector2)(player.transform.position - transform.position).normalized;
+        AnimMonster.SetFloat("Horizontal", Directions[CurrentDirectionIndex].x);
 
-            Rotation = Mathf.Atan2(Direction.x, Direction.y) / Mathf.PI * 8.0f + 8.0f;
-
-            Sp.sprite = Spr[(int)Mathf.Round(Rotation * 16) % 16];
-
-            Rb.MovePosition((Vector2)transform.position + Direction * MoveSpeed * Time.deltaTime);
-        }
+        AnimMonster.SetFloat("Vertical", Directions[CurrentDirectionIndex].y);
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.tag =="Player")
         {
             StartCoroutine(GameOverScene());
+        }
+
+        else if(other.gameObject.tag == "Walls")
+        {
+            CurrentDirectionIndex = (CurrentDirectionIndex + 1) % Directions.Length;
         }
     }
 
