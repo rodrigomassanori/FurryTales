@@ -18,7 +18,7 @@ public class TheDeformers : MonoBehaviour
     Animator AnimMonster;
 
     int CurrentDirectionIndex = 0;
-
+    
     void Awake()
     {
         AnimMonster = GetComponent<Animator>();
@@ -28,8 +28,6 @@ public class TheDeformers : MonoBehaviour
 
     void Update()
     {
-        UpdateAnim();
-
         Walking();
 
         StartCoroutine(RunTheDeformer());
@@ -37,6 +35,11 @@ public class TheDeformers : MonoBehaviour
 
     void Walking()
     {
+        if (Vector2.Distance(transform.position, player.transform.position) > 3.0f)
+        {
+            UpdateAnim();
+        }
+
         Rb.velocity = Directions[CurrentDirectionIndex] * MoveSpeed;
     }
 
