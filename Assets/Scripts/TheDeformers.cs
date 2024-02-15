@@ -38,6 +38,8 @@ public class TheDeformers : MonoBehaviour
         if (Vector2.Distance(transform.position, player.transform.position) < 10.0f)
         {
             UpdateAnim();
+
+            CurrentDirectionIndex = (CurrentDirectionIndex + 1) % Directions.Length;
         }
 
         Rb.velocity = Directions[CurrentDirectionIndex] * MoveSpeed;
@@ -72,11 +74,6 @@ public class TheDeformers : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             StartCoroutine(GameOverScene());
-        }
-
-        else if(other.gameObject.tag == "Walls")
-        {
-            CurrentDirectionIndex = (CurrentDirectionIndex + 1) % Directions.Length;
         }
     }
 
