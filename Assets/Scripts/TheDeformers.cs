@@ -35,7 +35,7 @@ public class TheDeformers : MonoBehaviour
 
     void Walking()
     {
-        if (Vector2.Distance(transform.position, player.transform.position) > 3.0f)
+        if (Vector2.Distance(transform.position, player.transform.position) < 10.0f)
         {
             UpdateAnim();
         }
