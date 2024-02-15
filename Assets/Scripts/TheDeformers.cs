@@ -69,7 +69,7 @@ public class TheDeformers : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag =="Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             StartCoroutine(GameOverScene());
         }
