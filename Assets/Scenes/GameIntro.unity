@@ -178,8 +178,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4807380925650889744, guid: c9b987c47e1be8f4183ec97b18fb21f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 599045055304204262}
   m_SourcePrefab: {fileID: 100100000, guid: c9b987c47e1be8f4183ec97b18fb21f0, type: 3}
+--- !u!1 &599045055304204261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4807380925650889744, guid: c9b987c47e1be8f4183ec97b18fb21f0, type: 3}
+  m_PrefabInstance: {fileID: 599045055304204260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &599045055304204262
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599045055304204261}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e05a2d978cd907842bb430917009ed85, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2264683376199383869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -188,18 +217,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4797407276791420985, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4797407276791420985, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 4797407276791420985, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
     - target: {fileID: 8618500829812117337, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -284,11 +301,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9112874303516186365, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
+      propertyPath: Comic
+      value: 
+      objectReference: {fileID: 2264683376199383870}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
+--- !u!114 &2264683376199383870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2569613553965693349, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
+  m_PrefabInstance: {fileID: 2264683376199383869}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3149247516622858447
 PrefabInstance:
   m_ObjectHideFlags: 0
