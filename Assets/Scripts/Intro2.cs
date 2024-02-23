@@ -24,6 +24,8 @@ public class Intro2 : MonoBehaviour
 
     IEnumerator HideComic()
     {
-        yield return new ;
+        yield return new WaitForSeconds(10.0f);
+
+        ComicAnim.Play("ComicIntro");
     }
 }
