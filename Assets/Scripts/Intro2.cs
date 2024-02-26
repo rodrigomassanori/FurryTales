@@ -13,7 +13,7 @@ public class Intro2 : MonoBehaviour
         ComicAnim = GetComponent<Animator>();
     }
 
-    void OnEnable()
+    public void OnEnable()
     {
         Comic.enabled = true;
 
