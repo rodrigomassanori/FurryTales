@@ -1,17 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Intro2 : MonoBehaviour
 {
-    Animator ComicAnim;
-
     public Image Comic;
 
-    void Awake()
-    {
-        ComicAnim = GetComponent<Animator>();
-    }
     void Start()
     {
         StartCoroutine(HideComic());
@@ -21,6 +16,12 @@ public class Intro2 : MonoBehaviour
     {
         yield return new WaitForSeconds(10.0f);
 
-        ComicAnim.Play("ComicIntro");
+        Comic.enabled = false;
+
+        Comic.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(15.0f);
+
+        SceneManager.LoadScene("GameIntro");
     }
 }
