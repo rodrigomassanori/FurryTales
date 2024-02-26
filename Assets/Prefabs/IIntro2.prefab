@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6599508248390860851}
   - component: {fileID: 5142709567430982338}
   - component: {fileID: 6848662067400822423}
-  - component: {fileID: 9014759072500080501}
   m_Layer: 5
   m_Name: ComicIntro
   m_TagString: Untagged
@@ -90,27 +89,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comic: {fileID: 5142709567430982338}
---- !u!95 &9014759072500080501
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2596024601243351851}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e474de5ba7b65b94a8314cbfef82ce27, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4313737703641528810
 GameObject:
   m_ObjectHideFlags: 0
