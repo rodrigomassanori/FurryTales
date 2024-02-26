@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6599508248390860851}
   - component: {fileID: 5142709567430982338}
   - component: {fileID: 6848662067400822423}
-  - component: {fileID: 288917146401987251}
+  - component: {fileID: 9014759072500080501}
   m_Layer: 5
   m_Name: ComicIntro
   m_TagString: Untagged
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comic: {fileID: 5142709567430982338}
---- !u!95 &288917146401987251
+--- !u!95 &9014759072500080501
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
