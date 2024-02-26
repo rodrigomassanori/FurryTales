@@ -12,13 +12,8 @@ public class Intro2 : MonoBehaviour
     {
         ComicAnim = GetComponent<Animator>();
     }
-
-    public void OnEnable()
+    void Start()
     {
-        Comic.enabled = true;
-
-        Comic.gameObject.SetActive(true);
-
         StartCoroutine(HideComic());
     }
 
