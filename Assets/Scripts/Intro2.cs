@@ -9,6 +9,10 @@ public class Intro2 : MonoBehaviour
 
     void Start()
     {
+        Comic.enabled = true;
+
+        Comic.gameObject.SetActive(true);
+        
         StartCoroutine(HideComic());
     }
 
