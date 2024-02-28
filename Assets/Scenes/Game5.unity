@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4895430162572846364, guid: 1573a2f87a3689147954537a6baaff08, type: 3}
+      propertyPath: Map
+      value: 
+      objectReference: {fileID: 844919304}
     - target: {fileID: 8034398560472481301, guid: 1573a2f87a3689147954537a6baaff08, type: 3}
       propertyPath: m_Name
       value: Kaitlyn
@@ -189,6 +193,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &844919304 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3939762842975468407, guid: 6750b1fb9e9ecab4c9ea24b2c880ec96, type: 3}
+  m_PrefabInstance: {fileID: 1471101608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1471101608
