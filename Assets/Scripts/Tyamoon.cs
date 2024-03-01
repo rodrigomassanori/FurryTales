@@ -19,10 +19,10 @@ public class Tyamoon : MonoBehaviour
 
     void Update()
     {
-        Speed = CharRb.velocity;
-
         if (Vector2.Distance(transform.position, Pl.transform.position) > 3)
         {
+            Speed = CharRb.velocity * Time.deltaTime;
+
             Anim.SetFloat("Vertical", Speed.y);
 
             Anim.SetFloat("Horizontal", Speed.x);
