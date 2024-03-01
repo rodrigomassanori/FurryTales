@@ -301,6 +301,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af1b15a24835b9547bc8511c618d821b, type: 3}
+--- !u!4 &2103574961 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 617659098041983560, guid: 1573a2f87a3689147954537a6baaff08, type: 3}
+  m_PrefabInstance: {fileID: 2131377691055610700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1185964247746396360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -427,6 +432,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1878013662881501541, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
+      propertyPath: Pl
+      value: 
+      objectReference: {fileID: 2103574961}
     - target: {fileID: 2987365145392127435, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
       propertyPath: m_Name
       value: Tyamoon
