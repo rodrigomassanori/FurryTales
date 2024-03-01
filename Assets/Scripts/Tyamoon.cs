@@ -21,7 +21,7 @@ public class Tyamoon : MonoBehaviour
     {
         Speed = CharRb.velocity;
 
-        if (Vector2.Distance(transform.position, Pl.transform.position) < 3)
+        if (Vector2.Distance(transform.position, Pl.transform.position) > 3)
         {
             Anim.SetFloat("Vertical", Speed.y);
 
