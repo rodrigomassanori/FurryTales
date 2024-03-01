@@ -8,6 +8,8 @@ public class Tyamoon : MonoBehaviour
 
     Vector2 Speed;
 
+    public Transform Pl;
+
     void Awake()
     {
         CharRb = GetComponent<Rigidbody2D>();
@@ -19,10 +21,13 @@ public class Tyamoon : MonoBehaviour
     {
         Speed = CharRb.velocity;
 
-        Anim.SetFloat("Vertical", Speed.y);
+        if (Vector2.Distance(transform.position, Pl.transform.position) > 0)
+        {
+            Anim.SetFloat("Vertical", Speed.y);
 
-        Anim.SetFloat("Horizontal", speed.x);
+            Anim.SetFloat("Horizontal", Speed.x);
 
-        Anim.SetFloat("Speed", Speed.x + Speed.y);
+            Anim.SetFloat("Speed", Speed.x + Speed.y);
+        }
     }
 }
