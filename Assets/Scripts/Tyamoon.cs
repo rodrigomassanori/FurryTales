@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Tyamoon : MonoBehaviour 
 {
-    private Rigidbody2D CharRb;
-    private Animator Anim;
+    Rigidbody2D CharRb;
+    
+    Animator Anim;
 
     Vector2 Speed;
 
@@ -16,12 +17,12 @@ public class Tyamoon : MonoBehaviour
 
     void Update()
     {
-        Vector2 speed = CharRb.velocity;
+        Speed = CharRb.velocity;
 
-        Anim.SetFloat("Vertical", speed.y);
+        Anim.SetFloat("Vertical", Speed.y);
 
         Anim.SetFloat("Horizontal", speed.x);
 
-        Anim.SetFloat("Speed", speed.x + speed.y);
+        Anim.SetFloat("Speed", Speed.x + Speed.y);
     }
 }
