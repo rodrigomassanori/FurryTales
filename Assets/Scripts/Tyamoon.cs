@@ -19,8 +19,7 @@ public class Tyamoon : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, Pl.transform.position) > 3.0f 
-        && Pl.gameObject.tag == "Player")
+        if (Vector2.Distance(transform.position, Pl.transform.position) > 3.0f)
         {
             Anim.SetFloat("Vertical", Speed.y);
 
