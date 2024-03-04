@@ -31,6 +31,6 @@ public class Tyamoon : MonoBehaviour
 
     void FixedUpdate()
     {
-        CharRb.MovePosition(CharRb.position + Speed * Time.deltaTime);
+        CharRb.MovePosition(CharRb.position + Speed.normalized * Speed * Time.deltaTime);
     }
 }
