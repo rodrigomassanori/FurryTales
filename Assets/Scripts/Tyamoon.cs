@@ -8,7 +8,7 @@ public class Tyamoon : MonoBehaviour
     
     public Transform Pl;
     
-    public float speed = 5f; 
+    float Speed = 2.5f; 
 
     void Awake()
     {
@@ -26,19 +26,19 @@ public class Tyamoon : MonoBehaviour
     {
         Vector2 direction = (Pl.position - transform.position).normalized;
 
-        float horizontalSpeed = direction.x * speed;
+        float HorizontalSpeed = direction.x * Speed;
         
-        float verticalSpeed = direction.y * speed;
+        float VerticalSpeed = direction.y * Speed;
 
-        Anim.SetFloat("Vertical", verticalSpeed);
+        Anim.SetFloat("Vertical", VerticalSpeed);
         
-        Anim.SetFloat("Horizontal", horizontalSpeed);
+        Anim.SetFloat("Horizontal", HorizontalSpeed);
         
-        Anim.SetFloat("Speed", Mathf.Abs(horizontalSpeed) + Mathf.Abs(verticalSpeed));
+        Anim.SetFloat("Speed", Mathf.Abs(HorizontalSpeed) + Mathf.Abs(VerticalSpeed));
 
         if (Vector2.Distance(transform.position, Pl.position) > 3.0f)
         {
-            CharRb.velocity = direction * speed;
+            CharRb.velocity = direction * Speed;
         }
         
         else

@@ -5,44 +5,53 @@ using TMPro;
 
 public class TheDeformers : MonoBehaviour
 {
-    float MoveSpeed = 4.0f;
-
-    Rigidbody2D Rb;
-    
-    public Transform player;
-
-    public Vector2[] Directions;
-
     public TextMeshProUGUI MonsterQuest;
 
-    Animator AnimMonster;
+    Rigidbody2D CharRb;
 
-    int CurrentDirectionIndex = 0;
+    Animator Anim;
     
+    public Transform Pl;
+    
+    float Speed = 3.0f; 
+
     void Awake()
     {
-        AnimMonster = GetComponent<Animator>();
+        CharRb = GetComponent<Rigidbody2D>();
 
-        Rb = GetComponent<Rigidbody2D>();
+        Anim = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
+        Pl = GameObject.FindGameObjectWithTag("Player01").transform;
     }
 
     void Update()
     {
-        Walking();
+        Vector2 direction = (Pl.position - transform.position).normalized;
 
-        StartCoroutine(RunTheDeformer());
-    }
+        float horizontalSpeed = direction.x * Speed;
+        
+        float verticalSpeed = direction.y * Speed;
 
-    void Walking()
-    {
-        if (Vector2.Distance(transform.position, player.transform.position) < 10.0f)
+        Anim.SetFloat("Vertical", verticalSpeed);
+        
+        Anim.SetFloat("Horizontal", horizontalSpeed);
+        
+        Anim.SetFloat("Speed", Mathf.Abs(horizontalSpeed) + Mathf.Abs(verticalSpeed));
+
+        if (Vector2.Distance(transform.position, Pl.position) > 3.0f)
         {
-            UpdateAnim();
-
-            CurrentDirectionIndex = (CurrentDirectionIndex + 1) % Directions.Length;
+            CharRb.velocity = direction * Speed;
+        }
+        
+        else
+        {
+            CharRb.velocity = Vector2.zero;
         }
 
-        Rb.velocity = Directions[CurrentDirectionIndex] * MoveSpeed;
+        StartCoroutine(RunTheDeformer());
     }
 
     IEnumerator RunTheDeformer()
@@ -60,13 +69,6 @@ public class TheDeformers : MonoBehaviour
         MonsterQuest.enabled = false;
 
         MonsterQuest.gameObject.SetActive(false);
-    }
-
-    void UpdateAnim()
-    {
-        AnimMonster.SetFloat("Horizontal", Directions[CurrentDirectionIndex].x);
-
-        AnimMonster.SetFloat("Vertical", Directions[CurrentDirectionIndex].y);
     }
 
     void OnCollisionEnter2D(Collision2D other)
