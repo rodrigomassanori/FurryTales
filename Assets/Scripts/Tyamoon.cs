@@ -19,7 +19,7 @@ public class Tyamoon : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, Pl.transform.position) > 3)
+        if (Vector2.Distance(transform.position, Pl.transform.position) > 3.0f && Pl.gameObject.tag == "Player")
         {
             Speed = CharRb.velocity * Time.deltaTime;
 
@@ -27,7 +27,9 @@ public class Tyamoon : MonoBehaviour
 
             Anim.SetFloat("Horizontal", Speed.x);
 
-            Anim.SetFloat("Speed", Speed.x + Speed.y);
+            Anim.SetFloat("Speed", Speed.sqrMagnitude);
+
+            CharRb.MovePosition(CharRb.position + Speed * Time.deltaTime);
         }
     }
 }
