@@ -5,7 +5,7 @@ public class DoorController2 : MonoBehaviour
 {
 	void OnCollisionEnter2D(Collision2D Door2)
 	{
-		if (Door2.gameObject.CompareTag("Player"))
+		if (Door2.gameObject.CompareTag("Player01"))
 		{
 			SceneManager.LoadScene("Game3");
 		}

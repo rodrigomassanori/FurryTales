@@ -25,6 +25,7 @@ TagManager:
   - Monster2
   - Mission2
   - Newspaper
+  - Player01
   layers:
   - Default
   - TransparentFX
