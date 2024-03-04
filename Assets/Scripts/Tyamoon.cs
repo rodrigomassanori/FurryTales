@@ -17,6 +17,11 @@ public class Tyamoon : MonoBehaviour
         Anim = GetComponent<Animator>();
     }
 
+    void Start()
+    {
+        Pl = GameObject.Find("Kaitlyn").transform;
+    }
+
     void Update()
     {
         if (Vector2.Distance(transform.position, Pl.transform.position) > 3.0f)
