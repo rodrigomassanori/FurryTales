@@ -25,7 +25,7 @@ public class Tyamoon : MonoBehaviour
 
             Anim.SetFloat("Horizontal", Speed.x);
 
-            Anim.SetFloat("Speed", Speed.sqrMagnitude);
+            Anim.SetFloat("Speed", Speed.x + Speed.y);
         }
     }
 
