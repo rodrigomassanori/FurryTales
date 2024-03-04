@@ -19,7 +19,7 @@ public class Tyamoon : MonoBehaviour
 
     void Start()
     {
-        Pl = GameObject.Find("Kaitlyn").transform;
+        Pl = GameObject.FindGameObjectWithTag("Player01").transform;
     }
 
     void Update()
