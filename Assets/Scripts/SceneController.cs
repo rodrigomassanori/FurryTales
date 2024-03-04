@@ -1,11 +1,10 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour 
 {
-	public Image KaitlynDeath;
+	public GameObject KaitlynDeath;
 
 	void Start()
 	{
