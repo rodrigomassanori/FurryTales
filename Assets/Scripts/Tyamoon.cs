@@ -3,12 +3,12 @@ using UnityEngine;
 public class Tyamoon : MonoBehaviour 
 {
     Rigidbody2D CharRb;
-    
+
     Animator Anim;
-
-    Vector2 Speed;
-
+    
     public Transform Pl;
+    
+    public float speed = 5f; 
 
     void Awake()
     {
@@ -24,18 +24,26 @@ public class Tyamoon : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, Pl.transform.position) > 3.0f)
+        Vector2 direction = (Pl.position - transform.position).normalized;
+
+        float horizontalSpeed = direction.x * speed;
+        
+        float verticalSpeed = direction.y * speed;
+
+        Anim.SetFloat("Vertical", verticalSpeed);
+        
+        Anim.SetFloat("Horizontal", horizontalSpeed);
+        
+        Anim.SetFloat("Speed", Mathf.Abs(horizontalSpeed) + Mathf.Abs(verticalSpeed));
+
+        if (Vector2.Distance(transform.position, Pl.position) > 3.0f)
         {
-            Anim.SetFloat("Vertical", Speed.y);
-
-            Anim.SetFloat("Horizontal", Speed.x);
-
-            Anim.SetFloat("Speed", Speed.x + Speed.y);
+            CharRb.velocity = direction * speed;
         }
-    }
-
-    void FixedUpdate()
-    {
-        CharRb.MovePosition(CharRb.position + Speed.normalized * Speed * Time.deltaTime);
+        
+        else
+        {
+            CharRb.velocity = Vector2.zero;
+        }
     }
 }
