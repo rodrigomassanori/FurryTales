@@ -1,14 +1,18 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Collections;
 
 public class SceneController : MonoBehaviour 
 {
-	Scene Sc;
-
-	public GameObject Player;
-
-	void Awake()
+	void Start()
 	{
-		Instantiate(Player);
+		StartCoroutine(Respawn());
 	}
+
+    IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(4.0f);
+
+		SceneManager.LoadScene("Game3");
+    }
 }
