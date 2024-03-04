@@ -22,8 +22,6 @@ public class Tyamoon : MonoBehaviour
         if (Vector2.Distance(transform.position, Pl.transform.position) > 3.0f 
         && Pl.gameObject.tag == "Player")
         {
-            Speed = CharRb.velocity * Time.deltaTime;
-
             Anim.SetFloat("Vertical", Speed.y);
 
             Anim.SetFloat("Horizontal", Speed.x);
