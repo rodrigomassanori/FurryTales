@@ -26,6 +26,7 @@ TagManager:
   - Mission2
   - Newspaper
   - Player01
+  - House
   layers:
   - Default
   - TransparentFX
