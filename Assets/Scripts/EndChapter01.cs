@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMpro;
+using TMPro;
 
 public class EndChapter01 : MonoBehaviour 
 {
