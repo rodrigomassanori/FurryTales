@@ -5,16 +5,10 @@ using System.Collections;
 
 public class ButtonPlay : MonoBehaviour 
 {
-	readonly KeyCode E = KeyCode.E;
-
-	Button Plbtn;
-
 	ColorBlock BtnPlayColor;
 
 	void Awake()
 	{
-		Plbtn = GetComponent<Button>();
-
 		BtnPlayColor = GetComponent<Button>().colors;
 	}
 
@@ -30,11 +24,8 @@ public class ButtonPlay : MonoBehaviour
 
 	IEnumerator Play()
 	{
-		if (Input.GetKeyDown(E))
-		{
-			yield return new WaitForSeconds(20.0f);
+		yield return new WaitForSeconds(20.0f);
 
-			SceneManager.LoadScene("Narration");
-		}
+		SceneManager.LoadScene("Narration");
 	}
 }
