@@ -18,7 +18,7 @@ public class ButtonPlay : MonoBehaviour
 		BtnColor = GetComponent<Button>().colors;
 	}
 
-	public void OnButtonClick()
+	public void OnClick()
 	{
 		StartCoroutine(Play());
 	}
