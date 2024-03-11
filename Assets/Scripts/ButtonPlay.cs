@@ -23,14 +23,15 @@ public class ButtonPlay : MonoBehaviour
 		StartCoroutine(Play());
 	}
 
+	public void ButtonTransitionColors()
+	{
+		BtnColor.pressedColor = Color.magenta;
+	}
+
 	IEnumerator Play()
 	{
 		if (Input.GetKeyDown(E))
 		{
-			yield return new WaitForSeconds(30.0f);
-
-			BtnColor.pressedColor = Color.magenta;
-
 			yield return new WaitForSeconds(20.0f);
 
 			SceneManager.LoadScene("Narration");
