@@ -5,17 +5,17 @@ using System.Collections;
 
 public class ButtonPlay : MonoBehaviour 
 {
-	KeyCode E = KeyCode.E;
+	readonly KeyCode E = KeyCode.E;
 
 	Button Plbtn;
 
-	ColorBlock BtnColor;
+	ColorBlock BtnPlayColor;
 
 	void Awake()
 	{
 		Plbtn = GetComponent<Button>();
 
-		BtnColor = GetComponent<Button>().colors;
+		BtnPlayColor = GetComponent<Button>().colors;
 	}
 
 	public void OnClick()
@@ -25,7 +25,7 @@ public class ButtonPlay : MonoBehaviour
 
 	public void ButtonTransitionColors()
 	{
-		BtnColor.pressedColor = Color.magenta;
+		BtnPlayColor.pressedColor = Color.magenta;
 	}
 
 	IEnumerator Play()
