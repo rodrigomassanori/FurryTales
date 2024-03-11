@@ -18,15 +18,10 @@ public class ButtonPlay : MonoBehaviour
 		BtnColor = GetComponent<Button>().colors;
 	}
 
-	void Update()
+	public void OnButtonClick()
 	{
-		StartGame();
+		StartCoroutine(Play());
 	}
-
-    void StartGame()
-    {
-        StartCoroutine(Play());
-    }
 
 	IEnumerator Play()
 	{
