@@ -24,7 +24,7 @@ public class ButtonPlay : MonoBehaviour
 
 	IEnumerator Play()
 	{
-		yield return new WaitForSeconds(20.0f);
+		yield return new WaitForSeconds(10.0f);
 
 		SceneManager.LoadScene("Narration");
 	}
