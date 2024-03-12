@@ -1,9 +1,9 @@
-using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour 
 {
-    public GameObject PauseBtn;
+    public Button PauseBtn;
 
     bool IsPaused;
 
@@ -38,13 +38,17 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 0.0f;
 
-        PauseBtn.SetActive(true);
+        PauseBtn.enabled = true;
+
+        PauseBtn.gameObject.SetActive(true);
     }
 
     void ResumeGame()
     {
         Time.timeScale = 1.0f;
 
-        PauseBtn.SetActive(false);
+        PauseBtn.enabled = false;
+
+        PauseBtn.gameObject.SetActive(false);
     }
 }
