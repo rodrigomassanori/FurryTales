@@ -16,6 +16,10 @@ public class TyamoonVoice : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player01")
 		{	
+			TyamoonDialogue.enabled = true;
+
+			TyamoonDialogue.gameObject.SetActive(true);
+			
 			VoiceOfTyamoon.Play();
 
 			TyamoonDialogue.text = "Hurry up Kaitlyn, we need to turn off all three gears in reactor basement";
@@ -24,6 +28,10 @@ public class TyamoonVoice : MonoBehaviour
 
 	void OnCollisionExit2D(Collision2D other)
 	{
+		TyamoonDialogue.enabled = false;
+
+		TyamoonDialogue.gameObject.SetActive(false);
+
 		VoiceOfTyamoon.Stop();
 	}
 }
