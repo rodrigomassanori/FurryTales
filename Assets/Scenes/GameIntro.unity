@@ -188,9 +188,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3890442858614756939, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: -1
+    - target: {fileID: 3695063193836280150, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695063193836280150, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802843417704141576, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802843417704141576, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8618500829812117337, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
       propertyPath: m_Name
@@ -276,13 +288,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9112874303516186365, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
-      propertyPath: Comic
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 2235031515294785147, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bc64debc241a70409a32d0bab6dbb04, type: 3}
