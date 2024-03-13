@@ -1,26 +1,30 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class MissionController2 : MonoBehaviour
 {
     public TextMeshProUGUI Mission3;
 
-    KeyCode E = KeyCode.E;
-
-    void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(E))
-        {
-            Mission3.enabled = true;
+        StartCoroutine(ShowQuest2());
+    }
 
-            Mission3.gameObject.SetActive(true);
-        }
+    IEnumerator ShowQuest2()
+    {
+        yield return new WaitForSeconds(15.0f);
 
-        if (Input.GetKeyUp(E))
-        {
-            Mission3.enabled = false;
+        Mission3.enabled = true;
 
-            Mission3.gameObject.SetActive(false);
-        }
+        Mission3.gameObject.SetActive(true);
+
+        Mission3.text = "Find all three gears";
+
+        yield return new WaitForSeconds(15.0f);
+
+        Mission3.enabled = false;
+
+        Mission3.gameObject.SetActive(false);
     }
 }
