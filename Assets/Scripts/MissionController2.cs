@@ -19,7 +19,7 @@ public class MissionController2 : MonoBehaviour
 
         Mission3.gameObject.SetActive(true);
 
-        Mission3.text = "Find all three gears";
+        Mission3.text = "Find all three gears and after pick all of them, \n go to door on this floor, to leave it";
 
         yield return new WaitForSeconds(15.0f);
 
