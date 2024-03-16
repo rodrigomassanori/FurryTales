@@ -490,7 +490,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 52e9ffff06eaffff3cefffff60efffff72f0ffff2ef1ffff24f2ffff1af3ffff62f4ffff8cf5ffff64f6ffffa0f6ffffe8f6ffff3ef7ffffd2faffff
+      m_ExpandedIDs: aae6ffff5ee7ffff94ecffffb8ecffffcaedffff86eeffff7cefffff72f0ffffbaf1ffffe4f2ffffbcf3fffff8f3ffff40f4ffff96f4ffffd2faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1330,7 +1330,7 @@ MonoBehaviour:
     m_SceneHandles: 
     m_ShowAllHits: 0
     m_SkipHidden: 0
-    m_SearchArea: 2
+    m_SearchArea: 1
     m_Folders:
     - Assets
     m_Globs: []
@@ -1347,9 +1347,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 829a0000
-    m_LastClickedID: 39554
-    m_ExpandedIDs: 00000000829a0000849a0000869a0000889a00008a9a00008c9a00008e9a0000
+    m_SelectedIDs: 869a0000
+    m_LastClickedID: 39558
+    m_ExpandedIDs: 00000000869a0000889a00008a9a00008c9a00008e9a0000909a0000929a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1377,7 +1377,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000829a0000849a0000869a0000889a00008a9a00008c9a00008e9a0000
+    m_ExpandedIDs: 00000000869a0000889a00008a9a00008c9a00008e9a0000909a0000929a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1404,7 +1404,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000000000002a9e0000a2ab00001ea70000069b000026980000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1429,7 +1429,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 229.80002}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 161.8
