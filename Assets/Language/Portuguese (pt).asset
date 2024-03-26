@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Portuguese (pt)
   m_EditorClassIdentifier: 
   m_Identifier:
-    m_Code: pt
+    m_Code: pt-BR
   m_Metadata:
     m_Items: []
   m_LocaleName: Portuguese (pt)
