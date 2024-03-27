@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StartupSelectors:
   - rid: 5215073294123270144
+  - rid: 5215073339036401673
   - rid: 5215073294123270145
   - rid: 5215073294123270146
   - rid: 5215073294123270169
@@ -38,7 +39,7 @@ MonoBehaviour:
     - rid: 5215073294123270144
       type: {class: CommandLineLocaleSelector, ns: UnityEngine.Localization.Settings, asm: Unity.Localization}
       data:
-        m_CommandLineArgument: -language=
+        m_CommandLineArgument: -language=en
     - rid: 5215073294123270145
       type: {class: SystemLocaleSelector, ns: UnityEngine.Localization.Settings, asm: Unity.Localization}
       data: 
@@ -70,7 +71,7 @@ MonoBehaviour:
         m_CustomTablePostprocessor:
           rid: -2
         m_UseFallback: 0
-        m_MissingTranslationState: 1
+        m_MissingTranslationState: -1
         m_NoTranslationFoundMessage: No translation found for '{key}' in {table.TableCollectionName}
         m_SmartFormat:
           rid: 5215073294123270150
@@ -215,3 +216,7 @@ MonoBehaviour:
       data:
         m_LocaleId:
           m_Code: pt-BR
+    - rid: 5215073339036401673
+      type: {class: CommandLineLocaleSelector, ns: UnityEngine.Localization.Settings, asm: Unity.Localization}
+      data:
+        m_CommandLineArgument: -language=pt-br
