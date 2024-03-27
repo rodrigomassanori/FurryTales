@@ -14,9 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: En
   m_TableCollectionNameGuidString: 2110d23fe1b6c8342bf9d2496fab7748
-  m_Entries: []
+  m_Entries:
+  - m_Id: 3118259892224
+    m_Key: Menu Languages
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3757333409792
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3977152688128
+    m_Key: New Entry 1
+    m_Metadata:
+      m_Items: []
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 5215073339036401678
+    - rid: 5215073339036401679
   m_KeyGenerator:
     rid: 5215073339036401674
   references:
@@ -26,3 +40,27 @@ MonoBehaviour:
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1711562280738
+    - rid: 5215073339036401678
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 3118259892224
+          m_TableCodes:
+          - en
+          - pt-BR
+        - m_KeyId: 3757333409792
+          m_TableCodes:
+          - en
+          - pt-BR
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - rid: 5215073339036401679
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 3977152688128
+          m_TableCodes:
+          - en
+          - pt-BR
+        m_TypeString: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

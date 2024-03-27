@@ -197,38 +197,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 808622902}
-    - target: {fileID: 2352246782670901861, guid: feef91186a347e04dbe58153bd5d7126, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 2352246782670901861, guid: feef91186a347e04dbe58153bd5d7126, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1080
-      objectReference: {fileID: 0}
-    - target: {fileID: 2352246782670901861, guid: feef91186a347e04dbe58153bd5d7126, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.0099792
-      objectReference: {fileID: 0}
-    - target: {fileID: 2352246782670901861, guid: feef91186a347e04dbe58153bd5d7126, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.010036
-      objectReference: {fileID: 0}
-    - target: {fileID: 2407947808702962840, guid: feef91186a347e04dbe58153bd5d7126, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 221
-      objectReference: {fileID: 0}
-    - target: {fileID: 2407947808702962840, guid: feef91186a347e04dbe58153bd5d7126, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -462.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3632229663715665323, guid: feef91186a347e04dbe58153bd5d7126, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 3632229663715665323, guid: feef91186a347e04dbe58153bd5d7126, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
     - target: {fileID: 3859957634494284928, guid: feef91186a347e04dbe58153bd5d7126, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -312,18 +280,6 @@ PrefabInstance:
     - target: {fileID: 7394635376349586737, guid: feef91186a347e04dbe58153bd5d7126, type: 3}
       propertyPath: m_Name
       value: Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016799119912129251, guid: feef91186a347e04dbe58153bd5d7126, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 234
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016799119912129251, guid: feef91186a347e04dbe58153bd5d7126, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -140
-      objectReference: {fileID: 0}
-    - target: {fileID: 8340737835308503161, guid: feef91186a347e04dbe58153bd5d7126, type: 3}
-      propertyPath: m_PreserveAspect
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
