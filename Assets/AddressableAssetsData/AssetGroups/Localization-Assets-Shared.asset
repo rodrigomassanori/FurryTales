@@ -32,8 +32,8 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 679c87211f6b93c4e8ea65583afb5177
-    m_Address: Assets/Language/Strings/In Game Text Shared Data.asset
+  - m_GUID: d6c15820a494cb048a36d408a4810886
+    m_Address: Assets/Language/AssetsLanguages/TyamoonVoice Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
