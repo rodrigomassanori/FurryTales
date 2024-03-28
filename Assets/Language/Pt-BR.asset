@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: Pt-BR
   m_EditorClassIdentifier: 
   m_StartupSelectors:
-  - rid: 5215073294123270144
-  - rid: 5215073339036401673
-  - rid: 5215073294123270145
   - rid: 5215073294123270146
   - rid: 5215073294123270169
   - rid: 5215073294123270168
@@ -36,13 +33,6 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 5215073294123270144
-      type: {class: CommandLineLocaleSelector, ns: UnityEngine.Localization.Settings, asm: Unity.Localization}
-      data:
-        m_CommandLineArgument: -language=en
-    - rid: 5215073294123270145
-      type: {class: SystemLocaleSelector, ns: UnityEngine.Localization.Settings, asm: Unity.Localization}
-      data: 
     - rid: 5215073294123270146
       type: {class: SpecificLocaleSelector, ns: UnityEngine.Localization.Settings, asm: Unity.Localization}
       data:
@@ -216,7 +206,3 @@ MonoBehaviour:
       data:
         m_LocaleId:
           m_Code: pt-BR
-    - rid: 5215073339036401673
-      type: {class: CommandLineLocaleSelector, ns: UnityEngine.Localization.Settings, asm: Unity.Localization}
-      data:
-        m_CommandLineArgument: -language=pt-br

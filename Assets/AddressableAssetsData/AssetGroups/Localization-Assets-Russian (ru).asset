@@ -16,7 +16,25 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: e933eb012ffe6a445a963b189aea2989
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 3e7261ad9f9af8f44a70e01357dbf447
+    m_Address: PlayButton3
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f0fa912bb6d62e45bd4a8ce1cbe1fe0
+    m_Address: OptionsButton3
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 679dc58ef2d2502459b50037943c2633
+    m_Address: QuitButton3
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 6814fcf46aef8fc4d980ac6b9ae47418, type: 2}
   m_SchemaSet:
