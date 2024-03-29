@@ -614,6 +614,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7917459398418872275, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
+      propertyPath: m_UpdateAsset.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917459398418872275, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
+      propertyPath: m_UpdateAsset.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8136541943642285870, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
       propertyPath: TyamoonDialogue
       value: 
@@ -621,68 +629,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2987365145392127435, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2362491211449026975}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
---- !u!1 &2362491211449026973 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2987365145392127435, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
-  m_PrefabInstance: {fileID: 2362491211449026972}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &2362491211449026974 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4710826513555420487, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
-  m_PrefabInstance: {fileID: 2362491211449026972}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2362491211449026975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2362491211449026973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d18ed12b29a9aa3479eb5083b95f899d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LocalizedAssetReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:d6c15820a494cb048a36d408a4810886
-    m_TableEntryReference:
-      m_KeyId: 391140208640
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-  m_UpdateAsset:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2362491211449026974}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: set_clip
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 2362491211449026974}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
 --- !u!1001 &6029753252892769527
 PrefabInstance:
   m_ObjectHideFlags: 0

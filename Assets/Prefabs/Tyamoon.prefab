@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4710826513555420487}
   - component: {fileID: 8136541943642285870}
   - component: {fileID: 1878013662881501541}
+  - component: {fileID: 7917459398418872275}
   m_Layer: 0
   m_Name: Tyamoon
   m_TagString: Partner
@@ -291,6 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c2266ba6d71d04598749eff068fd4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TyamoonDialogue: {fileID: 0}
 --- !u!114 &1878013662881501541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,3 +305,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2fb6304ecbe184e9e5d91172fa125b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pl: {fileID: 0}
+--- !u!114 &7917459398418872275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2987365145392127435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18ed12b29a9aa3479eb5083b95f899d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:d6c15820a494cb048a36d408a4810886
+    m_TableEntryReference:
+      m_KeyId: 391140208640
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4710826513555420487}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_clip
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 4710826513555420487}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
