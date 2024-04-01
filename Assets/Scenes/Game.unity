@@ -614,14 +614,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7917459398418872275, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
-      propertyPath: m_UpdateAsset.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7917459398418872275, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
-      propertyPath: m_UpdateAsset.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8136541943642285870, guid: 6f661133c1859ab42823e591e3dd379b, type: 3}
       propertyPath: TyamoonDialogue
       value: 

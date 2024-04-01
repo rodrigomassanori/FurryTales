@@ -9,6 +9,8 @@ public class ChernobylVideo : MonoBehaviour
 
 	void Awake()
 	{
+		Cursor.visible = false;
+		
 		VDPlayer = GetComponent<VideoPlayer>();
 	}
 
