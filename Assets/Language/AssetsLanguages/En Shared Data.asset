@@ -31,6 +31,14 @@ MonoBehaviour:
 '
     m_Metadata:
       m_Items: []
+  - m_Id: 1756781454159872
+    m_Key: OptionsMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1757668985663488
+    m_Key: OptionsMen
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 5215073339036401678
@@ -54,6 +62,11 @@ MonoBehaviour:
           - pt-BR
           - ru
         - m_KeyId: 3757333409792
+          m_TableCodes:
+          - en
+          - pt-BR
+          - ru
+        - m_KeyId: 1756781454159872
           m_TableCodes:
           - en
           - pt-BR
