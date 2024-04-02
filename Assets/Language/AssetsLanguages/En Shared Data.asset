@@ -39,6 +39,18 @@ MonoBehaviour:
     m_Key: OptionsMen
     m_Metadata:
       m_Items: []
+  - m_Id: 2184837121568768
+    m_Key: MainMenu/Menu/Logo/OptionsButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2185269084549120
+    m_Key: MainMenu/Menu/Logo/PlayButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2185321190387712
+    m_Key: MainMenu/Menu/Logo/QuitButton
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 5215073339036401678
@@ -71,6 +83,21 @@ MonoBehaviour:
           - en
           - pt-BR
           - ru
+        - m_KeyId: 2184837121568768
+          m_TableCodes:
+          - en
+          - pt-BR
+          - ru
+        - m_KeyId: 2185269084549120
+          m_TableCodes:
+          - en
+          - ru
+          - pt-BR
+        - m_KeyId: 2185321190387712
+          m_TableCodes:
+          - en
+          - ru
+          - pt-BR
         m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
     - rid: 5215073339036401679

@@ -34,6 +34,18 @@ MonoBehaviour:
     m_Localized: 7f0fa912bb6d62e45bd4a8ce1cbe1fe0[OptionsButton3]
     m_Metadata:
       m_Items: []
+  - m_Id: 2184837121568768
+    m_Localized: 7f0fa912bb6d62e45bd4a8ce1cbe1fe0[OptionsButton3]
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2185269084549120
+    m_Localized: 3e7261ad9f9af8f44a70e01357dbf447[PlayButton3]
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2185321190387712
+    m_Localized: 679dc58ef2d2502459b50037943c2633[QuitButton3]
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
