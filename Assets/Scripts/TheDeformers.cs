@@ -13,13 +13,17 @@ public class TheDeformers : MonoBehaviour
     
     public Transform Pl;
     
-    float Speed = 3.0f; 
+    float Speed = 3.0f;
+
+    AudioSource DeformedFox;
 
     void Awake()
     {
         CharRb = GetComponent<Rigidbody2D>();
 
         Anim = GetComponent<Animator>();
+
+        DeformedFox = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -44,6 +48,8 @@ public class TheDeformers : MonoBehaviour
         if (Vector2.Distance(transform.position, Pl.position) > 3.0f)
         {
             CharRb.velocity = direction * Speed;
+
+            DeformedFox.Play();
         }
         
         else
