@@ -53,9 +53,9 @@ Library: C:\Users\rodri\Documents\FurryTales\Temp\BurstOutput\Data\Plugins\x86_6
 --assembly-defines=Unity.ProBuilder.Csg;
 --assembly-defines=Unity.Formats.Fbx.Runtime;
 --assembly-defines=Unity.VisualScripting.Flow;
+--assembly-defines=LeanLocalization;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Configuration;
 --assembly-defines=Unity.XR.CoreUtils;
---assembly-defines=LeanLocalization;
 --assembly-defines=Unity.Multiplayer.Tools.NetStats;
 --assembly-defines=Unity.2D.SpriteShape.Runtime;
 --assembly-defines=Unity.Multiplayer.Tools.MetricTestData;
@@ -63,8 +63,8 @@ Library: C:\Users\rodri\Documents\FurryTales\Temp\BurstOutput\Data\Plugins\x86_6
 --assembly-defines=Unity.XR.OpenXR.Features.OculusQuestSupport;
 --assembly-defines=FbxBuildTestAssets;
 --assembly-defines=Unity.XR.Interaction.Toolkit;
---assembly-defines=Unity.Multiplayer.Tools.Common;
 --assembly-defines=Unity.Profiling.Core;
+--assembly-defines=Unity.Multiplayer.Tools.Common;
 --assembly-defines=Unity.XR.OpenXR.Features.RuntimeDebugger;
 --assembly-defines=Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary;
 --assembly-defines=LeanLocalization.TMP;
@@ -178,9 +178,9 @@ Library: C:\Users\rodri\Documents\FurryTales\Temp\BurstOutput\Data\Plugins\x86_6
 --assembly-defines=Unity.ProBuilder.Csg;
 --assembly-defines=Unity.Formats.Fbx.Runtime;
 --assembly-defines=Unity.VisualScripting.Flow;
+--assembly-defines=LeanLocalization;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Configuration;
 --assembly-defines=Unity.XR.CoreUtils;
---assembly-defines=LeanLocalization;
 --assembly-defines=Unity.Multiplayer.Tools.NetStats;
 --assembly-defines=Unity.2D.SpriteShape.Runtime;
 --assembly-defines=Unity.Multiplayer.Tools.MetricTestData;
@@ -188,8 +188,8 @@ Library: C:\Users\rodri\Documents\FurryTales\Temp\BurstOutput\Data\Plugins\x86_6
 --assembly-defines=Unity.XR.OpenXR.Features.OculusQuestSupport;
 --assembly-defines=FbxBuildTestAssets;
 --assembly-defines=Unity.XR.Interaction.Toolkit;
---assembly-defines=Unity.Multiplayer.Tools.Common;
 --assembly-defines=Unity.Profiling.Core;
+--assembly-defines=Unity.Multiplayer.Tools.Common;
 --assembly-defines=Unity.XR.OpenXR.Features.RuntimeDebugger;
 --assembly-defines=Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary;
 --assembly-defines=LeanLocalization.TMP;
@@ -301,9 +301,9 @@ Library: C:\Users\rodri\Documents\FurryTales\Temp\BurstOutput\Data\Plugins\x86_6
 --assembly-defines=Unity.ProBuilder.Csg;
 --assembly-defines=Unity.Formats.Fbx.Runtime;
 --assembly-defines=Unity.VisualScripting.Flow;
+--assembly-defines=LeanLocalization;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Configuration;
 --assembly-defines=Unity.XR.CoreUtils;
---assembly-defines=LeanLocalization;
 --assembly-defines=Unity.Multiplayer.Tools.NetStats;
 --assembly-defines=Unity.2D.SpriteShape.Runtime;
 --assembly-defines=Unity.Multiplayer.Tools.MetricTestData;
@@ -311,8 +311,8 @@ Library: C:\Users\rodri\Documents\FurryTales\Temp\BurstOutput\Data\Plugins\x86_6
 --assembly-defines=Unity.XR.OpenXR.Features.OculusQuestSupport;
 --assembly-defines=FbxBuildTestAssets;
 --assembly-defines=Unity.XR.Interaction.Toolkit;
---assembly-defines=Unity.Multiplayer.Tools.Common;
 --assembly-defines=Unity.Profiling.Core;
+--assembly-defines=Unity.Multiplayer.Tools.Common;
 --assembly-defines=Unity.XR.OpenXR.Features.RuntimeDebugger;
 --assembly-defines=Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary;
 --assembly-defines=LeanLocalization.TMP;
@@ -503,9 +503,9 @@ Library: C:\Users\rodri\Documents\FurryTales\Temp\BurstOutput\Data\Plugins\x86_6
 --assembly-defines=Unity.ProBuilder.Csg;
 --assembly-defines=Unity.Formats.Fbx.Runtime;
 --assembly-defines=Unity.VisualScripting.Flow;
+--assembly-defines=LeanLocalization;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Configuration;
 --assembly-defines=Unity.XR.CoreUtils;
---assembly-defines=LeanLocalization;
 --assembly-defines=Unity.Multiplayer.Tools.NetStats;
 --assembly-defines=Unity.2D.SpriteShape.Runtime;
 --assembly-defines=Unity.Multiplayer.Tools.MetricTestData;
@@ -513,8 +513,8 @@ Library: C:\Users\rodri\Documents\FurryTales\Temp\BurstOutput\Data\Plugins\x86_6
 --assembly-defines=Unity.XR.OpenXR.Features.OculusQuestSupport;
 --assembly-defines=FbxBuildTestAssets;
 --assembly-defines=Unity.XR.Interaction.Toolkit;
---assembly-defines=Unity.Multiplayer.Tools.Common;
 --assembly-defines=Unity.Profiling.Core;
+--assembly-defines=Unity.Multiplayer.Tools.Common;
 --assembly-defines=Unity.XR.OpenXR.Features.RuntimeDebugger;
 --assembly-defines=Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary;
 --assembly-defines=LeanLocalization.TMP;

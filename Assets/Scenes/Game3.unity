@@ -613,6 +613,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Newspaper
       objectReference: {fileID: 0}
+    - target: {fileID: 2906009156356966510, guid: 7f1bcc8ad4bfe084ebfe5db0a672f9a9, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[0].m_Data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906009156356966510, guid: 7f1bcc8ad4bfe084ebfe5db0a672f9a9, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[0].m_RefCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906009156356966510, guid: 7f1bcc8ad4bfe084ebfe5db0a672f9a9, type: 3}
+      propertyPath: m_Tiles.Array.data[0].second.m_TileSpriteIndex
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5314599882591664339, guid: 7f1bcc8ad4bfe084ebfe5db0a672f9a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -936,10 +948,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7043845164637006205, guid: 8ccaace601ee38f45a560a4c9c19fc1f, type: 3}
       propertyPath: Pl
-      value: 
-      objectReference: {fileID: 158305091}
-    - target: {fileID: 7043845164637006205, guid: 8ccaace601ee38f45a560a4c9c19fc1f, type: 3}
-      propertyPath: player
       value: 
       objectReference: {fileID: 158305091}
     - target: {fileID: 7043845164637006205, guid: 8ccaace601ee38f45a560a4c9c19fc1f, type: 3}
