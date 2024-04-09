@@ -87,7 +87,7 @@ public class VHSEffectPostProcessPass : ScriptableRenderPass
 
             material.SetColor(Shader.PropertyToID("StaticColor"), customEffect.noiseColor.value);
             
-			material.SetFloat(Shader.PropertyToID("ScanLinesHeight"), customEffect.scanlinesHeight.value);
+			material.SetFloat(Shader.PropertyToID("ScanLinesHeight"), customEffect.ScanlinesHeight.value);
 
             BlitTo(material);
         }
