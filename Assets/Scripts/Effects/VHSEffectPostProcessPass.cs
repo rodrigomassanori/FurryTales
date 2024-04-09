@@ -41,6 +41,7 @@ public class VHSEffectPostProcessPass : ScriptableRenderPass
 		destinationB = new RenderTargetIdentifier(temporaryRTIdB);
     }
 
+    [System.Obsolete]
     public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
     {
         var materials = VHSEffectMaterialPointer.instance;
@@ -71,7 +72,7 @@ public class VHSEffectPostProcessPass : ScriptableRenderPass
 
         latestDest = source;
 
-        var customEffect = stack.GetComponent<VHSEffectComponent>();
+        var customEffect = stack.GetComponent<VHSEffect>();
 
         if (customEffect.IsActive())
         {
