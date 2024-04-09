@@ -46,10 +46,19 @@ MonoBehaviour:
     m_Value: 0.749
   _bleed:
     m_OverrideState: 1
-    m_Value: 2.51
+    m_Value: 10
   _rocking:
     m_OverrideState: 1
-    m_Value: 0.0059
+    m_Value: 0.0108
+  _tape:
+    m_OverrideState: 0
+    m_Value: 1
+  _noise:
+    m_OverrideState: 0
+    m_Value: 0.5
+  _glitch:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,13 +93,13 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.51
+    m_Value: 0.05
   intensity:
     m_OverrideState: 1
-    m_Value: 0.57
+    m_Value: 2.82
   scatter:
     m_OverrideState: 1
-    m_Value: 0.28
+    m_Value: 1
   clamp:
     m_OverrideState: 0
     m_Value: 65472

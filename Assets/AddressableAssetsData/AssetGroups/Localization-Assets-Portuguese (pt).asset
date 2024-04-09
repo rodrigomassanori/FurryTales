@@ -41,6 +41,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pt-BR
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6634376c1d630b44a8be537dd5932695
+    m_Address: VHS Vol
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 6814fcf46aef8fc4d980ac6b9ae47418, type: 2}
   m_SchemaSet:

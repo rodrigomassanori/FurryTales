@@ -51,10 +51,15 @@ MonoBehaviour:
     m_Key: MainMenu/Menu/Logo/QuitButton
     m_Metadata:
       m_Items: []
+  - m_Id: 4686315384074240
+    m_Key: Game/VHS
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 5215073339036401678
     - rid: 5215073339036401679
+    - rid: 5493284551779942411
   m_KeyGenerator:
     rid: 5215073339036401674
   references:
@@ -111,3 +116,12 @@ MonoBehaviour:
           - ru
         m_TypeString: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
+    - rid: 5493284551779942411
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 4686315384074240
+          m_TableCodes:
+          - pt-BR
+        m_TypeString: UnityEngine.Rendering.VolumeProfile, Unity.RenderPipelines.Core.Runtime,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

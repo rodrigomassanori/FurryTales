@@ -46,6 +46,10 @@ MonoBehaviour:
     m_Localized: 482e4e3694db71e4d85be1d533e801b5[QuitButton2]
     m_Metadata:
       m_Items: []
+  - m_Id: 4686315384074240
+    m_Localized: 6634376c1d630b44a8be537dd5932695
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
