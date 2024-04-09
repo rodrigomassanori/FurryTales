@@ -293,6 +293,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4405562706396155179, guid: ca0e9b5dc55339546bbfa51895b6d05d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f8f73ce207035d143978abb0ff2ebf1d, type: 2}
     - target: {fileID: 5893895211717170087, guid: ca0e9b5dc55339546bbfa51895b6d05d, type: 3}
       propertyPath: m_Name
       value: Video
