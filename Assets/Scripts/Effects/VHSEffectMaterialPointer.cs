@@ -2,24 +2,24 @@ using UnityEngine;
 
 [System.Serializable, CreateAssetMenu(fileName = "VHSEffectMaterialPointer", 
 menuName = "VHS Effect/VHSEffectMaterialPointer")]
-public class VHSEffectMaterialPointer : UnityEngine.ScriptableObject
+public class VHSEffectMaterialPointer : ScriptableObject
 {
     public Material VHSEffectMaterial;
 
-    static VHSEffectMaterialPointer _instance;
+    static VHSEffectMaterialPointer Instance;
 
-    public static VHSEffectMaterialPointer Instance
+    public static VHSEffectMaterialPointer instance
     {
         get
         {
-            if (_instance != null)
+            if (Instance != null)
             {   
-                return _instance;
+                return Instance;
             }
 
-            _instance = Resources.Load("VHSEffectMaterialPointer") as VHSEffectMaterialPointer;
+            Instance = Resources.Load("VHSEffectMaterialPointer") as VHSEffectMaterialPointer;
             
-            return _instance;
+            return Instance;
         }
     }
 }
