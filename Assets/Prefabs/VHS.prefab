@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 135689411318884161}
   - component: {fileID: 7816033400844479584}
+  - component: {fileID: 3101204786844172299}
   m_Layer: 0
   m_Name: VHS
   m_TagString: Untagged
@@ -49,3 +50,90 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 0}
+--- !u!114 &3101204786844172299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8519794669837902008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - rid: 5493284551779942425
+  - rid: 5493284551779942428
+  references:
+    version: 2
+    RefIds:
+    - rid: 5493284551779942425
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 7816033400844479584}
+        m_TrackedProperties:
+          items:
+          - rid: 5493284551779942426
+        m_UpdateType: 0
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 5493284551779942426
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 5493284551779942427
+        m_PropertyPath: sharedProfile
+    - rid: 5493284551779942427
+      type: {class: LocalizedObject, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:2110d23fe1b6c8342bf9d2496fab7748
+        m_TableEntryReference:
+          m_KeyId: 4699934096224256
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 5493284551779942428
+      type: {class: TrackedTransform, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 135689411318884161}
+        m_TrackedProperties:
+          items:
+          - rid: 5493284551779942429
+          - rid: 5493284551779942430
+          - rid: 5493284551779942431
+    - rid: 5493284551779942429
+      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_PropertyPath: m_LocalPosition.x
+        m_VariantData:
+        - localeIdentifier:
+            m_Code: en
+          value: 34850108
+        - localeIdentifier:
+            m_Code: pt-BR
+          value: 0
+    - rid: 5493284551779942430
+      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_PropertyPath: m_LocalPosition.y
+        m_VariantData:
+        - localeIdentifier:
+            m_Code: en
+          value: 36917324
+        - localeIdentifier:
+            m_Code: pt-BR
+          value: 0
+    - rid: 5493284551779942431
+      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_PropertyPath: m_LocalPosition.z
+        m_VariantData:
+        - localeIdentifier:
+            m_Code: en
+          value: 17575798
+        - localeIdentifier:
+            m_Code: pt-BR
+          value: 0

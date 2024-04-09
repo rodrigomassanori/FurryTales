@@ -55,6 +55,14 @@ MonoBehaviour:
     m_Key: Game/VHS
     m_Metadata:
       m_Items: []
+  - m_Id: 4699288982908928
+    m_Key: Game4/VHS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4699934096224256
+    m_Key: Game4/VHS 1
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 5215073339036401678
@@ -121,6 +129,12 @@ MonoBehaviour:
       data:
         m_Entries:
         - m_KeyId: 4686315384074240
+          m_TableCodes:
+          - pt-BR
+        - m_KeyId: 4699288982908928
+          m_TableCodes:
+          - pt-BR
+        - m_KeyId: 4699934096224256
           m_TableCodes:
           - pt-BR
         m_TypeString: UnityEngine.Rendering.VolumeProfile, Unity.RenderPipelines.Core.Runtime,
