@@ -43,7 +43,7 @@ public class VHSEffectPostProcessPass : ScriptableRenderPass
 
     public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
     {
-        var materials = VHSEffectMaterialPointer.Instance;
+        var materials = VHSEffectMaterialPointer.instance;
 
         if (materials == null)
         {
