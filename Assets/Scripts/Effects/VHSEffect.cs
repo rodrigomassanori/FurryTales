@@ -16,6 +16,8 @@ public class VHSEffect : VolumeComponent, IPostProcessComponent
     
     public ClampedFloatParameter ScanlinesHeight = new ClampedFloatParameter(value: 0, min: 0, max: 3, overrideState: true);
     
+    internal object scanlinesHeight;
+
     public bool IsActive() => intensity.value > 0;
 
     public bool IsTileCompatible() => true;

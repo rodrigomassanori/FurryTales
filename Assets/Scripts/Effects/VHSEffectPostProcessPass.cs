@@ -22,7 +22,10 @@ public class VHSEffectPostProcessPass : ScriptableRenderPass
         renderPassEvent = RenderPassEvent.BeforeRenderingPostProcessing;
     }
 
+    [System.Obsolete]
+#pragma warning disable CS0809
     public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
+#pragma warning restore CS0809
     {
         RenderTextureDescriptor descriptor = renderingData.cameraData.cameraTargetDescriptor;
 
@@ -42,7 +45,9 @@ public class VHSEffectPostProcessPass : ScriptableRenderPass
     }
 
     [System.Obsolete]
+#pragma warning disable CS0809
     public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
+#pragma warning restore CS0809
     {
         var materials = VHSEffectMaterialPointer.instance;
 
