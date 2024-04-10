@@ -16,12 +16,17 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: d01c013914dcda044a54adea73f7f83c
   m_Entries:
   - m_Id: 31591886848
-    m_Key: "\tIntroEn"
+    m_Key: "\tIntro\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 689631478018048
+    m_Key: Narration/IIntro2/ComicIntro
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items:
     - rid: 5493284531652788225
+    - rid: 5493284574754766851
   m_KeyGenerator:
     rid: 5493284531652788224
   references:
@@ -41,4 +46,14 @@ MonoBehaviour:
           - pt-BR
           - ru
         m_TypeString: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - rid: 5493284574754766851
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 689631478018048
+          m_TableCodes:
+          - en
+          - pt-BR
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null

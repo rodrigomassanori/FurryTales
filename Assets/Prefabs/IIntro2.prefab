@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6599508248390860851}
   - component: {fileID: 5142709567430982338}
   - component: {fileID: 6848662067400822423}
+  - component: {fileID: 902701221182324908}
   m_Layer: 5
   m_Name: ComicIntro
   m_TagString: Untagged
@@ -58,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -74,7 +75,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
 --- !u!114 &6848662067400822423
 MonoBehaviour:
@@ -89,6 +90,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comic: {fileID: 5142709567430982338}
+--- !u!114 &902701221182324908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2596024601243351851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - rid: 5493284574754766848
+  references:
+    version: 2
+    RefIds:
+    - rid: 5493284574754766848
+      type: {class: TrackedUGuiGraphic, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 5142709567430982338}
+        m_TrackedProperties:
+          items:
+          - rid: 5493284574754766849
+        m_UpdateType: 0
+    - rid: 5493284574754766849
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 5493284574754766850
+        m_PropertyPath: m_Sprite
+    - rid: 5493284574754766850
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:d01c013914dcda044a54adea73f7f83c
+        m_TableEntryReference:
+          m_KeyId: 689631478018048
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
 --- !u!1 &4313737703641528810
 GameObject:
   m_ObjectHideFlags: 0

@@ -192,14 +192,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: IIntro2
       objectReference: {fileID: 0}
-    - target: {fileID: 5142709567430982338, guid: 1394741b0c109f8429212ed410f9a86e, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-    - target: {fileID: 5142709567430982338, guid: 1394741b0c109f8429212ed410f9a86e, type: 3}
-      propertyPath: m_UseSpriteMesh
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9113557681495436941, guid: 1394741b0c109f8429212ed410f9a86e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
