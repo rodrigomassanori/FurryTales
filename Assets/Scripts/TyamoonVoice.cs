@@ -22,7 +22,7 @@ public class TyamoonVoice : MonoBehaviour
 			
 			VoiceOfTyamoon.Play();
 
-			TyamoonDialogue.text = "Hurry up Kaitlyn, we need to turn off all three gears in reactor basement";
+			TyamoonDialogue.text = "Rápido Kaitlyn, temos que fechar as três valvulas no porão do reator";
 		}
 	}
 
