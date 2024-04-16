@@ -35,14 +35,14 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c822b24d3c913744a8ae9c7bdd0e0e36
-    m_Address: TyamoonVoice
+  - m_GUID: fe1345f8e1ff8934a98f43e7eeacaf34
+    m_Address: TyamoonVoiceEn
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2cce4f9ee72fcd34a976f9ae70b5de3d
-    m_Address: TyamoonVoice2
+  - m_GUID: 7f3b4e72c9607264697a5b2d4dbc9429
+    m_Address: TyamoonVoice2En
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
